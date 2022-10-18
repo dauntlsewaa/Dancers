@@ -13,14 +13,21 @@ import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 
+//引入视频详情全局组件
+import VideoDetail from './components/video/VideoDetail.vue'
 // createApp(App).mount('#app')
 
 
 const app = createApp(App)
+<<<<<<< HEAD
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 
+=======
+
+app.component('VideoDetail',VideoDetail)
+>>>>>>> lyh
 app.use(ElementPlus, {
     locale: zhCn
   }).mount('#app')

@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <Footer></Footer>
 =======
 =======
@@ -40,6 +41,34 @@ import Home from './views/home/index.vue';
    <Home></Home>
   </div>
 =======
+=======
+  <div id="app">
+     <!-- <training></training> -->
+     <Filter></Filter>
+  </div>
+</template>
+
+<script setup lang="ts">
+// import Training from './views/training/index.vue'
+import Filter from './views/home/filter/index.vue'
+=======
+=======
+  <!-- <div>
+    <el-radio-group  size="large">
+      <el-radio-button label="New York" />
+      <el-radio-button label="Washington" />
+      <el-radio-button label="Los Angeles" />
+      <el-radio-button label="Chicago" />
+    </el-radio-group>
+  </div> -->
+  <!-- <VideoDetail /> -->
+  <Video />
+</template>
+
+<script setup lang="ts">
+import Video from './view/home/lyh/video.vue'
+>>>>>>> lyh
+>>>>>>> fdc15a9cb8c25c5827e19ed0abc9a7128718024e
 
 <div><Home /></div>
 
@@ -48,6 +77,7 @@ import Home from './views/home/index.vue';
 
 <script setup lang="ts">
 import Home from "./pages/home/index.vue"
+>>>>>>> 9a7908537c8ea56270b6ba3ee32df7b2afe0e22d
 </script>
 
 <style >
