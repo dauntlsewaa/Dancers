@@ -1,6 +1,7 @@
 <template>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <Footer></Footer>
 =======
 =======
@@ -25,15 +26,19 @@ import Home from './views/home/index.vue'
   <div>
    <Home></Home>
   </div>
+=======
+
+<div><Home /></div>
+
+>>>>>>> 9a7908537c8ea56270b6ba3ee32df7b2afe0e22d
 </template>
 
 <script setup lang="ts">
 import Home from "./pages/home/index.vue"
->>>>>>> km
 </script>
 
-<style scoped>
-*{
+<style >
+html{
   padding: 0px;
   margin: 0px;
 }

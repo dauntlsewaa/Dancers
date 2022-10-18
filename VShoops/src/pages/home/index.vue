@@ -1,6 +1,5 @@
 <template>
   <Header></Header>
-  <div class="box-home"></div>
   <div class="slideshow">
     <div class="block text-center" m="t-4">
       <el-carousel trigger="click" height="150px">
