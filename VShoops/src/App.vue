@@ -1,16 +1,14 @@
 <template>
   <div>
-    <el-radio-group  size="large">
-      <el-radio-button label="New York" />
-      <el-radio-button label="Washington" />
-      <el-radio-button label="Los Angeles" />
-      <el-radio-button label="Chicago" />
-    </el-radio-group>
+    
   </div>
+  <!-- <Special></Special> -->
+  <Home></Home>
 </template>
 
 <script setup lang="ts">
-
+import Home from './views/home/index.vue';
+// import Special from './pages/special/special.vue';
 </script>
 
 <style scoped>
