@@ -1,12 +1,14 @@
 <template>
-  <Header></Header>
-  <div class="slideshow">
-    <div class="block text-center" m="t-4">
-      <el-carousel trigger="click" height="150px">
-        <el-carousel-item v-for="item in 4" :key="item">
-          <h3 class="small justify-center" text="2xl">{{ item }}</h3>
-        </el-carousel-item>
-      </el-carousel>
+  <div>
+    <Header></Header>
+    <div class="slideshow">
+      <div class="block text-center" m="t-4">
+        <el-carousel trigger="click" height="150px">
+          <el-carousel-item v-for="item in 4" :key="item">
+            <h3 class="small justify-center" text="2xl">{{ item }}</h3>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
     </div>
   </div>
 </template>
@@ -15,11 +17,11 @@
 import Header from "../../components/header/header.vue";
 </script>
 
-<style  scoped>
-box-home{
+<style scoped>
+box-home {
   width: 100%;
 }
-.slideshow{
+.slideshow {
   width: 1200px;
   margin: 0 auto;
 }
