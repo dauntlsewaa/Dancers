@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import Home from './pages/home/index.vue'
+import Home from './views/home/index.vue'
 </script>
 
 <style scoped>
