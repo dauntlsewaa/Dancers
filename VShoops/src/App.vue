@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-radio-group size="large">
+    <el-radio-group  size="large">
       <el-radio-button label="New York" />
       <el-radio-button label="Washington" />
       <el-radio-button label="Los Angeles" />
@@ -9,6 +9,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
 
-<style lang="scss" scoped></style>
+</script>
+
+<style scoped>
+
+</style>
