@@ -2,20 +2,33 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <Footer></Footer>
 =======
 =======
 >>>>>>> 51a520667ac16176e0e4f80602b8862d9ece68c7
 <Home />
 >>>>>>> f86fbd250789e57a4f2a03abd2d73828011265b0
+=======
+  <div>
+    
+  </div>
+  <!-- <Special></Special> -->
+  <Home></Home>
+>>>>>>> liuyajing
 </template>
 <script setup lang="ts">
+<<<<<<< HEAD
 <<<<<<< HEAD
 import Footer from './components/footer/footer.vue'
 =======
 import Home from './views/home/index.vue'
 <<<<<<< HEAD
 >>>>>>> f86fbd250789e57a4f2a03abd2d73828011265b0
+=======
+import Home from './views/home/index.vue';
+// import Special from './pages/special/special.vue';
+>>>>>>> liuyajing
 </script>
 
 <style scoped>
