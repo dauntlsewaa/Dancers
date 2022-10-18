@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <Course />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Course from './views/course/index.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Course
   }
 }
 </script>
