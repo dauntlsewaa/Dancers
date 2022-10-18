@@ -1,18 +1,16 @@
 <template>
   <div>
-    <el-radio-group  size="large">
-      <el-radio-button label="New York" />
-      <el-radio-button label="Washington" />
-      <el-radio-button label="Los Angeles" />
-      <el-radio-button label="Chicago" />
-    </el-radio-group>
+   <Home></Home>
   </div>
 </template>
 
 <script setup lang="ts">
-
+import Home from "./pages/home/index.vue"
 </script>
 
 <style scoped>
-
+*{
+  padding: 0px;
+  margin: 0px;
+}
 </style>
