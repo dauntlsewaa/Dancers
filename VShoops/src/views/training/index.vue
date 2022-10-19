@@ -1,8 +1,8 @@
 <template class="body">
     <div class="common-layout">
-         <!-- 左侧 -->
       <el-container>
-        <el-aside width="170px">
+         <!-- 左侧 -->
+        <el-aside width="170px" style="margin-right:10px">
             <div class="card left-sidebar">
                 <!--左侧上方 -->
                 <div class="practice active hover ">练习室<el-icon class="right-icon"><ArrowRight /></el-icon></div>
@@ -15,34 +15,35 @@
                <div class="hover  card-item ">历史</div>
             </div>
         </el-aside>
-        <!--右侧 -->
-        <el-container>
-        <!-- 右侧头部 -->
-          <el-header>
-            <div class="card header" >
-                头部
-            </div>
-          </el-header>
           <!-- 右侧中心展示数据区域 -->
-          <el-main>
-            <div class="main card" >
-            中间
-            </div>
+          <el-main style="padding: 0;">
+            <!-- 我的练习室组件 -->
+        <!-- <Mytraining></Mytraining> -->
+           <!-- 缓存组件 -->
+           <!-- <Eache></Eache> -->
+            <!-- 收藏组件 -->
+           <!-- <Collect></Collect> -->
+           <History></History>
           </el-main>
-        </el-container>
+    
       </el-container>
     </div>
   </template>
 
 <script setup lang="ts">
 import {ArrowDown,ArrowRight} from '@element-plus/icons-vue'
+import History from './history/index.vue'
+// import Collect from './collect/index.vue'
+// import Mytraining from './Mytraining/index.vue';
+// import Eache from './cache/index.vue'
 </script>
 
 <style scoped>
 .common-layout{
     width:1200px;
     margin:0 auto;
-    background-color: pink;
+    background-color: #f5f7f9;
+    height: 100%;
 }
 .card{
   background-color: #fff;
@@ -52,16 +53,13 @@ import {ArrowDown,ArrowRight} from '@element-plus/icons-vue'
 }
 .left-sidebar{
     padding:5px 0;
-   
     font-size: 14px;
     color: #111;
     cursor: pointer;
     position: relative;
     display: block;
 }
-.header{
-    margin-bottom: 10px;
-}
+
 .main{
     overflow: hidden;
     padding: 0 30px 10px;
@@ -73,13 +71,9 @@ import {ArrowDown,ArrowRight} from '@element-plus/icons-vue'
   position: relative;
 
 }
-.practice::before{
- 
-}
 .hover.active::before,.hover:hover::before{
-  background-color: #f93684;
+  background-color:  #f93684 ;
   display: block;
- 
   content: " ";
   position: absolute;
   width: 4px;
@@ -88,7 +82,7 @@ import {ArrowDown,ArrowRight} from '@element-plus/icons-vue'
   top:20%;
 }
 .right-icon{
-  color: #333;
+   color: #333;
     float: right;
     position: absolute;
     right: 20px;
@@ -114,4 +108,5 @@ import {ArrowDown,ArrowRight} from '@element-plus/icons-vue'
     display: block;
     text-decoration: none;
 }
+
 </style>

@@ -1,17 +1,16 @@
 <template>
+<<<<<<< HEAD
   <div id="app">
+<<<<<<< HEAD
      <!-- <training></training> -->
     <!-- <Home /> -->
 
-    <!-- 主题页组件 -->
-    <!-- <Theme /> -->
-
-    <!-- 视频播放--全局组件 -->
-    <VideoDetail />
   </div>
 </template>
 
 <script setup lang="ts">
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 
 // import Training from './views/training/index.vue'
@@ -25,12 +24,22 @@
 // import Theme from './views/course/theme/theme.vue'
 
 // import Training from './views/training/index.vue'
+=======
+// import Home from "./views/home/index.vue"
+import Training from './views/training/index.vue'
+// import Nav from './views/course/nav/index.vue'
+>>>>>>> haoxinxin
 
 
 
 
+=======
+import QR from './components/QR/index.vue';
+import Home from './views/home/index.vue'
+// import Synthesize from './views/class/synthesize/index.vue'
+>>>>>>> liuyajing
 </script>
 
-<style scoped>
+<style scoped >
 
 </style>
