@@ -18,16 +18,15 @@
       <Interest />
     </div>
 
-    <div style="background-color: #f5f7f9;width: 1200px; margin:0 auto">
+    <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
       <!-- 属性筛选列表 -->
       <Attrs />
+      <Attr />
       <!--视频列表 -->
       <VideoList />
-
-     
     </div>
- <!-- 底部 -->
- <Footer />
+    <!-- 底部 -->
+    <Footer />
   </div>
 </template>
 
@@ -37,8 +36,11 @@ import Header from "../../components/header/header.vue";
 import Interest from "./interest/index.vue";
 
 import Attrs from "./attr/index.vue";
+import Attr from "./attr/attr.vue";
 import VideoList from "./VideoList/index.vue";
-import Footer from '../../components/footer/footer.vue'
+import Footer from "../../components/footer/footer.vue";
+import { reqScreen } from "../../api/home/index";
+
 </script>
 
 <style scoped>

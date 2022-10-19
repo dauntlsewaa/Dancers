@@ -21,8 +21,9 @@
         {{ tag.name }}
       </el-tag>
     </div>
+    <p class="sub-title">推荐技能</p>
     <el-scrollbar height="400px">
-      <p class="sub-title">推荐技能</p>
+    
       <el-badge
         v-for="item in items"
         :key="item.label"
@@ -60,7 +61,9 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+
+import { reactive, ref, onMounted } from "vue";
+
 const dialogVisible = ref(false);
 
 const input = ref("");

@@ -2,34 +2,41 @@
   <div class="box">
     <div class="header">
       <a class="logo" href=""><img src="./images/logo@3xrenew3.png" alt="" /></a>
-    <ul class="navList">
-      <li class="navItem" click="handleractive">资源</li>
-      <li class="navItem" click="handleractive">课程</li>
-      <li class="navItem" click="handleractive">练习室</li>
-      <li class="navItem" click="handleractive">交流</li>
-      <li class="navItem" click="handleractive">我的</li>
-    </ul>
-    <div class="core">
-      <span class="download">
-        <el-icon><Iphone /></el-icon>下载APP</span
-      >
-      <button class="issue">
-        <el-icon><Plus /></el-icon>发布
-      </button>
-      <span class="person"
-        ><el-icon ><User /></el-icon
-      ></span>
+      <ul class="navList">
+        <li
+          class="navItem"
+          :class="{ active: isShow === index }"
+          @click="handlerActive(index)"
+          v-for="(item, index) in titleList"
+          :key="index"
+        >
+          {{ item }}
+        </li>
+      </ul>
+      <div class="core">
+        <span class="download">
+          <el-icon><Iphone /></el-icon>下载APP</span
+        >
+        <button class="issue">
+          <el-icon><Plus /></el-icon>发布
+        </button>
+        <span>登陆</span>
+      </div>
     </div>
-    </div>
-   
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
+let isShow = ref(0);
+let titleList = ref(["资源", "课程", "练习室", "交流", "我的"]);
 
+let handlerActive = (index: number) => {
+  isShow.value = index;
+};
 </script>
 
-<style  scoped>
+<style scoped>
 * {
   padding: 0;
   margin: 0;
@@ -40,22 +47,21 @@ li {
 .box {
   width: 100%;
   height: 60px;
-  box-shadow: 0px 2px 0px 0px rgb(122, 115, 115,.2);
-  
+  box-shadow: 0px 2px 0px 0px rgb(122, 115, 115, 0.2);
 }
- .header{
+.header {
   width: 1200px;
   height: 60px;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 .logo {
   float: left;
 }
-.logo img{
+.logo img {
   width: 128px;
   margin-top: 15px;
 }
- .navList {
+.navList {
   float: left;
 }
 .navList .navItem {
@@ -63,10 +69,10 @@ li {
   margin-left: 40px;
   line-height: 60px;
 }
-active{
+.active {
   color: #f93684;
 }
- .core {
+.core {
   float: right;
 }
 .core .download {
@@ -74,7 +80,7 @@ active{
   line-height: 60px;
   margin-right: 30px;
 }
-.core .issue{
+.core .issue {
   text-align: center;
   border: none;
   margin-right: 20px;
@@ -87,7 +93,7 @@ active{
   border-radius: 10px;
 }
 
-.core .person{
+.core .person {
   display: inline-block;
   width: 30px;
   height: 30px;

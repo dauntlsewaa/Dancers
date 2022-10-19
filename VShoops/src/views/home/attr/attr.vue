@@ -6,6 +6,7 @@
       mode="horizontal"
       :ellipsis="false"
       @select="handleSelect"
+      background-color="#f5f7f9"
     >
       <el-menu-item index="0">综合榜</el-menu-item>
       <el-menu-item index="1">热练榜</el-menu-item>
@@ -44,10 +45,10 @@
               margin: 5px 20px;
               border-radius: 4px;
               color: #7d8090;
-              background-color: #f5f7f9;
               border: none;
               font-size: 14px;
             "
+            @click="handler"
             v-for="item in 16"
             :key="item"
             >爵士舞</el-tag
@@ -80,14 +81,23 @@
 import { ref } from "vue";
 
 const activeIndex = ref("0");
+const handlers = ref(false);
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
+};
+
+let handler = () => {
+  handlers.value = !handlers.value;
 };
 </script>
 
 <style>
 .flex-grow {
   flex-grow: 1;
+}
+
+.el-menu--horizontal > .el-menu-item.is-active {
+  border-bottom: none !important;
   
 }
 </style>
