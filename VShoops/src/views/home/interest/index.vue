@@ -21,14 +21,16 @@
         {{ tag.name }}
       </el-tag>
     </div>
+    <p class="sub-title">推荐兴趣技能</p>
     <el-scrollbar height="400px">
-      <p class="sub-title">推荐技能</p>
       <el-badge
-        v-for="item in items"
+        v-for="(item,index) in items"
         :key="item.label"
         :type="item.type"
         effect="plain"
         class="tags"
+        @click="handlerColor(index)"
+        
       >
         {{ item.label }}
         <svg
@@ -40,6 +42,7 @@
           p-id="2522"
           width="16"
           height="16"
+          v-if="change === index"
         >
           <path
             d="M511.978511 61.559031c-247.304456 0-447.785489 200.480011-447.785489 447.785489s200.480011 447.785489 447.785489 447.785489 447.785489-200.480011 447.785489-447.785489S759.283989 61.559031 511.978511 61.559031zM475.04432 734.373647c-7.345292 7.163143-16.946974 10.729365-26.547633 10.729365-9.625218 0-19.225877-3.566222-26.544563-10.729365L201.24442 518.992251c-14.659885-14.322194-14.659885-37.509289 0-51.831482 14.662955-14.322194 38.428218-14.322194 53.091172 0l194.160071 189.467189L827.060629 287.271726c14.662955-14.322194 38.428218-14.322194 53.091172 0 14.663978 14.295588 14.663978 37.482683 0 51.804876L475.04432 734.373647z"
@@ -58,14 +61,12 @@
     </div>
   </el-dialog>
 </template>
-
-<script setup lang="ts">
+<script lang="ts" setup>
 import { reactive, ref } from "vue";
-const dialogVisible = ref(false);
-
+const dialogVisible = ref(true);
 const input = ref("");
 const count = ref(0);
-
+const change = ref();
 const tags = reactive([
   { name: "现代舞", type: "info" },
   { name: "爵士舞", type: "info" },
@@ -316,6 +317,11 @@ const items = reactive([
   { type: "info", label: "手势舞蹈" },
   { type: "info", label: "手势舞蹈" },
 ]);
+const handlerColor = (index)=>{
+  change.value = index
+  console.log(change.value)
+ 
+}
 </script>
 
 <style scoped>
@@ -357,15 +363,10 @@ const items = reactive([
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.item {
-  margin-top: 10px;
-  margin-right: 40px;
-  position: relative;
-}
 .icon {
   position: absolute;
-  left: 80px;
-  top: -10px;
+  right: 300px;
+  top: -35px;
 }
 .sub-title {
   margin: 8px 0 10px;
