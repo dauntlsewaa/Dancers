@@ -50,7 +50,7 @@
       </div>
     </div>
 
-<<<<<<< HEAD
+
     <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
       <!-- 属性筛选列表 -->
       <Attrs />
@@ -58,8 +58,7 @@
       <!--视频列表 -->
       <VideoList />
     </div>
-=======
->>>>>>> eed45a62c886c930c6edb138f180bcdb91a226ee
+
     <!-- 底部 -->
     <Footer />
   </div>
@@ -74,10 +73,8 @@ import Attrs from "./attr/index.vue";
 import Attr from "./attr/attr.vue";
 import VideoList from "./VideoList/index.vue";
 import Footer from "../../components/footer/footer.vue";
-<<<<<<< HEAD
 import { reqScreen } from "../../api/home/index";
 
-=======
 import { reqSwiperList, reqVideoList, reqScreen } from "../../api/home/index";
 const activeName = ref("first");
 
@@ -101,7 +98,7 @@ const getslideandnav = async () => {
   // let result3 = await reqScreen();//获取筛选信息
   // console.log(result3)
 };
->>>>>>> eed45a62c886c930c6edb138f180bcdb91a226ee
+
 </script>
 
 <style scoped>
@@ -133,7 +130,7 @@ box-home {
   background-color: #d3dce6;
 }
 
-/deep/ .el-carousel__indicator--horizontal .el-carousel__button {
+.el-carousel__indicator--horizontal .el-carousel__button {
   width: 10px;
   height: 10px;
   background: transparent;
@@ -141,7 +138,7 @@ box-home {
   border-radius: 50%;
   opacity: 0.5;
 }
-/deep/ .el-carousel__indicator--horizontal.is-active .el-carousel__button {
+.el-carousel__indicator--horizontal.is-active .el-carousel__button {
   width: 10px;
   height: 10px;
   background: #ffffff;
