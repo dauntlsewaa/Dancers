@@ -1,12 +1,18 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <div id="app">
      <training></training>
      <!-- <Filter></Filter> -->
+=======
+  <div>
+    <Home />
+>>>>>>> 9894791aa8063972fd83447266e60727798f319f
   </div>
 </template>
 
 <script setup lang="ts">
+<<<<<<< HEAD
 <<<<<<< HEAD
 // import Training from './views/training/index.vue'
 import Filter from './views/home/filter/index.vue'
@@ -23,11 +29,11 @@ import Home from "./pages/home/index.vue"
 import Training from './views/training/index.vue'
 // import Filter from './views/home/filter/index.vue'
 >>>>>>> haoxinxin
+=======
+import Home from './views/home/index.vue'
+>>>>>>> 9894791aa8063972fd83447266e60727798f319f
 </script>
 
-<style >
-html{
-  padding: 0px;
-  margin: 0px;
-}
+<style scoped>
+
 </style>
