@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
-<<<<<<< HEAD
     "@types/node": "^18.11.2",
-=======
->>>>>>> 66792c7bb8c7cfb32048e4a95388024d28339513
     "@vitejs/plugin-vue-jsx": "^2.0.1",
     "axios": "^1.1.3",
     "element-plus": "^2.2.18",
+    "less": "^4.1.3",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.1",
@@ -24,11 +22,8 @@
     "scss": "^0.2.4",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5",
-<<<<<<< HEAD
-    "vue3-video-play": "^1.3.1-beta.6"
-=======
+    "vue3-video-play": "^1.3.1-beta.6",
     "xgplayer": "^2.32.0"
->>>>>>> 66792c7bb8c7cfb32048e4a95388024d28339513
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",

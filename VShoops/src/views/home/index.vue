@@ -203,15 +203,10 @@ const handlerColor = (row: any, index: any) => {
     tags.value.splice(result, 1);
     row.isShow = false;
   }
-  console.log(tags.value[0]);
   change.value = row.id;
 };
 
-// 计算勾选状态
-// let isShow = computed(() => {
-//   let result = tags.value.some((item: any) => item.id === change.value);
-//   return result;
-// });
+
 </script>
 
 <style scoped>

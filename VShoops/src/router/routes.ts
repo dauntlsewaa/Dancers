@@ -2,6 +2,12 @@ import type { RouteRecordRaw } from 'vue-router';
 
 
 export const staticRoutes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    component: () => import('@/views/home/index.vue'),
+    redirect: '/index',
+    children: []
+  },
   // 首页路由
   {
     path: '/index',
