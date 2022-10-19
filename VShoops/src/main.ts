@@ -5,6 +5,8 @@ import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import { videoPlay } from 'vue3-video-play'
+import 'vue3-video-play/dist/style.css'
 
 
 //引入视频详情全局组件
@@ -21,7 +23,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 
 app.component('VideoDetail',VideoDetail)
-
+app.use(videoPlay)
 app.use(ElementPlus, {
     locale: zhCn
   }).mount('#app')

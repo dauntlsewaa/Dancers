@@ -1,32 +1,47 @@
 <template>
-  <div class="box">
+  <el-card shadow="always" style="height: 60px">
     <div class="header">
-      <a class="logo" href=""><img src="./images/logo@3xrenew3.png" alt="" /></a>
-      <ul class="navList">
-        <li
-          class="navItem"
-          :class="{ active: isShow === index }"
-          @click="handlerActive(index)"
-          v-for="(item, index) in titleList"
-          :key="index"
+      <div class="header_left">
+        <img width="128" height="30" src="./images/logo@3xrenew3.png" />
+
+        <ul class="navList">
+          <li
+            class="navItem"
+            :class="{ active: isShow === index }"
+            @click="handlerActive(index)"
+            v-for="(item, index) in titleList"
+            :key="index"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <el-button
+          style="border: none; font-size: 16px; color: #101010"
+          size="default"
+          icon="Iphone"
+          >下载APP</el-button
         >
-          {{ item }}
-        </li>
-      </ul>
-      <div class="core">
-        <span class="download">
-          <el-icon><Iphone /></el-icon>下载APP</span
+
+        <el-button
+          type="primary"
+          size="default"
+          :icon="Plus"
+          round
+          style="background-color: #f93684; margin-left: 10px; border: none"
+          >发布</el-button
         >
-        <button class="issue">
-          <el-icon><Plus /></el-icon>发布
-        </button>
-        <span>登陆</span>
+
+        <el-button style="border: none">登陆</el-button>
       </div>
     </div>
-  </div>
+  </el-card>
 </template>
 
 <script setup lang="ts">
+import { Plus, Iphone } from "@element-plus/icons-vue";
 import { ref } from "vue";
 let isShow = ref(0);
 let titleList = ref(["资源", "课程", "练习室", "交流", "我的"]);
@@ -44,64 +59,32 @@ let handlerActive = (index: number) => {
 li {
   list-style: none;
 }
-.box {
-  width: 100%;
-  height: 60px;
-  box-shadow: 0px 2px 0px 0px rgb(122, 115, 115, 0.2);
-}
 .header {
   width: 1200px;
-  height: 60px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
-.logo {
-  float: left;
+
+.header_left {
+  display: flex;
 }
-.logo img {
-  width: 128px;
-  margin-top: 15px;
-}
+
 .navList {
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
 }
-.navList .navItem {
-  float: left;
-  margin-left: 40px;
-  line-height: 60px;
+.navItem {
+  width: 55px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 20px;
 }
+
 .active {
   color: #f93684;
 }
-.core {
-  float: right;
-}
-.core .download {
-  font-weight: 600;
-  line-height: 60px;
-  margin-right: 30px;
-}
-.core .issue {
-  text-align: center;
-  border: none;
-  margin-right: 20px;
-  color: #fff;
-  line-height: 30px;
-  background-color: #f93684;
-  width: 75px;
-  height: 30px;
-  font-size: 16px;
-  border-radius: 10px;
-}
 
-.core .person {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-
-  border-radius: 50%;
-  color: #fff;
-  background-color: #ccc;
-  line-height: 30px;
-  text-align: center;
-}
 </style>

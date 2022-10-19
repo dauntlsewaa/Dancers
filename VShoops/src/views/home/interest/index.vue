@@ -21,22 +21,15 @@
         {{ tag.name }}
       </el-tag>
     </div>
-<<<<<<< HEAD
-    <p class="sub-title">推荐技能</p>
-    <el-scrollbar height="400px">
-    
-=======
     <p class="sub-title">推荐兴趣技能</p>
     <el-scrollbar height="400px">
->>>>>>> 4a8a5344744027c2b48d9ec63dc587a7221ab314
       <el-badge
-        v-for="(item,index) in items"
+        v-for="(item, index) in items"
         :key="item.label"
         :type="item.type"
         effect="plain"
         class="tags"
         @click="handlerColor(index)"
-        
       >
         {{ item.label }}
         <svg
@@ -58,7 +51,6 @@
         </svg>
       </el-badge>
     </el-scrollbar>
-    <!-- card body -->
     <div class="dialog-footer">
       <el-button style="width: 130px; height: 40px">取消</el-button>
       <el-button type="danger" style="width: 130px; height: 40px" color="#f93684">
@@ -67,19 +59,11 @@
     </div>
   </el-dialog>
 </template>
-<<<<<<< HEAD
 
-<script setup lang="ts">
-
-import { reactive, ref, onMounted } from "vue";
-
-const dialogVisible = ref(false);
-
-=======
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 const dialogVisible = ref(true);
->>>>>>> 4a8a5344744027c2b48d9ec63dc587a7221ab314
+
 const input = ref("");
 const count = ref(0);
 const change = ref();
@@ -333,11 +317,11 @@ const items = reactive([
   { type: "info", label: "手势舞蹈" },
   { type: "info", label: "手势舞蹈" },
 ]);
-const handlerColor = (index)=>{
-  change.value = index
-  console.log(change.value)
- 
-}
+const handlerColor = (index: any) => {
+  change.value = index;
+  console.log(change.value);
+};
+
 </script>
 
 <style scoped>
@@ -413,5 +397,4 @@ const handlerColor = (index)=>{
   background-color: #f93684;
   border-color: #f93684;
 }
-
 </style>

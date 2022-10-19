@@ -1,29 +1,11 @@
 <template>
-  <div id="app">
-     <!-- <training></training> -->
+  <div>
     <Home />
-
   </div>
 </template>
 
 <script setup lang="ts">
-
-
-// import Training from './views/training/index.vue'
-
-
-
-
-import Home from "./views/home/index.vue"
-
-
-// import Training from './views/training/index.vue'
-
-
-
-
+import Home from "./views/home/index.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
