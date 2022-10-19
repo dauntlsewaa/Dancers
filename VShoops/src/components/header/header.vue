@@ -5,14 +5,20 @@
         <img width="128" height="30" src="./images/logo@3xrenew3.png" />
 
         <ul class="navList">
-          <li
-            class="navItem"
-            :class="{ active: isShow === index }"
-            @click="handlerActive(index)"
-            v-for="(item, index) in titleList"
-            :key="index"
-          >
-            {{ item }}
+          <li class="navItem" :class="{ active: isShow === 1 }" @click="handlerActive(1)">
+            <router-link to="/index">资源</router-link>
+          </li>
+          <li class="navItem" :class="{ active: isShow === 2 }" @click="handlerActive(2)">
+            <router-link to="/discovery">课程</router-link>
+          </li>
+          <li class="navItem" :class="{ active: isShow === 3 }" @click="handlerActive(3)">
+            <router-link to="/training">练习室</router-link>
+          </li>
+          <li class="navItem" :class="{ active: isShow === 4 }" @click="handlerActive(4)">
+            <router-link to="/index">交流</router-link>
+          </li>
+          <li class="navItem" :class="{ active: isShow === 5 }" @click="handlerActive(5)">
+            <router-link to="/center">我的</router-link>
           </li>
         </ul>
       </div>
@@ -43,8 +49,7 @@
 <script setup lang="ts">
 import { Plus, Iphone } from "@element-plus/icons-vue";
 import { ref } from "vue";
-let isShow = ref(0);
-let titleList = ref(["资源", "课程", "练习室", "交流", "我的"]);
+let isShow = ref(1);
 
 let handlerActive = (index: number) => {
   isShow.value = index;
@@ -86,5 +91,4 @@ li {
 .active {
   color: #f93684;
 }
-
 </style>

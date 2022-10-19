@@ -1,7 +1,8 @@
 <template>
+
   <div>
-    <!--  头部 -->
-    <Header></Header>
+   <!--  头部 -->
+     <Header></Header>
     <div style="background-color: #fff">
       <!-- 轮播图 -->
       <div class="slideshow">
@@ -121,7 +122,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
-import Header from "../../components/header/header.vue";
+import Header from "@/components/header/header.vue";
 import Attrs from "./attr/index.vue";
 import VideoList from "./VideoList/index.vue";
 import Footer from "../../components/footer/footer.vue";

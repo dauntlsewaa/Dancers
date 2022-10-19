@@ -10,7 +10,7 @@ const router = createRouter({
   //设置路由的模式：history模式
 	history: createWebHistory(),
   //路由器管理的路由
-	routes: [],
+	routes: staticRoutes,
   scrollBehavior() {
     return { top: 0, left: 0}
   },
