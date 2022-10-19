@@ -1,4 +1,52 @@
 <template>
+<!-- 测试代码========失败 -->
+<!-- <div class="Vcontainer">
+  <div class="Vlist">
+    <div class="Vitem">
+      <div class="VimgCon">
+        <img class="Vimg" src="./images/wu.png" alt="">
+      </div>
+      <div class="Vtitle"> 
+        <div class="Vwork">作品</div>
+        <div class="Vwork_title">梦回大唐梦回大唐梦回大唐,梦回大梦回大唐唐,梦回大唐梦回大唐</div>
+      </div>
+      <div class="Vvisitors">
+        <div class="Vperson"><span>4894人浏览</span></div>
+      </div>
+      <div class="info">
+        <svg t="1666165569974" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2539" width="16" height="16"><path d="M710.549333 384.810667a12409.045333 12409.045333 0 0 0 47.466667-0.32l8.746667-0.085334c83.989333-0.618667 141.44 67.584 126.72 150.229334L847.296 794.026667c-10.026667 56.448-63.914667 101.546667-121.130667 101.589333L298.624 896a42.730667 42.730667 0 0 1-42.666667-42.410667l-0.810666-383.978666a42.666667 42.666667 0 0 1 42.026666-42.666667l3.157334-0.064c5.226667-0.042667 11.797333-0.042667 19.626666 0 91.946667 0.768 170.88-86.698667 170.709334-170.944-0.149333-86.741333 39.786667-126.762667 106.453333-127.573333 62.250667-0.746667 106.602667 59.605333 107.349333 149.12 0.213333 26.602667-6.293333 73.237333-14.506666 107.434666 6.186667 0 13.077333-0.042667 20.586666-0.085333z m-497.706666 63.232L213.333333 874.624A21.312 21.312 0 0 1 191.786667 896H149.525333A21.333333 21.333333 0 0 1 128 874.624l0.042667-426.581333A21.269333 21.269333 0 0 1 149.44 426.666667h41.984c11.669333 0 21.418667 9.578667 21.418667 21.376z" fill="#bfbfbf" p-id="2540"></path></svg>
+        <span class="info_1">33</span>
+        <svg t="1666165998164" class="icon icon2" viewBox="0 0 1026 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4095" id="mx_n_1666165998165" width="14" height="14"><path d="M935 809C994.6 724 1026 624.4 1026 520 1026 242 800 16 522 16S18 242 18 520s226 504 504 504c79.8 0 158.8-19 229.4-55.2l209.8 54.2c2.6 0.6 5.4 1 8 1 9 0 17.8-3.8 24-10.6 8-9 10.4-21.6 6.2-32.8l-64.4-171.6z m-563.6-238c-18.2 10.6-40.8 10.6-59 0-18.2-10.6-29.4-30-29.4-51s11.2-40.6 29.4-51c18.2-10.6 40.8-10.6 59 0 18.2 10.6 29.4 30 29.4 51 0.2 21-11.2 40.6-29.4 51z m180 0c-18.2 10.6-40.8 10.6-59 0-18.2-10.6-29.4-30-29.4-51s11.2-40.6 29.4-51c18.2-10.6 40.8-10.6 59 0 18.2 10.6 29.4 30 29.4 51 0.2 21-11 40.6-29.4 51z m180.2 0c-18.2 10.6-40.8 10.6-59 0-18.2-10.6-29.4-30-29.4-51s11.2-40.6 29.4-51c18.2-10.6 40.8-10.6 59 0 18.2 10.6 29.4 30 29.4 51s-11.2 40.6-29.4 51z" fill="#bfbfbf" p-id="4096"></path></svg>
+        <span class="info_2">66</span>
+        <svg t="1666166320248" class="icon icon3" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5199" width="16" height="16"><path d="M781.186088 616.031873q17.338645 80.573705 30.59761 145.848606 6.119522 27.537849 11.219124 55.075697t9.689243 49.976096 7.649402 38.247012 4.079681 19.888446q3.059761 20.398406-9.179283 27.027888t-27.537849 6.629482q-5.099602 0-14.788845-3.569721t-14.788845-5.609562l-266.199203-155.027888q-72.414343 42.836653-131.569721 76.494024-25.498008 14.278884-50.486056 28.557769t-45.386454 26.517928-35.187251 20.398406-19.888446 10.199203q-10.199203 5.099602-20.908367 3.569721t-19.378486-7.649402-12.749004-14.788845-2.039841-17.848606q1.01992-4.079681 5.099602-19.888446t9.179283-37.737052 11.729084-48.446215 13.768924-54.055777q15.298805-63.23506 34.677291-142.788845-60.175299-52.015936-108.111554-92.812749-20.398406-17.338645-40.286853-34.167331t-35.697211-30.59761-26.007968-22.438247-11.219124-9.689243q-12.239044-11.219124-20.908367-24.988048t-6.629482-28.047809 11.219124-22.438247 20.398406-10.199203l315.155378-28.557769 117.290837-273.338645q6.119522-16.318725 17.338645-28.047809t30.59761-11.729084q10.199203 0 17.848606 4.589641t12.749004 10.709163 8.669323 12.239044 5.609562 10.199203l114.231076 273.338645 315.155378 29.577689q20.398406 5.099602 28.557769 12.239044t8.159363 22.438247q0 14.278884-8.669323 24.988048t-21.928287 26.007968z" p-id="5200" fill="#bfbfbf"></path></svg>
+        <span class="info_3">99</span>
+      </div>
+      <div class="userInfo">
+        <div class="userItem">
+          <div class="user_left">
+          <img src="./images/tou.png" alt="">
+        </div>
+        <div class="user_mid">
+          <span>古舞者</span>
+        </div>
+        <div class="user_right">
+          08-10
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+<!-- ============================================================================ -->
+<!-- 视频列表 -->
  <div class="videoContainer">
     <div class="videoList">
       <div class="videoItem">
@@ -938,6 +986,136 @@
 <script setup lang="ts"></script>
 
 <style scoped>
+/* 尝试修改样式代码 ====失败*/
+/* .Vcontainer{
+  width: 1200px;
+  height: 650px;
+}
+.Vlist{
+  
+}
+.Vitem{
+  width: 224px;
+  height: 320px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.VimgCon{
+  widows: 224px;
+  height: 125px;
+}
+.Vimg{
+  width: 100%;
+  height: 100%;
+}
+.Vtitle{
+  width: 204px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.Vwork{
+  font-size: 12px;
+  border: 1px solid black;
+  margin: 0 13px;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+}
+.Vwork_title{
+  font-size: 14px;
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+}
+
+.Vvisitors{
+  width: 224px;
+  height: 32px;
+  position: absolute;
+}
+.Vperson{
+  position: relative;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 32px;
+  margin-left: 10px;
+  color:#D8DBE6;
+}
+.info{
+  height: 34px;
+  position: absolute;
+  display: flex;
+  top: 450px;
+}
+.icon{
+  position: relative;
+  left: -50px;
+}
+.info_1{
+  position: relative;
+  left: -102px;
+  top: 26px;
+  font-size: 14px;
+}
+.icon2{
+  position: relative;
+  left: -145px;
+}
+.info_2{
+  position: relative;
+  left: -195px;
+  top: 26px;
+  font-size:14px ;
+}
+.icon3{
+  position: relative;
+  left: -238px;
+}
+.info_3{
+  position: relative;
+  left: -288px;
+  top: 26px;
+  font-size: 14px;
+}
+.userInfo{
+  position: relative;
+  top: 80px;
+  border-top: 1px solid #D8DBE6;
+}
+.userItem{
+  display: flex;
+  margin: 10px;
+  position: absolute;
+}
+.user_left{
+  position: relative;
+  left: -45px;
+  top: 30px;
+}
+.user_mid{
+  position: relative;
+  left: -30px;
+  top: 35px;
+}
+.user_right{
+  position: relative;
+  left: 36px;
+  top: 38px;
+  font-size: 12px;
+  color: #D8DBE6;
+} */
+/* ========================================================================== */
+
+
+
+
+
+
+
 .videoList {
   width: 1200px;
   /* border: 1px solid red; */
