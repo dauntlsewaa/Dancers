@@ -1,12 +1,13 @@
 <template>
 <<<<<<< HEAD
   <div id="app">
-     <!-- <training></training> -->
-     <Filter></Filter>
+     <training></training>
+     <!-- <Filter></Filter> -->
   </div>
 </template>
 
 <script setup lang="ts">
+<<<<<<< HEAD
 // import Training from './views/training/index.vue'
 import Filter from './views/home/filter/index.vue'
 =======
@@ -18,6 +19,10 @@ import Filter from './views/home/filter/index.vue'
 <script setup lang="ts">
 import Home from "./pages/home/index.vue"
 >>>>>>> 9a7908537c8ea56270b6ba3ee32df7b2afe0e22d
+=======
+import Training from './views/training/index.vue'
+// import Filter from './views/home/filter/index.vue'
+>>>>>>> haoxinxin
 </script>
 
 <style >
