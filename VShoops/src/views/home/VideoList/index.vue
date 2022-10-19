@@ -1,5 +1,5 @@
 <template>
-  <div class="videoContainer">
+ <div class="videoContainer">
     <div class="videoList">
       <div class="videoItem">
         <div class="videoImg">
@@ -81,7 +81,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+       
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -174,7 +174,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+    
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -267,7 +267,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+       
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -360,7 +360,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+    
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -453,7 +453,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+        
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -546,7 +546,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+       
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -639,7 +639,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+       
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -732,7 +732,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+        
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -825,7 +825,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+       
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -918,7 +918,7 @@
             </div>
           </div>
         </div>
-        <!-- 发布者信息 -->
+      
         <div class="userInfo">
           <div class="userTou">
             <img src="./images/tou.png" />
@@ -939,16 +939,16 @@
 
 <style scoped>
 .videoList {
-  width: 1250px;
-  height: 650px;
+  width: 1200px;
   /* border: 1px solid red; */
   margin: auto;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   background-color: #f5f7f9;
 }
 .videoItem {
-  width: 224px;
+  width: 17%;
   height: 300px;
   /* border: 1px solid green; */
   margin: 10px;

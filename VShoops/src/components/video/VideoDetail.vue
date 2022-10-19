@@ -20,8 +20,7 @@
 
 
 <script setup lang="ts">
-import 'video.js/dist/video-js.min.css'
-import videojs from 'video.js';
+
 
 
 </script>
