@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-     <!-- <training></training> -->
+    <Mymember/>
+    <!-- <training></training> -->
+    <hr>
+    <hr>
+    <hr>
     <Home />
 
   </div>
@@ -15,7 +19,7 @@
 
 
 import Home from "./views/home/index.vue"
-
+import Mymember from "./components/mymember/mymember.vue"
 
 // import Training from './views/training/index.vue'
 
