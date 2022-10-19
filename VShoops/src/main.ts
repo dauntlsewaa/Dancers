@@ -10,8 +10,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 //引入视频详情全局组件
 import VideoDetail from './components/video/VideoDetail.vue'
 // createApp(App).mount('#app')
-// 引入订单详情全局组件
-import OrderDetail from './components/orderdetail/OrderDetail.vue'
+
 
 const app = createApp(App)
 
@@ -22,7 +21,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 
 app.component('VideoDetail',VideoDetail)
-app.component('OrderDetail',OrderDetail)
 
 app.use(ElementPlus, {
     locale: zhCn
