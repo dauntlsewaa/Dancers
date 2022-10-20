@@ -1,4 +1,13 @@
 <template>
+
+
+
+    <div style="background-color: #fff">
+
+    <Header />
+
+    <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
+
     <div class="Container">
         <div class="main">
             <div class="videoPlay">
@@ -139,10 +148,16 @@
                 <el-empty description="暂无留言" />
               </div>
         </div>
+    </div>
+    </div>
+    <Footer />
 </template>
 
 
 <script setup lang="ts">
+import Header from "@/components/header/header.vue";
+import Footer from "../../components/footer/footer.vue";
+
 import {onMounted} from 'vue'
 import Player from 'xgplayer' 
 onMounted(()=>{
@@ -153,6 +168,15 @@ onMounted(()=>{
     height:534
 });
 })
+
+
+
+
+
+
+
+
+
 
 </script>
 

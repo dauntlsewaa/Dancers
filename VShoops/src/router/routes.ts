@@ -17,7 +17,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       // 推荐页面
       {
         path: 'recommend',
-        component: () => import('@/views/home/index.vue')
+        component: () => import('@/views/home/index.vue'),
       },
       // 作品
       {
@@ -107,6 +107,11 @@ export const staticRoutes: Array<RouteRecordRaw> = [
         component: () => import('@/views/my/mymember/index.vue')
       },
     ]
+  },
+  //视频播放路由
+  {
+    path:'/player',
+    component: () => import('@/components/video/VideoDetail.vue') 
   }
 ];
 
