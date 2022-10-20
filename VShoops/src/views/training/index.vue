@@ -43,6 +43,7 @@
 import Header from "@/components/header/header.vue";
 import Footer from '@/components/footer/footer.vue'
 import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
+
 </script>
 
 <style scoped>

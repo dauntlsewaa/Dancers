@@ -22,7 +22,7 @@
 .header{
     margin-bottom: 10px;
     height:80px;
-    padding:10px ;
+  
 }
 .el-button.active{
     background-color: #f93684;

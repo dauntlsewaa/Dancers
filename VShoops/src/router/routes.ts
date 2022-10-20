@@ -101,13 +101,13 @@ export const staticRoutes: Array<RouteRecordRaw> = [
         path: 'edit_info',
         component: () => import('@/views/my/means/index.vue')
       },
-      //   {
-      //     path: 'dynamics',
-      //     component: () => import('@/views/my/index.vue')
-      //   },
+      // 我的会员
+      {
+        path: 'my_member',
+        component: () => import('@/views/my/mymember/index.vue')
+      },
     ]
-  },
-
+  }
 ];
 
 
