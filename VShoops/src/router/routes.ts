@@ -52,7 +52,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       },
       // 主题
       {
-        path:'zone_list',
+        path: 'zone_list',
         component: () => import('@/views/course/theme/index.vue')
       }
     ]
@@ -67,10 +67,22 @@ export const staticRoutes: Array<RouteRecordRaw> = [
     path: '/center',
     component: () => import('@/views/my/index.vue'),
     redirect: '/center/dynamics',
-    children: [{
-      path: 'dynamics',
-      component: () => import('@/views/my/index.vue')
-    }]
+    children: [
+      // 资源动态
+      {
+        path: 'dynamics',
+        component: () => import('@/views/my/resource/resource.vue')
+      },
+      // 我的资料
+      {
+        path: 'edit_info',
+        component: () => import('@/views/my/means/index.vue')
+      },
+      //   {
+      //     path: 'dynamics',
+      //     component: () => import('@/views/my/index.vue')
+      //   },
+    ]
   },
 
 ];
