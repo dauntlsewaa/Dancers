@@ -51,13 +51,25 @@
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
-import {reactive} from 'vue'
+import {reqHistoryList} from '@/api/training/index'
+import {reactive,ref} from 'vue'
+import {onMounted} from 'vue'
 const data= reactive([
     {imgUrl:"../../../assets/2.dance.jpg",
     description:'中舞网会员3大权益：数万元课程全免费、专属学舞功能、超多立减优惠',
     time:'昨天 11:30',
      }
     ])
+const content = reactive([])
+onMounted(() => {
+    getContent()
+})
+// 发请求获取历史数据
+const  getContent =async ()=>{
+    let result = await reqHistoryList();
+    // console.log(result);
+    
+}
 </script>
 <!--  -->
 <style scoped>
@@ -67,12 +79,12 @@ const data= reactive([
 .header{
     margin-bottom: 10px;
     height:80px;
-    padding:10px ;
+    
 }
 span{
     float: left;
     padding-top:10px;
-    padding-bottom:30px;
+    padding-bottom:26px;
     margin-right: 50px;
     color: #111;
     font-size: 14px;
