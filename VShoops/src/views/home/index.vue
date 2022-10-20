@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div >
     <!--  头部 -->
     <Header></Header>
     <div style="background-color: #fff">
       <!-- 轮播图 -->
-      <!-- <div class="slideshow">
+      <div class="slideshow">
         <el-carousel trigger="click" height="536px" :interval="5000" arrow="always">
           <el-carousel-item v-for="item in slideshowList" :key="item.id">
             <a class="small justify-center" :href="item.link">
@@ -12,9 +12,9 @@
             </a>
           </el-carousel-item>
         </el-carousel>
-      </div> -->
+      </div>
 
-      <!-- <el-affix>
+      <el-affix>
         <div style="width: 100%; background-color: #fff">
           <div class="nav">
             <el-menu mode="horizontal" :ellipsis="false">
@@ -35,11 +35,11 @@
             >
           </div>
         </div>
-      </el-affix> -->
+      </el-affix>
 
       <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
         <!-- 选择兴趣技能 -->
-        <!-- <el-dialog v-model="dialogVisible" draggable>
+        <el-dialog v-model="dialogVisible" draggable>
           <template #header="{ titleId, titleClass }">
             <div class="my-header">
               <span :id="titleId" :class="titleClass">选择我的兴趣技能</span>
@@ -105,15 +105,16 @@
               确认</el-button
             >
           </div>
-        </el-dialog> -->
+        </el-dialog> 
+        
         <!-- 属性筛选列表 -->
-        <!-- <Attrs /> -->
+        <Attrs />
 
         <!--视频列表 -->
         <VideoList />
 
         <!-- 视频播放 -->
-        <VideoDetail />
+        <!-- <VideoDetail /> -->
       </div>
     </div>
 

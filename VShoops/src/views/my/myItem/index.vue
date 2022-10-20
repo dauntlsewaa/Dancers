@@ -1,8 +1,7 @@
 <template>
-<<<<<<< HEAD
+
 <div class="myItem">
-=======
->>>>>>> d2f0f5c81028c75212e1e6ccb4b3e085802bd606
+
   <div class="my">
     <div class="left">
       <!-- 登陆数据 -->
