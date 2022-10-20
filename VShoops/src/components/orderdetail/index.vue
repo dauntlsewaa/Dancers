@@ -61,7 +61,10 @@
             <!-- 支付方式 -->
            <div class="pay">
             <div style="margin-right: 40px;"><img src="../../assets/2.zhifubao.png" alt=""></div>
-            <div><img src="../../assets/04weixin.png" alt=""></div>
+            <div @click="Payment">
+                <img v-if="!imgshow" src="@/assets/3.weixin.png" alt="">
+                <img v-else src="@/assets/4.weixin.png" alt="">
+            </div>
            </div>
             </el-card>
             
@@ -103,12 +106,17 @@
 
 <script setup lang="ts">
 import router from '@/router';
-import { ref } from 'vue'
+import { ref,reactive } from 'vue'
 
 const centerDialogVisible = ref(false)
-
+const imgshow = ref(false)
+// 立即开通事件回调
 const toMy = ()=>{
- router.push('/center')
+ router.push('/center/dynamics')
+}
+// 选择支付方式  微信支付事件回调(支付宝不支持)
+const Payment = ()=>{
+    imgshow.value = !imgshow.value
 }
 </script>
 
