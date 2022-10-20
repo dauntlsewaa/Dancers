@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <!--  头部 -->
     <Header></Header>
     <div style="background-color: #fff">
@@ -105,9 +105,11 @@
               确认</el-button
             >
           </div>
+
         </el-dialog>
+
         <!-- 属性筛选列表 -->
-        <!-- <Attrs /> -->
+        <Attrs />
 
         <!--视频列表 -->
         <VideoList />
