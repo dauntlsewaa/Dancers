@@ -8,6 +8,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // 移入路由器
 import router from './router'
 
+// 引入清除默认样式文件
+import  '@/assets/reset.css'
 
 //引入视频详情全局组件
 import VideoDetail from './components/video/VideoDetail.vue'
