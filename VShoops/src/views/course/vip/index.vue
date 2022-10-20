@@ -1,7 +1,6 @@
 <template>
   <div class="classContainer">
     <div class="classContent">
-      <div class="classTitle"></div>
       <div class="vip">
         <div class="vipContent">
           <span class="vipTitle">会员专区</span>
@@ -70,9 +69,13 @@ import vipAttr from "@/views/course/vipAttr/index.vue";
 </script>
 
 <style scoped>
+.classContainer{
+  background-color:rgb(245,247,249);
+}
 .classContent {
   width: 1200px;
-  margin: 0 auto;
+  margin:0 auto;
+  padding-top:5px ;
 }
 .vip {
   display: flex;
@@ -80,6 +83,7 @@ import vipAttr from "@/views/course/vipAttr/index.vue";
   height: 108px;
   padding: 20px 30px 16px;
   margin: 10px 0 5px 0;
+  background: #fff;
 }
 .vipContent {
   background-color: #fff;
@@ -102,7 +106,7 @@ import vipAttr from "@/views/course/vipAttr/index.vue";
   margin-top: 20px;
 }
 .vipheader {
-  background-image: url("../../assets/1.png");
+  background-image: url("@/assets/1.png");
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
@@ -148,14 +152,14 @@ import vipAttr from "@/views/course/vipAttr/index.vue";
   font-style: normal;
 }
 .FPEEtitle {
-  background: url("../../assets/2.png");
+  background: url("@/assets/2.png");
   width: 58px;
   height: 58px;
   background-size: 100% 100%;
   margin-right: 10px;
 }
 .NEXT {
-  background: url("../../assets/3.png");
+  background: url("@/assets/3.png");
   width: 58px;
   height: 58px;
   background-size: 100% 100%;
