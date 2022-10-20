@@ -1,96 +1,93 @@
 <template>
-<<<<<<< HEAD
-<div class="myItem">
-=======
->>>>>>> d2f0f5c81028c75212e1e6ccb4b3e085802bd606
-  <div class="my">
-    <div class="left">
-      <!-- 登陆数据 -->
-      <el-card>
-        <div class="Personal">
-          <div class="PersonalDetails">
-            <img
-              class="imgone"
-              src="https://rs.dance365.com/default_head@3x.png?imageView2/0/w/200/h/1200/format/webp/ignore-error/1"
-              alt=""
-            />
-            <div>登录以后显示用户</div>
-            <img class="imgtwo" src="../../assets/111.png" alt="" />
-          </div>
-          <div class="PersonalPosition">
-            <div class="PersonalLeft">
-              <div>0</div>
-              <div class="string">关注</div>
+  <div class="myItem">
+    <div class="my">
+      <div class="left">
+        <!-- 登陆数据 -->
+        <el-card>
+          <div class="Personal">
+            <div class="PersonalDetails">
+              <img
+                class="imgone"
+                src="https://rs.dance365.com/default_head@3x.png?imageView2/0/w/200/h/1200/format/webp/ignore-error/1"
+                alt=""
+              />
+              <div>登录以后显示用户</div>
+              <img class="imgtwo" src="../../assets/111.png" alt="" />
             </div>
-            <div class="PersonalLeft">
-              <div>0</div>
-              <div class="string">粉丝</div>
+            <div class="PersonalPosition">
+              <div class="PersonalLeft">
+                <div>0</div>
+                <div class="string">关注</div>
+              </div>
+              <div class="PersonalLeft">
+                <div>0</div>
+                <div class="string">粉丝</div>
+              </div>
             </div>
           </div>
-        </div>
-      </el-card>
-      <!-- 资源动态 -->
-      <el-card shadow="never" style="padding: 0px 0">
-        <div class="ResourceDynamic">
-          <div
-            class="ResourceDynamicItem"
-            :class="numOne === -1 ? 'ResourceDynamicAcvtive' : ''"
-            @click="toziyuan"
-          >
-            <router-link to="/center/dynamics">资源动态</router-link>
+        </el-card>
+        <!-- 资源动态 -->
+        <el-card shadow="never" style="padding: 0px 0">
+          <div class="ResourceDynamic">
+            <div
+              class="ResourceDynamicItem"
+              :class="numOne === -1 ? 'ResourceDynamicAcvtive' : ''"
+              @click="toziyuan"
+            >
+              <router-link to="/center/dynamics">资源动态</router-link>
+            </div>
           </div>
-        </div>
-      </el-card>
-      <!-- 二级菜单 -->
-      <el-card shadow="never" :body-style="{ padding: '20px' }">
-        <div class="ResourceDynamic">
-          <div
-            class="ResourceDynamicItem"
-            :class="numOne === index ? 'ResourceDynamicAcvtive' : ''"
-            v-for="(item, index) in obj"
-            :key="index"
-            @click="toMyItem(index)"
-          >
-            {{ item }}
+        </el-card>
+        <!-- 二级菜单 -->
+        <el-card shadow="never" :body-style="{ padding: '20px' }">
+          <div class="ResourceDynamic">
+            <div
+              class="ResourceDynamicItem"
+              :class="numOne === index ? 'ResourceDynamicAcvtive' : ''"
+              v-for="(item, index) in obj"
+              :key="index"
+              @click="toMyItem(index)"
+            >
+              {{ item }}
+            </div>
+            <el-menu>
+              <el-sub-menu>
+                <template #title>
+                  <div class="ResourceDynamicItem">
+                    <span>我卖的</span>
+                  </div>
+                </template>
+                <el-menu-item>订单管理</el-menu-item>
+                <el-menu-item>商品管理</el-menu-item>
+                <el-menu-item>客户管理</el-menu-item>
+                <el-menu-item>代收款</el-menu-item>
+                <el-menu-item>优惠管理</el-menu-item>
+                <el-menu-item>评论管理</el-menu-item>
+                <el-menu-item>保证金</el-menu-item>
+              </el-sub-menu>
+            </el-menu>
           </div>
-          <el-menu>
-            <el-sub-menu>
-              <template #title>
-                <div class="ResourceDynamicItem">
-                  <span>我卖的</span>
-                </div>
-              </template>
-              <el-menu-item>订单管理</el-menu-item>
-              <el-menu-item>商品管理</el-menu-item>
-              <el-menu-item>客户管理</el-menu-item>
-              <el-menu-item>代收款</el-menu-item>
-              <el-menu-item>优惠管理</el-menu-item>
-              <el-menu-item>评论管理</el-menu-item>
-              <el-menu-item>保证金</el-menu-item>
-            </el-sub-menu>
-          </el-menu>
-        </div>
-      </el-card>
-      <!-- 我的资料 -->
-      <el-card shadow="never" :body-style="{ padding: '20px' }">
-        <div class="ResourceDynamic">
-          <div
-            class="ResourceDynamicItem"
-            v-for="(item, index) in 1"
-            :key="item"
-            @click="toDatum(index)"
-            :class="{ ResourceDynamicAcvtive: numOne === -2 }"
-          >
-            <router-link to="/center/edit_info">我的资料</router-link>
+        </el-card>
+        <!-- 我的资料 -->
+        <el-card shadow="never" :body-style="{ padding: '20px' }">
+          <div class="ResourceDynamic">
+            <div
+              class="ResourceDynamicItem"
+              v-for="(item, index) in 1"
+              :key="item"
+              @click="toDatum(index)"
+              :class="{ ResourceDynamicAcvtive: numOne === -2 }"
+            >
+              <router-link to="/center/edit_info">我的资料</router-link>
+            </div>
           </div>
-        </div>
-      </el-card>
-    </div>
-    <div class="right">
-      <router-view></router-view>
+        </el-card>
+      </div>
+      <div class="right">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script setup lang="ts">
@@ -118,16 +115,12 @@ const toDatum = (index: any) => {
 };
 </script>
 
-<<<<<<< HEAD
-<style scoped> 
-=======
 <style scoped>
-.myItem{
-  background-color:rgb(245,247,249);
+.myItem {
+  background-color: rgb(245, 247, 249);
   padding-top: 20px;
   padding-bottom: 120px;
 }
->>>>>>> 2252276b5012f49fc46dce39bb21e5661c12f2de
 /* 左上个人信息 */
 .my {
   width: 1200px;

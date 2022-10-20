@@ -8,10 +8,12 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // 移入路由器
 import router from './router'
 
-
 //引入视频详情全局组件
 import VideoDetail from './components/video/VideoDetail.vue'
-
+// 头部组件
+import Header from "@/components/header/header.vue";
+// 底部组件
+import Footer from "@/components/footer/footer.vue";
 
 const app = createApp(App)
 
@@ -20,7 +22,12 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 // 视频组件
-app.component('VideoDetail', VideoDetail) 
+app.component('VideoDetail', VideoDetail)
+// 头部组件
+app.component('Header', Header)
+app.component('Footer', Footer)
+
+
 
 app.use(ElementPlus, {
   locale: zhCn
