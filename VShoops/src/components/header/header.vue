@@ -3,7 +3,7 @@
     <el-card shadow="always" style="height: 60px">
       <div class="header">
         <div class="header_left">
-          <img width="128" height="30" src="./images/logo@3xrenew3.png" />
+          <img width="128" height="30" src="./images/logo@3xrenew3.png" @click="toRec" />
 
           <ul class="navList">
             <li class="navItem">
@@ -74,7 +74,27 @@
 
 <script setup lang="ts">
 import { Plus, Iphone } from "@element-plus/icons-vue";
-import { ref } from "vue";
+import { ref,onMounted } from "vue";
+
+//引入路由
+import {useRouter} from 'vue-router'
+//获取路由对象
+const router = useRouter()
+
+//点击图标跳转回推荐首页
+const toRec = () =>{
+  // alert(123)
+  router.push({path:'/index/recommend'})
+  //重新发请求获取数据？？？？？
+}
+
+
+
+
+
+
+
+
 const dialogVisible = ref(false);
 </script>
 
