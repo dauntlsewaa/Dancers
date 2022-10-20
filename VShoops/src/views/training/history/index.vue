@@ -22,19 +22,22 @@
       </el-row>
 
 <!-- table展示数据 -->
- <el-table :data="data"  stripe show-header="false"> 
-    <el-table-column   width="180">
+ <el-table :data="content"  stripe show-header="false"> 
+    
+    <el-table-column width="180">
        <template #="{row,$index}">
-        <img src="../../../assets/2.dance.jpg" alt="">
+        <img :src="row.momentBackup.cover[0]" width="169" height="101" >
        </template>
     </el-table-column>
-    <el-table-column class="description"  width='511px'>
-        <div class="theme">中舞网会员3大权益：数万元课程全免费、专属学舞功能、超多立减优惠</div>
+    <el-table-column class="description"  width='511px' prop="momentTitle" >
+     <template #="{row,$index}">
+        <div class="theme">{{row.momentTitle}}</div>
         <div class="type" style="margin:5px 0;">作品</div>
         <div class="author">
-            <img class="img" src="../../../assets/1.logo.jpg" alt=""/>
-            <div class="authors">开妹妹</div>      
+            <img class="img" :src="row.momentBackup.creatorBackup.avatar" alt=""/>
+            <div class="authors" prop="name">{{row.momentBackup.creatorBackup.name}}</div>      
         </div>
+     </template>
      
     </el-table-column>
     <el-table-column class="time" prop="time"  align="right" ></el-table-column>
@@ -45,30 +48,29 @@
     </el-table-column>
   
  </el-table>
+
+ 
 </el-card>
     </div>
 </template>
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
-import {reqHistoryList} from '@/api/training/index'
-import {reactive,ref} from 'vue'
+import {reqViewrecords} from '@/api/training/index'
+import {ref} from 'vue'
 import {onMounted} from 'vue'
-const data= reactive([
-    {imgUrl:"../../../assets/2.dance.jpg",
-    description:'中舞网会员3大权益：数万元课程全免费、专属学舞功能、超多立减优惠',
-    time:'昨天 11:30',
-     }
-    ])
-const content = reactive([])
+
+const content = ref([])
 onMounted(() => {
     getContent()
 })
 // 发请求获取历史数据
 const  getContent =async ()=>{
-    let result = await reqHistoryList();
+    let result = await reqViewrecords();
     // console.log(result);
-    
+    // 存储数据
+    content.value = result.content;
+    // console.log(content.value[0].momentBackup.cover[0]);  
 }
 </script>
 <!--  -->
