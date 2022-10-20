@@ -106,8 +106,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       //     component: () => import('@/views/my/index.vue')
       //   },
     ]
-  },
-
+  }
 ];
 
 
