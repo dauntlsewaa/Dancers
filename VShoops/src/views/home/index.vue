@@ -67,7 +67,7 @@
               v-for="(item, index) in items"
               :key="item.id"
               :type="item.type"
-              style="margin-top: 20px;width:80px;height:40px"
+              style="margin-top: 20px; width: 80px; height: 40px"
               effect="plain"
               class="tags"
               @click="handlerColor(item, index)"
@@ -114,6 +114,9 @@
       </div>
     </div>
 
+    <el-backtop :bottom="100" :right="100">
+      <img src="https://rs.dance365.com/img/back_top@3x.e71cd044.png" class="AffixImg" />
+    </el-backtop>
     <!-- 底部 -->
     <Footer />
   </div>
@@ -358,5 +361,12 @@ const handlerColor = (row: any, index: any) => {
   color: #fff;
   background-color: #f93684;
   border-color: #f93684;
+}
+
+
+/* 回到顶部 */
+/deep/.el-backtop{
+  --el-backtop-bg-color::none;
+  box-shadow:none
 }
 </style>

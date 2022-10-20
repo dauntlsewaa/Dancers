@@ -20,7 +20,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 // 视频组件
-app.component('VideoDetail', VideoDetail)
+app.component('VideoDetail', VideoDetail) 
 
 app.use(ElementPlus, {
   locale: zhCn

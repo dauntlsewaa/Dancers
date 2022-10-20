@@ -40,7 +40,6 @@
       <!-- 二级菜单 -->
       <el-card shadow="never" :body-style="{ padding: '20px' }">
         <div class="ResourceDynamic">
-          <router-link to="/center/my_member"> 我的会员</router-link>
           <div
             class="ResourceDynamicItem"
             :class="numOne === index ? 'ResourceDynamicAcvtive' : ''"
@@ -91,8 +90,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+let router = useRouter();
 let numOne = ref(-1);
-let obj = ref(["我的钱包", "我的优惠卷", "我买的订单"]);
+let obj = ref(["我的会员", "我的钱包", "我的优惠卷", "我买的订单"]);
 
 const toziyuan = (index: any) => {
   numOne.value = -1;
@@ -101,6 +102,7 @@ const toziyuan = (index: any) => {
 const toMyItem = (index: any) => {
   numOne.value = index;
   if (index === 0) {
+    router.push("/center/my_member");
   } else if (index === 1) {
   } else if (index === 2) {
   } else if (index === 3) {
@@ -111,7 +113,7 @@ const toDatum = (index: any) => {
 };
 </script>
 
-<style scoped>
+<style scoped> 
 /* 左上个人信息 */
 .my {
   width: 1200px;

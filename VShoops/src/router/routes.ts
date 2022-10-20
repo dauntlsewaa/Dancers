@@ -48,7 +48,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       // 视频课
       {
         path: 'video_courses',
-        component: () => import('@/views/course/index.vue')
+        component: () => import('@/views/course/attrVideo.vue')
       },
       // 主题
       {
