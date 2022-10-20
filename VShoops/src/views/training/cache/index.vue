@@ -31,12 +31,12 @@ import { Search } from '@element-plus/icons-vue'
 .header{
     margin-bottom: 10px;
     height:80px;
-    padding:10px ;
+
 }
 span{
     float: left;
     padding-top:10px;
-    padding-bottom:30px;
+    padding-bottom:26px;
     margin-right: 50px;
     color: #111;
     font-size: 14px;

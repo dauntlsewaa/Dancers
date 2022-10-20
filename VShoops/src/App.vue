@@ -2,12 +2,14 @@
   <div>
 
     <!-- <router-view></router-view> -->
-   <PayWrning></PayWrning>
+    <my-training-details></my-training-details>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import PayWrning from '@/components/orderdetail/payWrning/index.vue'
+import MyTrainingDetails from './views/training/myTrainingDetails/index.vue';
+
 </script>
 
 <style scoped></style>

@@ -38,6 +38,7 @@
 <script setup lang="ts">
 import Header from "@/components/header/header.vue";
 import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
+
 </script>
 
 <style scoped>
