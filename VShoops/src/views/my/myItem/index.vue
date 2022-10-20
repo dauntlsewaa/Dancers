@@ -1,8 +1,12 @@
 <template>
+<<<<<<< HEAD
+<div class="myItem">
+=======
+>>>>>>> d2f0f5c81028c75212e1e6ccb4b3e085802bd606
   <div class="my">
     <div class="left">
       <!-- 登陆数据 -->
-      <el-card shadow="never" :body-style="{ padding: '20px' }">
+      <el-card>
         <div class="Personal">
           <div class="PersonalDetails">
             <img
@@ -86,6 +90,7 @@
       <router-view></router-view>
     </div>
   </div>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -113,7 +118,16 @@ const toDatum = (index: any) => {
 };
 </script>
 
+<<<<<<< HEAD
 <style scoped> 
+=======
+<style scoped>
+.myItem{
+  background-color:rgb(245,247,249);
+  padding-top: 20px;
+  padding-bottom: 120px;
+}
+>>>>>>> 2252276b5012f49fc46dce39bb21e5661c12f2de
 /* 左上个人信息 */
 .my {
   width: 1200px;

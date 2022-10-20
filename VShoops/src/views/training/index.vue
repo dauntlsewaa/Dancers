@@ -1,6 +1,7 @@
 <template class="body">
   <!--  头部 -->
   <Header></Header>
+ <div class="training">
   <div class="common-layout">
     <el-container>
       <!-- 左侧 -->
@@ -33,20 +34,29 @@
       </el-main>
     </el-container>
   </div>
+ </div>
+  <!-- 底部 -->
+<Footer></Footer>
 </template>
 
 <script setup lang="ts">
 import Header from "@/components/header/header.vue";
+import Footer from '@/components/footer/footer.vue'
 import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
 
 </script>
 
 <style scoped>
+.training{
+  background-color:rgb(245,247,249);
+}
 .common-layout {
   width: 1200px;
-  margin: 20px auto;
+  margin: 0px auto;
   background-color: #f5f7f9;
   height: 100%;
+  padding-top: 20px;
+  padding-bottom: 100px;
 }
 .card {
   background-color: #fff;
