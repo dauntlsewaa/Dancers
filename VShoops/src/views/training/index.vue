@@ -1,6 +1,6 @@
 <template class="body">
-   <!--  头部 -->
-   <Header></Header>
+  <!--  头部 -->
+  <Header></Header>
   <div class="common-layout">
     <el-container>
       <!-- 左侧 -->
@@ -10,24 +10,26 @@
           <div class="practice active hover">
             练习室<el-icon class="right-icon"><ArrowRight /></el-icon>
           </div>
-          <span class="myPractice">我的练习室</span>
+          <span class="myPractice"
+            ><router-link to="/training/dynamics">我的练习室</router-link></span
+          >
         </div>
         <div class="card">
-          <div class="hover active card-item">缓存</div>
+          <div class="hover active card-item">
+            <router-link to="/training/mediaCache">缓存</router-link>
+          </div>
           <div class="hover card-item">音频库</div>
-          <div class="hover card-item">收藏</div>
-          <div class="hover card-item">历史</div>
+          <div class="hover card-item">
+            <router-link to="/training/collections">收藏</router-link>
+          </div>
+          <div class="hover card-item">
+            <router-link to="/training/view_records">历史</router-link>
+          </div>
         </div>
       </el-aside>
       <!-- 右侧中心展示数据区域 -->
       <el-main style="padding: 0">
-        <!-- 我的练习室组件 -->
-        <!-- <Mytraining></Mytraining> -->
-        <!-- 缓存组件 -->
-        <!-- <Eache></Eache> -->
-        <!-- 收藏组件 -->
-        <!-- <Collect></Collect> -->
-        <History></History>
+        <router-view></router-view>
       </el-main>
     </el-container>
   </div>
@@ -35,11 +37,7 @@
 
 <script setup lang="ts">
 import Header from "@/components/header/header.vue";
-import {ArrowDown,ArrowRight} from '@element-plus/icons-vue'
-import History from './history/index.vue'
-// import Collect from './collect/index.vue'
-// import Mytraining from './Mytraining/index.vue';
-// import Eache from './cache/index.vue'
+import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
 </script>
 
 <style scoped>

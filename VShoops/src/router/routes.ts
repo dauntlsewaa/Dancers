@@ -61,6 +61,29 @@ export const staticRoutes: Array<RouteRecordRaw> = [
   {
     path: '/training',
     component: () => import('@/views/training/index.vue'),
+    redirect: '/training/dynamics',
+    children: [
+      // 我的练习室
+      {
+        path: 'dynamics',
+        component: () => import('@/views/training/Mytraining/index.vue')
+      },
+      // 缓存
+      {
+        path: 'mediaCache',
+        component: () => import('@/views/training/cache/index.vue')
+      },
+      // 收藏页面
+      {
+        path: 'collections',
+        component: () => import('@/views/training/collect/index.vue')
+      },
+      // 历史记录
+      {
+        path: 'view_records',
+        component: () => import('@/views/training/history/index.vue')
+      }
+    ]
   },
   // 我的路由
   {
