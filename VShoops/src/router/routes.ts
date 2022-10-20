@@ -17,7 +17,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       // 推荐页面
       {
         path: 'recommend',
-        component: () => import('@/views/home/index.vue')
+        component: () => import('@/views/home/index.vue'),
       },
       // 作品
       {
@@ -101,11 +101,17 @@ export const staticRoutes: Array<RouteRecordRaw> = [
         path: 'edit_info',
         component: () => import('@/views/my/means/index.vue')
       },
-      //   {
-      //     path: 'dynamics',
-      //     component: () => import('@/views/my/index.vue')
-      //   },
+      // 我的会员
+      {
+        path: 'my_member',
+        component: () => import('@/views/my/mymember/index.vue')
+      },
     ]
+  },
+  //视频播放路由
+  {
+    path:'/player',
+    component: () => import('@/components/video/VideoDetail.vue') 
   }
 ];
 

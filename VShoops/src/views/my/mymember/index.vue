@@ -1,5 +1,5 @@
 <style scoped>
-.borders{
+.borders {
   margin-right: 0 !important;
 }
 .cost {
@@ -42,18 +42,17 @@
   text-align: center;
   line-height: 32px;
 }
- .cost div{
+.cost div {
   text-align: center;
   border: 1px solid rgb(220, 223, 230);
   height: 124px;
   width: 215px;
   border-radius: 15px;
- }
- .bacc{
+}
+.bacc {
   background-color: rgb(249, 235, 241);
-  border:1px solid #f93684 !important;
-
- }
+  border: 1px solid #f93684 !important;
+}
 </style>
 <template>
   <el-card class="box-card">
@@ -72,38 +71,37 @@
     <div class="hint">开通会员平均每年可省：￥9500</div>
     <ul class="cost">
       <li class="costitem">
-        <div  :class="but[0]===1?'bacc':''" @click="handlerbacc1">
-            <p>季度会员</p>
-            <p class="pic">
-              ￥
-              <span>98</span>
-              /季
-            </p>
-            <p>合计￥98(青少年专属)</p>
+        <div :class="but[0] === 1 ? 'bacc' : ''" @click="handlerbacc1">
+          <p>季度会员</p>
+          <p class="pic">
+            ￥
+            <span>98</span>
+            /季
+          </p>
+          <p>合计￥98(青少年专属)</p>
         </div>
       </li>
       <li class="costitem">
-      
-          <div  @click="handlerbacc2" :class="  but[1]===1?'bacc':''">
-            <p>1年会员</p>
-            <p class="pic">
-              ￥
-              <span>268</span>
-              /年
-            </p>
-            <p>合计￥268</p>
-          </div>
+        <div @click="handlerbacc2" :class="but[1] === 1 ? 'bacc' : ''">
+          <p>1年会员</p>
+          <p class="pic">
+            ￥
+            <span>268</span>
+            /年
+          </p>
+          <p>合计￥268</p>
+        </div>
       </li>
       <li class="costitem">
-        <div  @click="handlerbacc3" :class="but[2]===1?'bacc':''">
-            <p>3年会员</p>
-            <p class="pic">
-              ￥
-              <span>196</span>
-              /年
-            </p>
-            <p>合计￥588(省￥216)</p>
-          </div>
+        <div @click="handlerbacc3" :class="but[2] === 1 ? 'bacc' : ''">
+          <p>3年会员</p>
+          <p class="pic">
+            ￥
+            <span>196</span>
+            /年
+          </p>
+          <p>合计￥588(省￥216)</p>
+        </div>
         <p class="rec">推荐</p>
       </li>
     </ul>
@@ -286,7 +284,7 @@
           <p>724个会员专区课程免费学习</p>
         </div>
       </li>
-      <li class="priviitem " @mouseover="handlerOver" @mouseleave="handlerOut">
+      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
         <div v-show="flag">
           <div class="tool1">
             <div class="tisi">
@@ -326,51 +324,46 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-const flag = ref(0);//判断会员专属权益的提示框显示和隐藏
-const but = ref([0,0,1]);//判断按钮颜色
+const flag = ref(0); //判断会员专属权益的提示框显示和隐藏
+const but = ref([0, 0, 1]); //判断按钮颜色
 const handlerOver = () => {
   flag.value = 1;
 };
 const handlerOut = () => {
   flag.value = 0;
 };
-const handlerbacc1=()=>{
-  but.value=[0,0,0,]
-  if(but.value[0] ==1){
-    but.value[0]=0
+const handlerbacc1 = () => {
+  but.value = [0, 0, 0];
+  if (but.value[0] == 1) {
+    but.value[0] = 0;
+  } else {
+    but.value[0] = 1;
   }
-  else{
-    but.value[0]=1
+};
+const handlerbacc2 = () => {
+  but.value = [0, 0, 0];
+  if (but.value[1] == 1) {
+    but.value[1] = 0;
+  } else {
+    but.value[1] = 1;
   }
-  
-}
-const handlerbacc2=()=>{
-  but.value=[0,0,0,]
-  if(but.value[1] ==1){
-    but.value[1]=0
+};
+const handlerbacc3 = () => {
+  but.value = [0, 0, 0];
+  if (but.value[2] == 1) {
+    but.value[2] = 0;
+  } else {
+    but.value[2] = 1;
   }
-  else{
-    but.value[1]=1
-  }
-  
-}
-const handlerbacc3=()=>{
-  but.value=[0,0,0,]
-  if(but.value[2] ==1){
-    but.value[2]=0
-  }
-  else{
-    but.value[2]=1
-  }
-}
+};
 </script>
 
 <style scoped>
 * {
   font-weight: 700;
-  font-family: PingFang SC, Lantinghei SC, Microsoft YaHei, HanHei SC,
-    Helvetica Neue, Open Sans, Arial, Hiragino Sans GB, "\5FAE\8F6F\96C5\9ED1",
-    STHeiti, WenQuanYi Micro Hei, SimSun, sans-serif;
+  font-family: PingFang SC, Lantinghei SC, Microsoft YaHei, HanHei SC, Helvetica Neue,
+    Open Sans, Arial, Hiragino Sans GB, "\5FAE\8F6F\96C5\9ED1", STHeiti,
+    WenQuanYi Micro Hei, SimSun, sans-serif;
 }
 text {
   color: #626aef;
@@ -391,7 +384,7 @@ text {
   width: 110px;
   height: 110px;
   padding: 14px;
-  margin: 0 15px 15px 0 ;
+  margin: 0 15px 15px 0;
   float: left;
   border: 1px solid rgb(222, 220, 220);
   border-radius: 5px;
@@ -488,7 +481,6 @@ li {
   text-align: center;
   font-size: 16px;
 }
-
 
 .open {
   display: block;

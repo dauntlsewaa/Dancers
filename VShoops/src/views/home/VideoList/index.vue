@@ -2,7 +2,7 @@
   <div class="videoContainer">
     <div class="videoList">
       <div class="videoItem" v-for="item in video" :key="item.id">
-        <div class="videoImg">
+        <div class="videoImg" @click="playerVideo">
           <img class="videoImg" :src="item.cover[0]" />
         </div>
         <div class="videoTitle">
@@ -120,6 +120,11 @@
 import { ref, onMounted } from "vue";
 import { reqVideoList } from "../../../api/home/index";
 
+//引入路由
+import {useRouter} from 'vue-router'
+//获取路由对象
+const router = useRouter()
+
 // 视频数据
 let video = ref<any>([]);
 
@@ -127,6 +132,7 @@ const loading = ref(false);
 
 onMounted(() => {
   getVideoList();
+  
 });
 
 // 请求视频数据
@@ -141,7 +147,29 @@ let getVideoList = async () => {
 let isLoading = () => {
   getVideoList();
 };
+
+// 点击视频播放的回调函数
+const playerVideo = () => { 
+  // alert(123)
+  router.push({path:'/player'});
+}
+
+
+
+
+
+
+
+
+
 </script>
+
+
+
+
+
+
+
 
 <style scoped>
 /deep/.el-button:focus,
