@@ -14,4 +14,3 @@ import Footer from "@/components/footer/footer.vue";
 
 <style scoped></style>
 
-<style scoped></style>
