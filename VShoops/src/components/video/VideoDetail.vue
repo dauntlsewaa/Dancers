@@ -186,7 +186,7 @@ onMounted(()=>{
           'url3'
         ],
     },
-  pip: true ,//打开画中画功能
+  pip: true ,//打开画中画
 });
 })
 
