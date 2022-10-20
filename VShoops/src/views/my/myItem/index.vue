@@ -1,5 +1,5 @@
 <template>
-<div class="my">
+  <div class="my">
     <div class="left">
       <!-- 登陆数据 -->
       <el-card shadow="never" :body-style="{ padding: '20px' }">
@@ -40,6 +40,7 @@
       <!-- 二级菜单 -->
       <el-card shadow="never" :body-style="{ padding: '20px' }">
         <div class="ResourceDynamic">
+          <router-link to="/center/my_member"> 我的会员</router-link>
           <div
             class="ResourceDynamicItem"
             :class="numOne === index ? 'ResourceDynamicAcvtive' : ''"
@@ -91,7 +92,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 let numOne = ref(-1);
-let obj = ref(["我的会员", "我的钱包", "我的优惠卷", "我买的订单"]);
+let obj = ref(["我的钱包", "我的优惠卷", "我买的订单"]);
 
 const toziyuan = (index: any) => {
   numOne.value = -1;
