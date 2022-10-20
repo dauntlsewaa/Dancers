@@ -1,8 +1,7 @@
 <template>
-
   <div>
-   <!--  头部 -->
-     <Header></Header>
+    <!--  头部 -->
+    <Header></Header>
     <div style="background-color: #fff">
       <!-- 轮播图 -->
       <div class="slideshow">
@@ -15,7 +14,7 @@
         </el-carousel>
       </div>
 
-      <el-affix >
+      <el-affix>
         <div style="width: 100%; background-color: #fff">
           <div class="nav">
             <el-menu mode="horizontal" :ellipsis="false">
@@ -68,7 +67,7 @@
               v-for="(item, index) in items"
               :key="item.id"
               :type="item.type"
-              style="margin-top: 20px"
+              style="margin-top: 20px;width:80px;height:40px"
               effect="plain"
               class="tags"
               @click="handlerColor(item, index)"
@@ -141,26 +140,7 @@ const input = ref("");
 const count = ref(0);
 const change = ref();
 // 勾选的数据
-const tags = ref<any>([
-  {
-    groupType: "avocation",
-    name: "古典舞",
-    id: "402881ed649d628e01649d636ea7005b",
-    isShow: true,
-  },
-  {
-    groupType: "avocation",
-    name: "肚皮舞",
-    id: "402881ed649d628e01649d636ea7005f",
-    isShow: true,
-  },
-  {
-    groupType: "avocation",
-    name: "爵士舞",
-    id: "402881ed649d628e01649d636ea70057",
-    isShow: true,
-  },
-]);
+const tags = ref<any>([]);
 
 // 推荐技能列表
 const items = ref<any>([]);
@@ -181,6 +161,14 @@ const getslideandnav = async () => {
 const getInterest = async () => {
   let result = await reqInterest();
   items.value.push(...result.content);
+  items.value[0].isShow = true;
+  items.value[1].isShow = true;
+  items.value[2].isShow = true;
+  if (items.value.length === result.content.length) {
+    tags.value.push(items.value[0]);
+    tags.value.push(items.value[1]);
+    tags.value.push(items.value[2]);
+  }
 };
 
 // 点击显示选择兴趣
@@ -205,8 +193,6 @@ const handlerColor = (row: any, index: any) => {
   }
   change.value = row.id;
 };
-
-
 </script>
 
 <style scoped>
