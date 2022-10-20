@@ -1,12 +1,11 @@
 <template>
   <div>
-    <!-- <router-view></router-view> -->
-    <means></means>
+    <router-view></router-view>
   </div>
 </template>
 
 <script setup lang="ts">
-import Means from './components/means/index.vue';
 </script>
 
 <style scoped></style>
+ 

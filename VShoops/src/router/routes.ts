@@ -43,7 +43,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       // 会员专区
       {
         path: 'vip_zone',
-        component: () => import('@/views/course/index.vue')
+        component: () => import('@/views/course/vip/index.vue')
       },
       // 视频课
       {

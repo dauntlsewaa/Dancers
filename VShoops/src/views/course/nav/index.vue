@@ -1,7 +1,6 @@
 <template>
   <div>
-    <el-card shadow="always" :body-style="{ padding: '20px' }">
-      <div class="el-menu-demo-nav">
+    <div class="el-menu-demo-nav" style="margin-top:20px" >
         <el-menu
           class="el-menu-demo"
           mode="horizontal"
@@ -23,7 +22,6 @@
           </el-menu-item>
         </el-menu>
       </div>
-    </el-card>
     <router-view></router-view>
   </div>
 </template>
