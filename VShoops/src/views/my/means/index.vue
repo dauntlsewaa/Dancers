@@ -179,7 +179,10 @@ const inputVisible = ref(false)
 /* 我的资料 */
 .box {
   width: 1200px;
-  margin: 0 auto;
+  margin-top:-140px;
+  width: 1020px;
+  margin-left:420px;
+  margin-bottom: 100px;
 }
 
 .box-card {

@@ -30,7 +30,7 @@
           </div>
         </el-card>
         <!-- 资源动态 -->
-        <el-card shadow="never" style="padding: 0px 0">
+        <el-card shadow="never" style="padding: 0 0 ">
           <div class="ResourceDynamic">
             <div
               class="ResourceDynamicItem"
@@ -86,10 +86,11 @@
           </div>
         </el-card>
       </div>
-      <div class="right">
-        <router-view></router-view>
-      </div>
+
     </div>
+  </div>
+  <div class="right">
+    <router-view></router-view>
   </div>
 </template>
 
@@ -121,8 +122,8 @@ const toDatum = (index: any) => {
 <style scoped>
 .myItem {
   background-color: rgb(245, 247, 249);
-  padding-top: 20px;
   padding-bottom: 120px;
+  margin-top: 20px;
 }
 /* 左上个人信息 */
 .my {
@@ -237,5 +238,8 @@ li:hover {
   font-size: 14px;
   line-height: 40px;
   margin-left: 10px;
+}
+.right{
+  margin-top: -120px;
 }
 </style>

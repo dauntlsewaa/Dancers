@@ -1,4 +1,5 @@
 <template>
+ <div class="Resource">
   <el-card shadow="never">
     <div class="ResourceDynamicRight">资源动态</div>
   </el-card>
@@ -36,13 +37,20 @@
       </el-table>
     </el-form>
   </el-card>
+ </div>
 </template>
 
 <script setup lang="ts">
+
 import { Search } from "@element-plus/icons-vue";
 </script>
 
 <style scoped>
+.Resource{
+  width: 1020px;
+  margin-left:420px;
+  margin-bottom: 100px;
+}
 /deep/.el-input--large .el-input__wrapper {
   background-color: #f5f7f9 !important;
 }

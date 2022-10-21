@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import request from '@/utils/request'
 
 enum API {
@@ -20,8 +19,6 @@ export const reqStreaming = () => request.get(API.STREAMING)
 //主题页/图片数据
 export const reqActivityzones = () => request.get(API.ACTIVITYZONES)
 
-=======
-import request from '../../utils/request'
 
 
 enum API {
@@ -32,4 +29,3 @@ enum API {
 
 //我的课程主题请求函数
 export const reqCourseTheme = () => request.get(API.THEME)
->>>>>>> b951b5f6397f769327e182b2f346a6689d2c7776

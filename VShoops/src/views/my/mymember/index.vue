@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="MyVip">
     <el-card class="box-card">
       <div class="card-header">
         <span>我的会员</span>
@@ -59,7 +59,7 @@
       <hr />
       <div class="rights">会员专属权益</div>
       <ul class="privileged">
-        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut"> 
           <div v-show="flag">
             <div class="tool1">
               <div class="tisi">
@@ -122,7 +122,7 @@
             </div>
             <div class="triangle"></div>
           </div>
-          <div class="tool">
+          <div class=" ">
             <img src="./image/10001.course_equity.png" alt="" />
             <p>724个会员专区课程免费学习</p>
           </div>
@@ -270,13 +270,13 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-const flag = ref(0); //判断会员专属权益的提示框显示和隐藏
+const flag = ref(false); //判断会员专属权益的提示框显示和隐藏
 const but = ref([0, 0, 1]); //判断按钮颜色
 const handlerOver = () => {
-  flag.value = 1;
+  flag.value = true;
 };
 const handlerOut = () => {
-  flag.value = 0;
+  flag.value = false;
 };
 const handlerbacc1 = () => {
   but.value = [0, 0, 0];
@@ -314,6 +314,12 @@ const handlerbacc3 = () => {
 text {
   color: #626aef;
 }
+.MyVip{
+  margin-top:-140px;
+  width: 1020px;
+  margin-left:420px;
+  margin-bottom: 100px;
+}
 .privileged li .triangle {
   width: 30px;
   height: 30px;
@@ -330,13 +336,14 @@ text {
   width: 110px;
   height: 110px;
   padding: 14px;
-  margin: 0 15px 15px 0;
+  margin: 0 20px 15px 0;
   float: left;
   border: 1px solid rgb(222, 220, 220);
   border-radius: 5px;
   font-size: 14px;
 }
 .privileged li .tool1 {
+  background-color: #fff;
   position: absolute;
   top: -220px;
   left: -30px;
@@ -384,7 +391,9 @@ text {
 .privileged .tool {
   text-align: center;
 }
-
+.privileged .tool p{
+  margin-top: 15px;
+}
 li {
   list-style: none;
 }
@@ -443,6 +452,7 @@ li {
 .letter {
   font-size: 14px;
   text-align: center;
+  margin-bottom: 40px;
 }
 .letter a {
   color: #f93684 !important;
@@ -453,10 +463,10 @@ hr {
   border: none;
 }
 .rights {
-  margin: 32px 0px 0px;
+  margin: 32px 0px 20px;
   font-size: 20px;
   font-weight: 700;
-  text-align: center;
+
 }
 .card-header {
   display: flex;

@@ -31,16 +31,6 @@
             icon="Iphone"
             >下载APP</el-button
           >
-
-          <!-- <el-button
-            type="primary"
-            size="default"
-            :icon="Plus"
-            round
-            style="background-color: #f93684; margin-left: 10px; border: none"
-            >发布</el-button
-          > -->
-
           <el-dropdown>
             <span class="el-dropdown-link">
               <div
