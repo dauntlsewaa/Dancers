@@ -67,18 +67,23 @@
           </el-dropdown>
 
 
-          <el-button style="border: none" v-if="!token">
+          <el-button style="border: none" v-if="token==''">
             <router-link to="/login">登陆 </router-link>
           </el-button>
 
-          <img
+        <el-popconfirm title="确定退出登录嘛" @confirm="toLoginOut" v-else >
+          <template #reference >
+            <img
             src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fq_70%2Fimages03%2F20221019%2Fd238380148944608933e1accadc089ce.png&refer=http%3A%2F%2Fp5.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668923859&t=4a19766364020992c1241da32271e418"
-            v-else
             width="30"
             height="30"
             style="border-radius: 50%; margin-left: 10px"
-           @click="toLoginOut"
+           class="logoutImg"
           />
+          </template>
+        </el-popconfirm>
+
+
 
         </div>
       </div>
@@ -104,10 +109,8 @@ onMounted(() => {
 });
 let toLoginOut = () => {
  localStorage.clear()
- token.value = ''
+ token.value = '';
 };
-
-
 const dialogVisible = ref(false);
 </script>
 
@@ -123,8 +126,8 @@ li {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
-
 .header_left {
   display: flex;
 }
