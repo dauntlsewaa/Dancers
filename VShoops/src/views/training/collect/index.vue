@@ -3,10 +3,8 @@
     <div>
 <el-card class="header" shadow="always" :body-style="{ padding: '20px' }">
     <div>
-        <span class="active">资源</span>
-        <span>视频课</span>
-        <span>线下课</span>
-        <span>直播课</span>
+        <span v-for="(item,index) in spans " :key="index" @click="show=index" :class="{active:show==index}">{{item.name}}</span>
+       
     </div>
 </el-card>
 <el-card style="height: 730px;"  class="main" shadow="always" :body-style="{ padding: '20px' }">
@@ -32,6 +30,16 @@
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
+import {ref} from 'vue'
+// 设置下方红色滑条出现的标识符
+let show = ref(0)
+// 设置数组,存储上方的文字
+let spans = ref([
+    {name:'资源'},
+    {name:'视频课'},
+    {name:'线下课'},
+    {name:'直播课'},
+])
 </script>
 <!--  -->
 <style scoped>
@@ -41,17 +49,18 @@ import { Search } from '@element-plus/icons-vue'
 .header{
     margin-bottom: 10px;
     height:80px;
-    padding:10px ;
+ 
 }
 span{
     float: left;
     padding-top:10px;
-    padding-bottom:30px;
+    padding-bottom:26px;
     margin-right: 50px;
     color: #111;
     font-size: 14px;
     position: relative;
     width: 42px;
+    text-align: center;
 }
 .active,span:hover{
     text-align:center;

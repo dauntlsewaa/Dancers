@@ -14,13 +14,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+
+import { ref } from 'vue';
 const isActive = ref('2-1')
 
 const handlerOver = (e:any)=>{
-    isActive.value = e;
+    isActive.value = e
 }
-
 </script>
 
 <style scoped>

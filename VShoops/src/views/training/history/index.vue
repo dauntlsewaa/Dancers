@@ -4,7 +4,7 @@
         <!-- 上方 -->
 <el-card class="header" shadow="always" :body-style="{ padding: '20px' }">
     <div>
-        <span >浏览记录</span>
+        <span @click="show=true" :class="{active:show==true}" >浏览记录</span>
     </div>
 </el-card>
 <!-- 下方 -->
@@ -22,42 +22,85 @@
       </el-row>
 
 <!-- table展示数据 -->
- <el-table :data="data"  stripe show-header="false"> 
-    <el-table-column   width="180">
+ <el-table :data="content"  stripe show-header="false"> 
+    
+    <el-table-column width="180">
        <template #="{row,$index}">
-        <img src="../../../assets/2.dance.jpg" alt="">
+        <img :src="row.momentBackup.cover[0]" width="169" height="101" >
        </template>
     </el-table-column>
-    <el-table-column class="description"  width='511px'>
-        <div class="theme">中舞网会员3大权益：数万元课程全免费、专属学舞功能、超多立减优惠</div>
+    <el-table-column class="description"  width='511px' prop="momentTitle" >
+     <template #="{row,$index}">
+        <div class="theme">{{row.momentTitle}}</div>
         <div class="type" style="margin:5px 0;">作品</div>
         <div class="author">
-            <img class="img" src="../../../assets/1.logo.jpg" alt=""/>
-            <div class="authors">开妹妹</div>      
+            <img class="img" :src="row.momentBackup.creatorBackup.avatar" alt=""/>
+            <div class="authors" prop="name">{{row.momentBackup.creatorBackup.name}}</div>      
         </div>
+     </template>
      
     </el-table-column>
     <el-table-column class="time" prop="time"  align="right" ></el-table-column>
     <el-table-column  class="delete" align="right"  >
    <template #="{row,$index}">
-     <el-button text size="default">删除</el-button>
+     <el-button text size="default" @click="open($index)" >删除</el-button>
    </template>
     </el-table-column>
   
  </el-table>
+
+ <!-- 消息弹框,点击删除按钮弹出 -->
+
+ 
 </el-card>
     </div>
 </template>
 
 <script setup lang="ts">
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search } from '@element-plus/icons-vue'
-import {reactive} from 'vue'
-const data= reactive([
-    {imgUrl:"../../../assets/2.dance.jpg",
-    description:'中舞网会员3大权益：数万元课程全免费、专属学舞功能、超多立减优惠',
-    time:'昨天 11:30',
-     }
-    ])
+import {reqViewrecords} from '@/api/training/index'
+import {ref} from 'vue'
+import {onMounted} from 'vue'
+let show = ref(false)
+const content = ref([])
+onMounted(() => {
+    getContent()
+})
+// 发请求获取历史数据
+const  getContent =async ()=>{
+    let result = await reqViewrecords();
+    // console.log(result);
+    // 存储数据
+    content.value = result.content;
+    // console.log(content.value[0].momentBackup.cover[0]);  
+}
+
+// 消息弹框的js
+
+
+const open = (index) => {
+  ElMessageBox.confirm(
+    '此操作将删除该项,是否继续',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning',
+    }
+  )
+    .then(() => {
+       content.value.splice(index,1)
+        
+      ElMessage({
+        type: 'success',
+        message: '删除成功',
+      })
+    })
+    .catch(() => {
+   
+    })
+}
 </script>
 <!--  -->
 <style scoped>
@@ -67,12 +110,12 @@ const data= reactive([
 .header{
     margin-bottom: 10px;
     height:80px;
-    padding:10px ;
+    
 }
 span{
     float: left;
     padding-top:10px;
-    padding-bottom:30px;
+    padding-bottom:26px;
     margin-right: 50px;
     color: #111;
     font-size: 14px;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <!--  头部 -->
     <Header></Header>
     <div style="background-color: #fff">
@@ -105,12 +105,17 @@
               确认</el-button
             >
           </div>
+
         </el-dialog>
+
         <!-- 属性筛选列表 -->
-        <!-- <Attrs /> -->
+        <Attrs />
 
         <!--视频列表 -->
         <VideoList />
+
+        <!-- 视频播放 -->
+        <!-- <VideoDetail /> -->
       </div>
     </div>
 
@@ -120,6 +125,8 @@
 </template>
 
 <script setup lang="ts">
+// 引入视频播放
+import VideoDetail from '../../components/video/VideoDetail.vue'
 import { ref, computed, onMounted } from "vue";
 import Header from "@/components/header/header.vue";
 import Attrs from "./attr/index.vue";

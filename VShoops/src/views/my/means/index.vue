@@ -46,16 +46,17 @@
           </el-select>
         </el-form-item>
         <el-form-item style="margin-left: 160px" label="兴趣技能：">
-          <el-tag class="tags" v-for="item in tags" :key="item.id" style="width:100px;" @click="handlerColor(item,tags)">
+          <el-tag class="tags" v-for="item in tags" :key="item.id" style="width:100px;"
+            @click="handlerColor(item,tags)">
             {{ item.name }}
-            <svg class="icon1" t="1666226412231" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            p-id="2553" width="16" height="16">
-            <path
-              d="M827.392 195.584q65.536 65.536 97.792 147.456t32.256 167.936-32.256 167.936-97.792 147.456-147.456 98.304-167.936 32.768-168.448-32.768-147.968-98.304-98.304-147.456-32.768-167.936 32.768-167.936 98.304-147.456 147.968-97.792 168.448-32.256 167.936 32.256 147.456 97.792zM720.896 715.776q21.504-21.504 18.944-49.152t-24.064-49.152l-107.52-107.52 107.52-107.52q21.504-21.504 24.064-49.152t-18.944-49.152-51.712-21.504-51.712 21.504l-107.52 106.496-104.448-104.448q-21.504-20.48-49.152-23.04t-49.152 17.92q-21.504 21.504-21.504 52.224t21.504 52.224l104.448 104.448-104.448 104.448q-21.504 21.504-21.504 51.712t21.504 51.712 49.152 18.944 49.152-24.064l104.448-104.448 107.52 107.52q21.504 21.504 51.712 21.504t51.712-21.504z"
-              p-id="2554" fill="#d81e06"></path>
-          </svg>
+            <svg class="icon1" t="1666226412231" viewBox="0 0 1024 1024" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" p-id="2553" width="16" height="16">
+              <path
+                d="M827.392 195.584q65.536 65.536 97.792 147.456t32.256 167.936-32.256 167.936-97.792 147.456-147.456 98.304-167.936 32.768-168.448-32.768-147.968-98.304-98.304-147.456-32.768-167.936 32.768-167.936 98.304-147.456 147.968-97.792 168.448-32.256 167.936 32.256 147.456 97.792zM720.896 715.776q21.504-21.504 18.944-49.152t-24.064-49.152l-107.52-107.52 107.52-107.52q21.504-21.504 24.064-49.152t-18.944-49.152-51.712-21.504-51.712 21.504l-107.52 106.496-104.448-104.448q-21.504-20.48-49.152-23.04t-49.152 17.92q-21.504 21.504-21.504 52.224t21.504 52.224l104.448 104.448-104.448 104.448q-21.504 21.504-21.504 51.712t21.504 51.712 49.152 18.944 49.152-24.064l104.448-104.448 107.52 107.52q21.504 21.504 51.712 21.504t51.712-21.504z"
+                p-id="2554" fill="#d81e06"></path>
+            </svg>
           </el-tag>
-          
+
           <el-button style="width: 80px;margin-top:20px;" class="button-new-tag ml-1" @click="handler">
             请选择
           </el-button>
@@ -116,7 +117,6 @@
 import { ref, reactive, onMounted } from 'vue'
 import { reqInterest } from '@/api/home/index'
 // 叉的定义
-const wrong = ref(false)
 // 勾选的数据
 const tags = ref<any>([])
 // 推荐技能列表
@@ -128,6 +128,7 @@ const dialogVisible = ref(false);
 onMounted(() => {
   getInterest();
 })
+
 // 获取推荐技能列表
 const getInterest = async () => {
   let result = await reqInterest();
@@ -233,17 +234,61 @@ const inputVisible = ref(false)
 }
 
 /deep/.el-input__wrapper {
-  background-color: #f5f7f9 !important;
-}
+   background-color: #f5f7f9 !important;
+  }
 
-.el-button:focus,
+
 .el-button:hover {
   color: #fff;
   background-color: #f93684;
+
 }
 
 /* 选择兴趣 */
 .my-header {
+  float: left;
+}
+
+.my-header :nth-child(2) {
+  margin-left: 10px;
+  color: #b1b5c1;
+}
+
+.el-form {
+  margin: 15px 0;
+}
+
+.title-memo {
+  color: #b1b5c1;
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+.el-form {
+  margin-top: 10px;
+}
+
+.tags {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #eaecf0;
+  color: #111;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 0 22px 21px 0;
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tagIcon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
   float: left;
 }
 
