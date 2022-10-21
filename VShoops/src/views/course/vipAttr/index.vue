@@ -23,8 +23,8 @@
           <!-- 价格区间 -->
           <div class="interest">
             <span>价格区间:</span>
-<<<<<<< HEAD
-            <div class="dance">
+
+            <div class="dance" style="height: 30px">
               <div
                 style="width: 100px"
                 @click="item.bt = !item.bt"
@@ -35,11 +35,6 @@
               >
                 {{ item.name }}
               </div>
-=======
-            <div class="dance" style="height:30px;">
-              <div style="width: 100px;" @click="item.bt=!item.bt"  :class="{ isChecked: item.bt }" :key="index" class="checkbox-button " v-for="(item,index) in priceRange">{{item.name}}</div>
-           
->>>>>>> b3791b21a3cb8b84cc461d2de19ce5faea094425
             </div>
           </div>
         </div>
@@ -79,7 +74,6 @@
               </div>
               <div class="interest">
                 <span>难易度:</span>
-<<<<<<< HEAD
                 <div class="dance">
                   <div
                     style="width: 100px"
@@ -91,10 +85,6 @@
                   >
                     {{ item.name }}
                   </div>
-=======
-                <div class="dance" style="height:50px;">
-                  <div  style="width: 100px;" @click="btsHandler3(item)" :class="{ isChecked: item.bt }" :key="index"  v-for="(item,index) in difficultDegree" class="checkbox-button">{{item.name}}</div>
->>>>>>> b3791b21a3cb8b84cc461d2de19ce5faea094425
                 </div>
               </div>
             </el-collapse-item>
@@ -221,13 +211,7 @@ const difficultDegrees = computed(() => {
 .el-collapse {
   border: none;
 }
-/* .el-collapse /deep/.el-collapse-item__header {
-  font-size: 14px;
-  text-align: center;
-  display: block;
-  border-bottom: none;
-  color: #7d8090;
-} */
+
 /*折叠样式触发样式 */
 
 .el-collapse-item {
@@ -267,7 +251,6 @@ const difficultDegrees = computed(() => {
 }
 .filter-order-container {
   width: 1200px;
-  /* border: 1px solid #333; */
   margin: 0 auto;
 }
 .order-container {
@@ -329,7 +312,7 @@ span {
   display: flex;
   width: 1000px;
   flex-wrap: wrap;
-  height:110px ;
+  height: 110px;
 }
 .checkbox-button {
   font-size: 14px;
