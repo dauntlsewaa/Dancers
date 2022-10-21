@@ -24,7 +24,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="right">
           <el-button
             style="border: none; font-size: 16px; color: #101010"
             size="default"
@@ -40,36 +40,22 @@
             style="background-color: #f93684; margin-left: 10px; border: none"
             >发布</el-button
           >
-          <el-button style="border: none"> 登陆 </el-button>
-          <el-avatar size="small" :src="circleUrl"></el-avatar>
+
+          <el-button style="border: none" v-if="!token">
+            <router-link to="/login">登陆 </router-link>
+          </el-button>
+
+          <img
+            src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fq_70%2Fimages03%2F20221019%2Fd238380148944608933e1accadc089ce.png&refer=http%3A%2F%2Fp5.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668923859&t=4a19766364020992c1241da32271e418"
+            v-else
+            width="30"
+            height="30"
+            style="border-radius: 50%; margin-left: 10px"
+            @click="toLoginOut"
+          />
         </div>
       </div>
     </el-card>
-
-    <!-- 二维码 -->
-
-    <el-dialog
-      v-model="dialogVisible"
-      draggable
-      modal="false"
-      destroy-on-close="true"
-      class="el-ewm"
-      style="width: 400px"
-    >
-      <span class="ewm">扫码登录</span>
-      <div class="qr-box">
-        <img src="./images/1.png" alt="" />
-      </div>
-      <div class="dialog">
-        <p class="tips">打开“中舞网APP”，扫描二维码登录</p>
-      </div>
-      <p>如未安装APP,扫描此二维码同样可以下载“中舞网APP”</p>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button>确定登陆</el-button>
-        </span>
-      </template>
-    </el-dialog>
   </div>
 </template>
 
@@ -84,13 +70,14 @@ const router = useRouter();
 
 //点击图标跳转回推荐首页
 
-const toRec = () => {
-  // alert(123)
-  router.push({ path: "/index/recommend" });
-  //重新发请求获取数据？？？？？
-};
-const circleUrl = () => {
-  "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png";
+let token = ref<any>("");
+let isShow = ref(false);
+onMounted(() => {
+  token.value = localStorage.getItem("token");
+  console.log(token.value);
+});
+let toLoginOut = () => {
+  isShow.value = !isShow;
 };
 
 const dialogVisible = ref(false);
@@ -98,7 +85,6 @@ const dialogVisible = ref(false);
 
 <style scoped>
 * {
-  padding: 0;
   margin: 0;
 }
 li {
@@ -113,6 +99,11 @@ li {
 
 .header_left {
   display: flex;
+}
+.right {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .navList {
