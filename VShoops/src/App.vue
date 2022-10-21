@@ -1,6 +1,7 @@
 <template>
   <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <router-view></router-view>
   </div>
 </template>
@@ -14,10 +15,9 @@
 
 
 
+=======
+>>>>>>> liuyajing
     <router-view></router-view>
-
-
-
   </div>
 </template>
 
@@ -26,6 +26,7 @@
 
 </script>
 
+<<<<<<< HEAD
   
 
 
@@ -43,3 +44,8 @@
 >>>>>>> b951b5f6397f769327e182b2f346a6689d2c7776
 
 <script setup lang="ts"></script>
+=======
+<script setup lang="ts">
+
+</script>
+>>>>>>> liuyajing
