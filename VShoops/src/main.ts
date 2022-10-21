@@ -12,7 +12,7 @@ import router from './router'
 import  '@/assets/reset.css'
 
 //引入视频详情全局组件
-import VideoDetail from './components/video/VideoDetail.vue'
+import VideoDetail from './components/video/index.vue'
 
 
 const app = createApp(App)

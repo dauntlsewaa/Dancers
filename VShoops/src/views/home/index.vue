@@ -126,7 +126,7 @@
 
 <script setup lang="ts">
 // 引入视频播放
-import VideoDetail from '../../components/video/VideoDetail.vue'
+import VideoDetail from '../../components/video/index.vue'
 import { ref, computed, onMounted } from "vue";
 import Header from "@/components/header/header.vue";
 import Attrs from "./attr/index.vue";
