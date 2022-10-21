@@ -13,11 +13,16 @@ import router from './router'
 import  '@/assets/reset.css'
 
 //引入视频详情全局组件
+<<<<<<< HEAD
+import VideoDetail from './components/video/index.vue'
+
+=======
 import VideoDetail from './components/video/VideoDetail.vue'
 // 头部组件
 import Header from "@/components/header/header.vue";
 // 底部组件
 import Footer from "@/components/footer/footer.vue";
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 
 const app = createApp(App)
 

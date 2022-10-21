@@ -1,8 +1,8 @@
 <template>
   <div class="videoContainer">
     <div class="videoList">
-      <div class="videoItem" v-for="item in video" :key="item.id">
-        <div class="videoImg" @click="playerVideo">
+      <div class="videoItem" v-for="item in video" :key="item.id" @click="playerVideo">
+        <div class="videoImg" >
           <img class="videoImg" :src="item.cover[0]" />
         </div>
         <div class="videoTitle">
@@ -148,7 +148,13 @@ watch(
 let getVideoList = async () => {
   loading.value = true;
   let result = await reqVideoList();
+<<<<<<< HEAD
+  video.value.push(...result.content)
+ 
+  
+=======
   video.value.push(...result.content);
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
   loading.value = false;
 };
 

@@ -82,10 +82,19 @@
 
 <script setup lang="ts">
 // 引入视频播放
+<<<<<<< HEAD
+import VideoDetail from '../../components/video/index.vue'
+import { ref, computed, onMounted } from "vue";
+import Header from "@/components/header/header.vue";
+import Attrs from "./attr/index.vue";
+import VideoList from "./VideoList/index.vue";
+import Footer from "../../components/footer/footer.vue";
+=======
 import VideoDetail from "@/components/video/VideoDetail.vue";
 
 import { ref, onMounted, nextTick, watch } from "vue";
 import Dialog from "@/components/Dialog/index.vue";
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 
 import { Grid } from "@element-plus/icons-vue";
 
