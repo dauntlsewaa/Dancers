@@ -1,41 +1,5 @@
 <template>
-<<<<<<< HEAD
-  <!-- <div class="myItem">
-    <div class="my">
-      <div class="left"> -->
-  <!-- 登陆数据 -->
-  <!-- <el-card>
-          <div class="Personal">
-            <div class="PersonalDetails">
-              <img
-                class="imgone"
-                src="https://rs.dance365.com/default_head@3x.png?imageView2/0/w/200/h/1200/format/webp/ignore-error/1"
-                alt=""
-              />
-              <div>登录以后显示用户</div>
-              <img class="imgtwo" src="../../assets/111.png" alt="" /> -->
 
-=======
-<!-- <<<<<<< HEAD
->>>>>>> liuyajing
-  <div class="myItem">
-    <div class="my">
-      <div class="left">
-        <!-- 登陆数据 -->
-        <!-- <el-card>
-          <div class="Personal">
-            <div class="PersonalDetails">
-              <img
-                class="imgone"
-                src="https://rs.dance365.com/default_head@3x.png?imageView2/0/w/200/h/1200/format/webp/ignore-error/1"
-                alt=""
-              />
-<<<<<<< HEAD
-              <div>登录以后显示用户</div>
-              <img class="imgtwo" src="../../assets/111.png" alt="" />
-=======
-               <div>登录以后显示用户</div> -->
-              <!-- <img class="imgtwo" src="../../assets/111.png" alt="" /> -->
 
 <div class="myItem">
 
@@ -57,8 +21,6 @@
             <div class="PersonalLeft">
               <div>0</div>
               <div class="string">关注</div>
-<!-- >>>>>>> b951b5f6397f769327e182b2f346a6689d2c7776 -->
->>>>>>> liuyajing
             </div>
             <div class="PersonalPosition">
               <div class="PersonalLeft">
