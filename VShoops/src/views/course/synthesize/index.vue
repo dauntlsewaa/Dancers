@@ -1,7 +1,7 @@
 <template>
   <!-- 综合 -->
 
-  <div>
+  <div style="margin-bottom:20px;margin-top:20px">
     <el-menu
       class="el-menu-demo"
       mode="horizontal"
@@ -10,17 +10,17 @@
       style="margin: 10px 0 10px 160px; width: 1200px"
       @select="handlerMenu"
     >
-      <el-menu-item index="2-1" :class="{ active: isActive == '2-1' }"
+      <el-menu-item @click="ExportHandler" index="2-1" :class="{ active: isActive == '2-1' }"
         ><router-link to="/discovery/x">{{
           isActive == "2-1" ? "综合排名" : "综合"
         }}</router-link></el-menu-item
       >
-      <el-menu-item index="2-2"
+      <el-menu-item  @click="ExportHandler"  index="2-2"
         ><router-link to="/discovery/w">{{
           isActive == "2-2" ? "销量由高到低" : "销量"
         }}</router-link></el-menu-item
       >
-      <el-menu-item index="2-3"
+      <el-menu-item  @click="ExportHandler"  index="2-3"
         ><router-link to="/discovery/e">{{
           isActive == "2-3" ? "浏览量由高到低" : "浏览量"
         }}</router-link></el-menu-item
@@ -37,6 +37,9 @@
       </el-menu-item>
     </el-menu>
   </div>
+
+   <!-- 视频列表 -->
+   <Video ref="sonRef" />
 </template>
 
 
@@ -44,12 +47,21 @@
 
 <script lang="ts" setup>
 
-import { ref } from "vue";
+import Video from "@/views/home/VideoList/index.vue";
+import { ref ,onMounted} from "vue";
 const isActive = ref("2-1");
+
 
 const handlerMenu = (e: any) => {
   isActive.value = e;
 };
+
+// 获取子组件
+const sonRef=ref()
+const ExportHandler = ()=>{
+  console.log(sonRef.value.ExportHandler());
+}
+
 </script>
 
 
