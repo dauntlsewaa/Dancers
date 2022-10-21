@@ -46,20 +46,27 @@
       </el-affix>
 
       <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
+<<<<<<< HEAD
 
         <!-- 兴趣选择 -->
         <Dialog ref="dialog"></Dialog>
 
         <router-view></router-view>
 
+=======
+        <Dialog ref="dialog"></Dialog>
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 
         <!-- 属性筛选列表 -->
         <Attrs />
 
         <!--视频列表 -->
         <VideoList />
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
         <!-- 视频播放 -->
         <!-- <VideoDetail /> -->
       </div>
@@ -88,6 +95,7 @@ import { reqSwiperList } from "@/api/home/index";
 let slideshowList = ref<any>([]);
 
 // 兴趣选择实例
+
 let dialog = ref();
 
 // tags
@@ -100,13 +108,6 @@ onMounted(() => {
     tags.value = dialog.value.tags;
   });
 });
-
-// watch(
-//   () => tags.value,
-//   () => {
-//     tags.value = dialog.value.tags;
-//   }
-// );
 
 // 获取轮播图列表数据
 const getslideandnav = async () => {

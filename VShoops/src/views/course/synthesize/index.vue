@@ -1,6 +1,9 @@
 <template>
   <!-- 综合 -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
   <div>
     <el-menu
       class="el-menu-demo"
@@ -36,14 +39,16 @@
         <router-link to="/discovery/a">发布时间</router-link>
       </el-menu-item>
     </el-menu>
-
-   <router-view></router-view>
   </div>
 </template>
 
+<<<<<<< HEAD
 
 <script lang="ts" setup>
 
+=======
+<script lang="ts" setup>
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 import { ref } from "vue";
 const isActive = ref("2-1");
 
@@ -51,6 +56,7 @@ const handlerMenu = (e: any) => {
   isActive.value = e;
 };
 </script>
+<<<<<<< HEAD
 <style scoped>
 .el-menu-demo {
     display: flex;
@@ -59,6 +65,16 @@ const handlerMenu = (e: any) => {
     width: 1200px;
     margin: 0 auto !important;
 
+=======
+
+<style scoped>
+.el-menu-demo {
+  display: flex;
+  /* justify-content: center; */
+  border-bottom: none;
+  width: 1200px;
+  margin: 0 auto !important;
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 }
 
 /deep/.el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
