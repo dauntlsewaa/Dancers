@@ -2,7 +2,9 @@
   <div class="Container">
     <div class="themeList">
       <div class="themeItem" v-for="(item, index) in themeList" :key="index">
-        <img class="themeImg" :src="item.cover" />
+        <a :href="item.webUrl">
+          <img class="themeImg" :src="item.cover"
+        /></a>
       </div>
     </div>
   </div>

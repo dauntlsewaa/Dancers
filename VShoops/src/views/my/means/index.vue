@@ -57,7 +57,7 @@
             </svg>
           </el-tag>
 
-          <el-button style="width: 80px;margin-top:20px;" class="button-new-tag ml-1" @click="handler">
+          <el-button plain style="width: 80px;" class="button-new-tag ml-1" @click="handler">
             请选择
           </el-button>
         </el-form-item>
@@ -95,7 +95,7 @@
               </svg>
             </el-tag>
           </el-scrollbar>
-          <div class="dialog-footer">
+          <div class="dialog-footer" style="text-align:right" >
             <el-button style="width: 130px; height: 40px" @click="dialogVisible = false">取消</el-button>
             <el-button type="danger" style="width: 130px; height: 40px" @click="dialogVisible = false" color="#f93684">
               确认</el-button>
