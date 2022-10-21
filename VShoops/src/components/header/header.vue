@@ -109,6 +109,15 @@ let toLoginOut = () => {
 
 
 const dialogVisible = ref(false);
+
+//点击标题logo跳转
+const toRec =() =>{
+  // alert(123)
+  router.push({path:'/index/recommend'})
+}
+
+
+
 </script>
 
 <style scoped>

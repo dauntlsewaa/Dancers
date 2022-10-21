@@ -2,8 +2,8 @@
   <div class="videoContainer">
     <div class="videoList">
       <div class="videoItem" v-for="item in video" :key="item.id" @click="playerVideo">
-        <div class="videoImg" >
-          <img class="videoImg" :src="item.cover[0]" />
+        <div class="videoImg" v-lazy-container="{selector:'img'}" >
+          <img class="videoImg" :data-src="item.cover[0]" />
         </div>
         <div class="videoTitle">
           <div class="titleTag">作品</div>
@@ -117,6 +117,15 @@
 </template>
 
 <script setup lang="ts">
+
+
+
+
+
+
+
+
+
 import { ref, onMounted, watch } from "vue";
 import { reqVideoList } from "../../../api/home/index";
 
@@ -128,7 +137,7 @@ const routes = useRoute();
 
 // 视频数据
 let video = ref<any>([]);
-
+let url = ref<any>([])
 const loading = ref(false);
 
 
@@ -148,11 +157,15 @@ watch(
 let getVideoList = async () => {
   loading.value = true;
   let result = await reqVideoList();
-  video.value.push(...result.content)
  
   
-  video.value.push(...result.content);
+  video.value.push(...result.content)
+ 
+
+  
+  
   loading.value = false;
+   console.log(url);
 };
 
 // 加载
@@ -165,6 +178,12 @@ const playerVideo = () => {
   // alert(123)
   router.push({ path: "/player" });
 };
+
+
+
+
+
+
 </script>
 
 <style scoped>
