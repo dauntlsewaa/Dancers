@@ -134,7 +134,13 @@ export const staticRoutes: Array<RouteRecordRaw> = [
   {
     path: '/player',
     component: () => import('@/components/video/VideoDetail.vue')
-  }
+  },
+  //登陆页面
+  {
+    path: '/login',
+    component: () => import('@/components/login/index.vue')
+  },
+
 ];
 
 
