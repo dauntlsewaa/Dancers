@@ -39,10 +39,8 @@
       </el-affix>
 
       <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
-<<<<<<< HEAD
         <!-- 兴趣选择 -->
         <Dialog ref="dialog"></Dialog>
-=======
         <!-- 选择兴趣技能 -->
         <el-dialog v-model="dialogVisible" draggable>
           <template #header="{ titleId, titleClass }">
@@ -112,7 +110,6 @@
           </div>
 
         </el-dialog>
->>>>>>> b951b5f6397f769327e182b2f346a6689d2c7776
 
         <!-- 属性筛选列表 -->
         <Attrs />
