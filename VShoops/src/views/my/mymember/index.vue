@@ -1,325 +1,271 @@
-<style scoped>
-.borders {
-  margin-right: 0 !important;
-}
-.cost {
-  margin: 0 auto;
-  width: 750px;
-  height: 124px;
-  margin-top: 30px;
-}
-.cost .costitem {
-  position: relative;
-  float: left;
-  margin-right: 30px;
-  cursor: pointer;
-}
-
-.cost .costitem .pic {
-  margin-bottom: 20px !important;
-}
-.cost .costitem p {
-  font-size: 16px;
-  height: 20px;
-  margin: 12px auto;
-}
-
-.cost .costitem p span {
-  font-size: 30px;
-}
-.cost .costitem .rec {
-  position: absolute;
-  top: -13px;
-  right: -20px;
-  display: block;
-  padding: 3px 2px;
-  width: 76px;
-  height: 32px;
-  border-radius: 16px;
-  background-color: #f93684;
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-  line-height: 32px;
-}
-.cost div {
-  text-align: center;
-  border: 1px solid rgb(220, 223, 230);
-  height: 124px;
-  width: 215px;
-  border-radius: 15px;
-}
-.bacc {
-  background-color: rgb(249, 235, 241);
-  border: 1px solid #f93684 !important;
-}
-</style>
 <template>
-  <el-card class="box-card">
-    <div class="card-header">
-      <span>我的会员</span>
-    </div>
-  </el-card>
-  <el-card class="box-card">
-    <div class="head-profile">
-      <a class="profile"></a>
-      <div class="mi">
-        <a href="" class="mi-name">我是用户名</a>
-        <span>您还不是会员</span>
+  <div>
+    <el-card class="box-card">
+      <div class="card-header">
+        <span>我的会员</span>
       </div>
-    </div>
-    <div class="hint">开通会员平均每年可省：￥9500</div>
-    <ul class="cost">
-      <li class="costitem">
-        <div :class="but[0] === 1 ? 'bacc' : ''" @click="handlerbacc1">
-          <p>季度会员</p>
-          <p class="pic">
-            ￥
-            <span>98</span>
-            /季
-          </p>
-          <p>合计￥98(青少年专属)</p>
+    </el-card>
+    <el-card class="box-card">
+      <div class="head-profile">
+        <a class="profile"></a>
+        <div class="mi">
+          <a href="" class="mi-name">我是用户名</a>
+          <span>您还不是会员</span>
         </div>
-      </li>
-      <li class="costitem">
-        <div @click="handlerbacc2" :class="but[1] === 1 ? 'bacc' : ''">
-          <p>1年会员</p>
-          <p class="pic">
-            ￥
-            <span>268</span>
-            /年
-          </p>
-          <p>合计￥268</p>
-        </div>
-      </li>
-      <li class="costitem">
-        <div @click="handlerbacc3" :class="but[2] === 1 ? 'bacc' : ''">
-          <p>3年会员</p>
-          <p class="pic">
-            ￥
-            <span>196</span>
-            /年
-          </p>
-          <p>合计￥588(省￥216)</p>
-        </div>
-        <p class="rec">推荐</p>
-      </li>
-    </ul>
-    <button class="open">立即以588元开通</button>
+      </div>
+      <div class="hint">开通会员平均每年可省：￥9500</div>
+      <ul class="cost">
+        <li class="costitem">
+          <div :class="but[0] === 1 ? 'bacc' : ''" @click="handlerbacc1">
+            <p>季度会员</p>
+            <p class="pic">
+              ￥
+              <span>98</span>
+              /季
+            </p>
+            <p>合计￥98(青少年专属)</p>
+          </div>
+        </li>
+        <li class="costitem">
+          <div @click="handlerbacc2" :class="but[1] === 1 ? 'bacc' : ''">
+            <p>1年会员</p>
+            <p class="pic">
+              ￥
+              <span>268</span>
+              /年
+            </p>
+            <p>合计￥268</p>
+          </div>
+        </li>
+        <li class="costitem">
+          <div @click="handlerbacc3" :class="but[2] === 1 ? 'bacc' : ''">
+            <p>3年会员</p>
+            <p class="pic">
+              ￥
+              <span>196</span>
+              /年
+            </p>
+            <p>合计￥588(省￥216)</p>
+          </div>
+          <p class="rec">推荐</p>
+        </li>
+      </ul>
+      <button class="open">立即以588元开通</button>
 
-    <div class="letter">
-      开通即视为同意
-      <a href=""> 《会员服务协议》 </a>
-    </div>
-    <hr />
-    <div class="rights">会员专属权益</div>
-    <ul class="privileged">
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+      <div class="letter">
+        开通即视为同意
+        <a href=""> 《会员服务协议》 </a>
+      </div>
+      <hr />
+      <div class="rights">会员专属权益</div>
+      <ul class="privileged">
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem borders" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem borders" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-      <li class="priviitem borders" @mouseover="handlerOver" @mouseleave="handlerOut">
-        <div v-show="flag">
-          <div class="tool1">
-            <div class="tisi">
-              <!-- <img src="./image/10001.course_equity.png" alt=""> -->
-              <div class="img"></div>
-              <p>12412412421</p>
-              <a href="">立即前往会员专区</a>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+        <li class="priviitem borders" @mouseover="handlerOver" @mouseleave="handlerOut">
+          <div v-show="flag">
+            <div class="tool1">
+              <div class="tisi">
+                <!-- <img src="./image/10001.course_equity.png" alt=""> -->
+                <div class="img"></div>
+                <p>12412412421</p>
+                <a href="">立即前往会员专区</a>
+              </div>
             </div>
+            <div class="triangle"></div>
           </div>
-          <div class="triangle"></div>
-        </div>
-        <div class="tool">
-          <img src="./image/10001.course_equity.png" alt="" />
-          <p>724个会员专区课程免费学习</p>
-        </div>
-      </li>
-    </ul>
-  </el-card>
+          <div class="tool">
+            <img src="./image/10001.course_equity.png" alt="" />
+            <p>724个会员专区课程免费学习</p>
+          </div>
+        </li>
+      </ul>
+    </el-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -519,8 +465,7 @@ hr {
 }
 
 .box-card {
-  width: 1020px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .tooltip-base-box {
@@ -537,5 +482,60 @@ hr {
 .tooltip-base-box .box-item {
   width: 110px;
   margin-top: 10px;
+}
+
+.borders {
+  margin-right: 0 !important;
+}
+.cost {
+  margin: 0 auto;
+  width: 750px;
+  height: 124px;
+  margin-top: 30px;
+}
+.cost .costitem {
+  position: relative;
+  float: left;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.cost .costitem .pic {
+  margin-bottom: 20px !important;
+}
+.cost .costitem p {
+  font-size: 16px;
+  height: 20px;
+  margin: 12px auto;
+}
+
+.cost .costitem p span {
+  font-size: 30px;
+}
+.cost .costitem .rec {
+  position: absolute;
+  top: -13px;
+  right: -20px;
+  display: block;
+  padding: 3px 2px;
+  width: 76px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #f93684;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 32px;
+}
+.cost div {
+  text-align: center;
+  border: 1px solid rgb(220, 223, 230);
+  height: 124px;
+  width: 215px;
+  border-radius: 15px;
+}
+.bacc {
+  background-color: rgb(249, 235, 241);
+  border: 1px solid #f93684 !important;
 }
 </style>

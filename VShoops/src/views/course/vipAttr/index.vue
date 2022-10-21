@@ -1,95 +1,97 @@
 <template>
-  <div :class="'filter-order-container'">
-    <!-- 点击筛选弹出部分下方 -->
-    <div class="filter-container">
-      <div class="filter-content-container">
-        <!-- 兴趣技能 -->
-        <div class="interest">
-          <span>兴趣技能:</span>
-          <div class="dance">
-            <div class="checkbox-button isChecked">爵士舞</div>
-            <div class="checkbox-button">爵士舞</div>
-            <div class="checkbox-button">爵士舞</div>
-            <div class="checkbox-button isChecked">爵士舞</div>
-            <div class="checkbox-button isChecked">爵士舞</div>
-            <div class="checkbox-button">爵士舞</div>
-            <div class="checkbox-button">爵士舞</div>
-            <div class="checkbox-button isChecked">爵士舞</div>
-            <div class="checkbox-button isChecked">爵士舞</div>
-            <div class="checkbox-button isChecked">爵士舞</div>
-            <div class="checkbox-button">爵士舞</div>
-            <div class="checkbox-button">爵士舞</div>
-            <div class="checkbox-button isChecked">爵士舞</div>
+  <el-card style="width: 1200px; margin: 0 auto">
+    <div :class="'filter-order-container'">
+      <!-- 点击筛选弹出部分下方 -->
+      <div class="filter-container">
+        <div class="filter-content-container">
+          <!-- 兴趣技能 -->
+          <div class="interest">
+            <span>兴趣技能:</span>
+            <div class="dance">
+              <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="checkbox-button">爵士舞</div>
+              <div class="checkbox-button">爵士舞</div>
+              <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="checkbox-button">爵士舞</div>
+              <div class="checkbox-button">爵士舞</div>
+              <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="checkbox-button">爵士舞</div>
+              <div class="checkbox-button">爵士舞</div>
+              <div class="checkbox-button isChecked">爵士舞</div>
+            </div>
+          </div>
+          <!-- 内容样式 -->
+          <div class="interest">
+            <span>兴趣技能:</span>
+            <div class="dance">
+              <div class="checkbox-button isChecked">视频</div>
+              <div class="checkbox-button">图片</div>
+              <div class="checkbox-button">文章</div>
+            </div>
           </div>
         </div>
-        <!-- 内容样式 -->
-        <div class="interest">
-          <span>兴趣技能:</span>
-          <div class="dance">
-            <div class="checkbox-button isChecked">视频</div>
-            <div class="checkbox-button">图片</div>
-            <div class="checkbox-button">文章</div>
-          </div>
-        </div>
-      </div>
 
-      <div class="demo-collapse">
-        <el-collapse v-model="activeNames" @change="handleChange" class="el-collapse">
-          <el-collapse-item :title="flag === 0 ? '展开全部' : '收起'" name="1">
-            <div class="interest">
-              <span>兴趣技能:</span>
-              <div class="dance">
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
+        <div class="demo-collapse">
+          <el-collapse v-model="activeNames" @click="handleChange" class="el-collapse">
+            <el-collapse-item :title="flag === 0 ? '展开全部' : '收起'" name="1">
+              <div class="interest">
+                <span>兴趣技能:</span>
+                <div class="dance">
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                </div>
               </div>
-            </div>
-            <div class="interest">
-              <span>兴趣技能:</span>
-              <div class="dance">
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>  
-                <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="interest">
+                <span>兴趣技能:</span>
+                <div class="dance">
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                </div>
               </div>
-            </div>
-            <div class="interest">
-              <span>兴趣技能:</span>
-              <div class="dance">
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button">爵士舞</div>
-                <div class="checkbox-button isChecked">爵士舞</div>
+              <div class="interest">
+                <span>兴趣技能:</span>
+                <div class="dance">
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button">爵士舞</div>
+                  <div class="checkbox-button isChecked">爵士舞</div>
+                </div>
               </div>
-            </div>
-          </el-collapse-item>
-        </el-collapse>
+            </el-collapse-item>
+          </el-collapse>
+        </div>
       </div>
     </div>
-  </div>
+  </el-card>
 </template>
 
 <script setup lang="ts">
@@ -97,12 +99,9 @@ import { ref } from "vue";
 
 const activeNames = ref(["0"]);
 const flag = ref(0);
-// 折叠面板变化操作
-// const handleChange = (val: string[]) => {
-//   console.log(val);
-// };
+
 // 折叠面板的切换
-const handleclick = () => {
+const handleChange = () => {
   flag.value = flag.value === 1 ? 0 : 1;
   console.log(flag.value);
 };
@@ -155,8 +154,8 @@ const handleclick = () => {
 
 /** */
 .filter-container {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .filter-order-container {
   width: 1200px;

@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
 // 移入路由器
 import router from './router'
 
@@ -12,8 +13,16 @@ import router from './router'
 import  '@/assets/reset.css'
 
 //引入视频详情全局组件
+<<<<<<< HEAD
 import VideoDetail from './components/video/index.vue'
 
+=======
+import VideoDetail from './components/video/VideoDetail.vue'
+// 头部组件
+import Header from "@/components/header/header.vue";
+// 底部组件
+import Footer from "@/components/footer/footer.vue";
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 
 const app = createApp(App)
 
@@ -23,6 +32,11 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 // 视频组件
 app.component('VideoDetail', VideoDetail)
+// 头部组件
+app.component('Header', Header)
+app.component('Footer', Footer)
+
+
 
 app.use(ElementPlus, {
   locale: zhCn
