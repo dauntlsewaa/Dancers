@@ -37,7 +37,7 @@
       </div>
     </div>
     <!-- int.bt=!int.bt -->
-    <!-- 兴趣技能 -->
+    <!-- 内容格式 -->
     <div class="interest" style="display: flex">
       <div class="caption" style="width: 62px">内容格式:</div>
       <div class="dance">
@@ -99,12 +99,8 @@ onMounted(() => {
 });
 
 // 兴趣按钮点击事件回调
-const btsHandler = (int) => {
-  //  如果按钮数组中带有bt属性已经变色的有三个了个
-
-  if (interests.value.length >= 3) {
-    ElMessage("同一筛选条件最多选择3个");
-
+ const btsHandler = (int) =>{
+    //  如果按钮数组中带有bt属性已经变色的有三个了个
   if (interests.value.length >= 3 && !int.bt) {
     ElMessage("同一筛选条件最多选择3个");
     console.log(interests.value);
@@ -113,6 +109,8 @@ const btsHandler = (int) => {
     int.bt = !int.bt;
   }
 };
+
+
 // 计算属性,计算兴趣按钮数组中带有bt属性已经变色的有几个,存入interests中
 const interests = computed(() => {
   return interest.value.filter((item) => {
