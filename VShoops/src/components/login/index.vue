@@ -1,90 +1,66 @@
 <template>
   <div class="login-container">
-    <el-from ref="formRef" :model="ruleForm" :rules="loginRules" class="login-form">
-      <div class="title-container">
-        <h3 class="title">中舞网</h3>
-      </div>
-      <el-form-item label="用户名" style="padding-left: 650px">
-        <el-input
-          v-model="ruleForm.name"
-          class="svg-container"
-          :input-style="{ width: '300px', height: '40px' }"
-        />
+    <div class="title-container">
+      <h3 class="title">中舞网</h3>
+    </div>
+    <el-form ref="ruleFormRef" :model="ruleForm" status-icon :rules="rules" class="login-form">
+
+      <el-form-item label="用户名" style="padding-left: 650px;width: 300px;" prop="name">
+        <el-input v-model="ruleForm.name" />
       </el-form-item>
-      <el-form-item label="密码：" prop="pass" style="padding-left: 650px">
-        <el-input
-          v-model="ruleForm.pass"
-          type="password"
-          autocomplete="off"
-          class="svg-container"
-          :input-style="{ width: '300px', height: '40px' }"
-        />
+      <el-form-item label="密码" style="padding-left: 650px;width: 300px;" prop="pass">
+        <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
       </el-form-item>
-      <button
-        @click="handleLogin"
-        style="
-          width: 100px;
-          margin-bottom: 30px;
-          height: 40px;
-          background-color: #409eff;
-          border: #409eff;
-          border-radius: 5px;
-        "
-      >
-        登录
-      </button>
-    </el-from>
+      <el-form-item style="padding-left: 800px;">
+        <el-button type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from "vue";
-import type { FormInstance } from "element-plus";
-import { Loading } from "@element-plus/icons-vue";
-import { userInfo } from "os";
+import { reactive, ref } from 'vue'
+import type { FormInstance } from 'element-plus'
 import { useRouter } from "vue-router";
 import { ElMessage } from "element-plus";
-
+const ruleFormRef = ref<FormInstance>()
 const router = useRouter();
 
-const formRef = ref<FormInstance>();
-const ruleForm = reactive({
-  name: "admin",
-  pass: "111111",
-});
-const validateUsername = (rule: any, value: any, callback: any) => {
-  if (value.length < 4) {
-    callback(new Error("用户名长不能小于4位"));
-  } else {
-    callback();
-  }
-};
-const validatePassword = (rule: any, value: any, callback: any) => {
-  if (value.length < 6) {
-    callback(new Error("密码长度不能小于6位"));
-  } else {
-    callback();
-  }
-};
-const loginRules = {
-  username: [{ required: true, validator: validateUsername }],
-  password: [{ required: true, trigger: "blur", validator: validatePassword }],
-};
-// 点击登录的回调
-const handleLogin = () => {
-  setTimeout(() => {
-    ElMessage({
-      message: "登陆成功",
-      type: "success",
-    });
-    let token = 'sahjnxzfwwknaslkj'
-    localStorage.setItem('token',token)
-    router.push("/index");
-  }, 500);
-};
-</script>
+const ruleForm = ref({
+  name: '',
+  pass: ''
+})
 
-<style scoped>
+const rules = ref({
+  name: [{ min: 3, max: 7, required: true, message: '名称 3 to 5', }],
+  pass: [{ min: 3, max: 7, required: true, message: '密码 3 to 5', }]
+
+})
+
+const submitForm = (formEl: FormInstance | undefined) => {
+  if (!formEl) return
+  formEl?.validate((valid) => {
+
+
+    if (valid) {
+      router.push("/index");
+      ElMessage({
+        message: "登录成功",
+        type: 'success'
+      })
+    }
+    ElMessage({
+      message: '请重新确认'
+    })
+  })
+}
+
+// const resetForm = (formEl: FormInstance | undefined) => {
+//   if (!formEl) return
+//   formEl.resetFields()
+// }
+</script>
+<style>
 .login-container {
   width: 100%;
   height: 700px;
@@ -95,7 +71,7 @@ const handleLogin = () => {
 .login-form {
   width: 300px;
   height: 600px;
-  text-align: center; 
+  text-align: center;
 }
 
 .el-input__wrapper {

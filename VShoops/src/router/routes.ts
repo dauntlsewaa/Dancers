@@ -144,8 +144,19 @@ export const staticRoutes: Array<RouteRecordRaw> = [
     path: '/login',
     component: () => import('@/components/login/index.vue')
   },
-
+  //404页面
+  {
+    path: '/404',
+    component: () => import('@/components/404/index.vue')
+  },
+  /*  任意路由跳转404 */
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
+  },
 ];
+
+
 
 
 

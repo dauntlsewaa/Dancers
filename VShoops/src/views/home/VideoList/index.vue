@@ -1,9 +1,11 @@
 <template>
   <div class="videoContainer">
     <div class="videoList">
+
       <div class="videoItem" v-for="item in video" :key="item.id" @click="playerVideo">
         <div class="videoImg" v-lazy-container="{selector:'img'}" >
           <img class="videoImg" :data-src="item.cover[0]" />
+
         </div>
         <div class="videoTitle">
           <div class="titleTag">作品</div>
@@ -36,7 +38,9 @@
                   ></path>
                 </svg>
               </div>
-              <span class="jionPerson">{{ item.statisticsBackup.favoriteCount }}</span>
+              <span class="jionPerson">{{
+                item.statisticsBackup.favoriteCount
+              }}</span>
             </div>
             <div class="videoToal-mid">
               <div>
@@ -78,7 +82,9 @@
                   ></path>
                 </svg>
               </div>
-              <span class="jionPerson">{{ item.statisticsBackup.praiseCount }}</span>
+              <span class="jionPerson">{{
+                item.statisticsBackup.praiseCount
+              }}</span>
             </div>
           </div>
         </div>
@@ -128,9 +134,11 @@
 
 import { ref, onMounted, watch } from "vue";
 import { reqVideoList } from "../../../api/home/index";
+import request from "@/utils/request";
 
 //引入路由
 import { useRouter, useRoute } from "vue-router";
+import { emit } from "process";
 //获取路由对象
 const router = useRouter();
 const routes = useRoute();
@@ -140,7 +148,6 @@ let video = ref<any>([]);
 let url = ref<any>([])
 const loading = ref(false);
 
-
 onMounted(() => {
   getVideoList();
 });
@@ -148,15 +155,27 @@ onMounted(() => {
 watch(
   () => routes.path,
   () => {
-    getVideoList();
+    // getVideoList();
+    video.value = video.value.reverse();
   }
 );
 
-
+// 暴露方法方便排序页面获取视频列表数据
+const ExportHandler = async () => {
+  let result = await request.get(
+    "/moment/moments/rec/default?access_token=0c1166e8-c539-4341-a8ac-c4324d0707e7&column=recommend&pageSize=20&pageNum=1&localCache=20"
+  );
+  video.value = result.content;
+  console.log(result);
+};
+defineExpose({
+  ExportHandler,
+});
 // 请求视频数据
 let getVideoList = async () => {
   loading.value = true;
   let result = await reqVideoList();
+
  
   
   video.value.push(...result.content)
@@ -164,6 +183,7 @@ let getVideoList = async () => {
 
   
   
+
   loading.value = false;
    console.log(url);
 };
