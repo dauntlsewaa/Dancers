@@ -8,16 +8,32 @@
           <div class="interest">
             <span>兴趣技能:</span>
             <div class="dance">
-              <div @click="btsHandler(item)"
-              :class="{ isChecked: item.bt }" style="width: 100px;" :key="index" class="checkbox-button " v-for="(item,index) in avocation">{{item.name}}</div>
+              <div
+                @click="btsHandler(item)"
+                :class="{ isChecked: item.bt }"
+                style="width: 100px"
+                :key="index"
+                class="checkbox-button"
+                v-for="(item, index) in avocation"
+              >
+                {{ item.name }}
+              </div>
             </div>
           </div>
           <!-- 价格区间 -->
           <div class="interest">
             <span>价格区间:</span>
             <div class="dance">
-              <div style="width: 100px;" @click="item.bt=!item.bt"  :class="{ isChecked: item.bt }" :key="index" class="checkbox-button " v-for="(item,index) in priceRange">{{item.name}}</div>
-           
+              <div
+                style="width: 100px"
+                @click="item.bt = !item.bt"
+                :class="{ isChecked: item.bt }"
+                :key="index"
+                class="checkbox-button"
+                v-for="(item, index) in priceRange"
+              >
+                {{ item.name }}
+              </div>
             </div>
           </div>
         </div>
@@ -28,20 +44,46 @@
               <div class="interest">
                 <span>课程类型:</span>
                 <div class="dance">
-                  <div @click="btsHandler1(item)" style="width: 100px;"
-                  :class="{ isChecked: item.bt }"   :key="index"  v-for="(item,index) in coureType" class="checkbox-button">{{item.name}}</div>
+                  <div
+                    @click="btsHandler1(item)"
+                    style="width: 100px"
+                    :class="{ isChecked: item.bt }"
+                    :key="index"
+                    v-for="(item, index) in coureType"
+                    class="checkbox-button"
+                  >
+                    {{ item.name }}
+                  </div>
                 </div>
               </div>
               <div class="interest">
                 <span>学习目标:</span>
                 <div class="dance">
-                  <div @click="btsHandler2(item)" :class="{ isChecked: item.bt }"  style="width: 100px;" :key="index"  v-for="(item,index) in learningGoals" class="checkbox-button ">{{item.name}}</div>
+                  <div
+                    @click="btsHandler2(item)"
+                    :class="{ isChecked: item.bt }"
+                    style="width: 100px"
+                    :key="index"
+                    v-for="(item, index) in learningGoals"
+                    class="checkbox-button"
+                  >
+                    {{ item.name }}
+                  </div>
                 </div>
               </div>
               <div class="interest">
                 <span>难易度:</span>
                 <div class="dance">
-                  <div  style="width: 100px;" @click="btsHandler3(item)" :class="{ isChecked: item.bt }" :key="index"  v-for="(item,index) in difficultDegree" class="checkbox-button">{{item.name}}</div>
+                  <div
+                    style="width: 100px"
+                    @click="btsHandler3(item)"
+                    :class="{ isChecked: item.bt }"
+                    :key="index"
+                    v-for="(item, index) in difficultDegree"
+                    class="checkbox-button"
+                  >
+                    {{ item.name }}
+                  </div>
                 </div>
               </div>
             </el-collapse-item>
@@ -53,12 +95,12 @@
 </template>
 
 <script setup lang="ts">
-import request from '@/utils/request'
-import { ref,onMounted , computed} from "vue";
+import request from "@/utils/request";
+import { ref, onMounted, computed } from "vue";
 import { ElMessage } from "element-plus";
-import {reqProperties}  from '@/api/course/index'
+import { reqProperties } from "@/api/course/index";
 // 存储兴趣技能的数据
-let avocation= ref([]);
+let avocation = ref([]);
 // 存储价格区间的数据
 let priceRange = ref([]);
 // 存储课程类型的数据
@@ -83,64 +125,58 @@ onMounted(() => {
 
 // 发请求获取数据
 const getProperties = async () => {
-  const result = await request.get('/moment/properties/filter/vip_zone?access_token=0c1166e8-c539-4341-a8ac-c4324d0707e7')
-  console.log(result);
-  // 存储数据
-  avocation.value=result[0].choises
-  // console.log(avocation.value);
-  priceRange.value=result[1].choises
-  coureType.value=result[2].choises
-  learningGoals.value=result[3].choises
-  difficultDegree.value=result[4].choises
+  const result = await request.get(
+    "/moment/properties/filter/vip_zone?access_token=0c1166e8-c539-4341-a8ac-c4324d0707e7"
+  );
 
+  // 存储数据
+  avocation.value = result[0].choises;
+  // console.log(avocation.value);
+  priceRange.value = result[1].choises;
+  coureType.value = result[2].choises;
+  learningGoals.value = result[3].choises;
+  difficultDegree.value = result[4].choises;
 };
 
 // 兴趣按钮点击事件回调
-const btsHandler = (item) =>{
-    //  如果按钮数组中带有bt属性已经变色的有三个了个
-console.log(123);
-  if (interests.value.length >= 3 && !item.bt ) {
+const btsHandler = (item) => {
+  //  如果按钮数组中带有bt属性已经变色的有三个了个
+  console.log(123);
+  if (interests.value.length >= 3 && !item.bt) {
     ElMessage("同一筛选条件最多选择3个");
     console.log(interests.value);
   } else {
     item.bt = !item.bt;
   }
+};
+// 课程类型按钮点击事件回调
+const btsHandler1 = (item) => {
+  //  如果按钮数组中带有bt属性已经变色的有三个了个
 
- }
- // 课程类型按钮点击事件回调
-const btsHandler1 = (item) =>{
-    //  如果按钮数组中带有bt属性已经变色的有三个了个
-
-  if (coureTypes.value.length >= 3 && !item.bt ) {
+  if (coureTypes.value.length >= 3 && !item.bt) {
     ElMessage("同一筛选条件最多选择3个");
   } else {
     item.bt = !item.bt;
   }
-
- }
-  //学习目标按钮点击事件回调
-const btsHandler2 = (item) =>{
-    //  如果按钮数组中带有bt属性已经变色的有三个了个
-  if (learningGoalss.value.length >= 3 && !item.bt ) {
+};
+//学习目标按钮点击事件回调
+const btsHandler2 = (item) => {
+  //  如果按钮数组中带有bt属性已经变色的有三个了个
+  if (learningGoalss.value.length >= 3 && !item.bt) {
     ElMessage("同一筛选条件最多选择3个");
- 
   } else {
     item.bt = !item.bt;
   }
-
- }
-   // 难易度按钮点击事件回调
-const btsHandler3 = (item) =>{
-    //  如果按钮数组中带有bt属性已经变色的有三个了个
-  if (difficultDegrees.value.length >= 3 && !item.bt ) {
+};
+// 难易度按钮点击事件回调
+const btsHandler3 = (item) => {
+  //  如果按钮数组中带有bt属性已经变色的有三个了个
+  if (difficultDegrees.value.length >= 3 && !item.bt) {
     ElMessage("同一筛选条件最多选择3个");
- 
   } else {
     item.bt = !item.bt;
   }
-
- }
-
+};
 
 // 计算属性,计算兴趣按钮数组中带有bt属性已经变色的有几个
 const interests = computed(() => {

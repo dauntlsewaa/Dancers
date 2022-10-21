@@ -100,7 +100,6 @@ const router = useRouter();
 let token = ref<any>("");
 onMounted(() => {
   token.value = localStorage.getItem("token");
-  console.log(token.value);
 });
 let toLoginOut = () => {
  localStorage.clear()

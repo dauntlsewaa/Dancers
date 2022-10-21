@@ -5,6 +5,7 @@
           class="el-menu-demo"
           mode="horizontal"
           menu-trigger="click"
+          default-active="0"
           :ellipsis="false"
           text-color="#111"
           active-text-color="#111"
