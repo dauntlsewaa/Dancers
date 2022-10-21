@@ -32,16 +32,51 @@
             >下载APP</el-button
           >
 
-          <el-button
+          <!-- <el-button
             type="primary"
             size="default"
             :icon="Plus"
             round
             style="background-color: #f93684; margin-left: 10px; border: none"
             >发布</el-button
-          >
+          > -->
 
-          <el-button style="border: none" @click="dialogVisible = true"> 登陆 </el-button>
+          <el-dropdown>
+            <span class="el-dropdown-link">
+              <div
+                style="
+                  width: 75px;
+                  height: 30px;
+                  text-align: center;
+                  line-height: 30px;
+                  font-size: 16px;
+                  border-radius: 30px;
+                  background-color: #f93684;
+                  color: #fff;
+                  border: none;
+                  position: relative;
+                  display: inline-block;
+                  margin:0 30px
+                "
+              >
+                <el-icon color="#fff"><Plus /></el-icon>发布
+              </div>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu style="width: 120px;">
+                <el-dropdown-item style="background-color:#ccc">发布资源</el-dropdown-item>
+                <el-dropdown-item><div class="fabu1">作品</div></el-dropdown-item>
+                <el-dropdown-item><div class="fabu">教程</div></el-dropdown-item>
+                <el-dropdown-item><div class="fabu2">动态</div></el-dropdown-item>
+                <el-dropdown-item style="background-color:#ccc">发布商品</el-dropdown-item> 
+                <el-dropdown-item><div class="fabu1">视频课</div></el-dropdown-item>
+                <el-dropdown-item><div class="fabu">线下课</div></el-dropdown-item>
+                <el-dropdown-item><div class="fabu2">直播课</div></el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+
+          <el-button style="border: none" @click="dialogVisible = true"> 登录 </el-button>
         </div>
       </div>
     </el-card>
@@ -87,13 +122,6 @@ const toRec = () =>{
   router.push({path:'/index/recommend'})
   //重新发请求获取数据？？？？？
 }
-
-
-
-
-
-
-
 
 const dialogVisible = ref(false);
 </script>
@@ -178,5 +206,51 @@ li {
   margin-right: 120px;
   width: 120px;
   height: 40px;
+}
+.fabu1{
+  font-size: 15px;
+  line-height: 30px;
+  height: 39px;
+  width:80px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.fabu2{
+  font-size: 15px;
+  line-height: 39px;
+  width:80px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.fabu{
+  font-size: 15px;
+  line-height: 35px;
+  height: 40px;
+  width:80px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+/deep/.el-dropdown-menu__item{
+height: 31px !important;
+}
+/deep/.el-dropdown-menu__item:nth-last-child(2){
+  height: 30px;
+}
+/deep/.el-dropdown-menu__item:hover{
+  background-color: #ccc !important;
+  color: #111;
+}
+/deep/.el-dropdown-menu__item:nth-last-child(2):hover{
+  background-color: #ccc !important;
+  color: #111;
+}
+/deep/.el-button{
+  font-size: 15px;
+  color: #111;
+}
+/deep/.el-button:hover{
+  background-color: #fff;
+  color: #111;
 }
 </style>
