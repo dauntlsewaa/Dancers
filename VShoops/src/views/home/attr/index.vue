@@ -1,59 +1,61 @@
 <template>
-  <!-- 第一排 -->
-  <div class="notice">
-    <div class="titles">
-      <span
-        class="title"
-        @click="red = index"
-        v-for="(item, index) in data"
-        :key="index"
-        :class="{ active: red == index }"
-      >
-        {{ item.name }}
-      </span>
-    </div>
-    <el-button bg class="filtrate" @click="change = !change"
-      >筛选
-      <el-icon style="width: 16px" :class="{ icon: change }"
-        ><ArrowDown /></el-icon
-    ></el-button>
-  </div>
-
-  <!-- 下方点击筛选才会展示出来的数据 -->
-  <div style="padding: 26px 0; position: relative" v-if="change">
-    <!-- 兴趣技能 -->
-    <div class="interest" style="display: flex">
-      <div class="caption">兴趣技能:</div>
-      <div class="dance">
-        <div
-          class="danceitem"
-          @click="btsHandler(int)"
-          :class="{ special: int.bt }"
-          v-for="(int, index) in interest"
+<div class="box">
+    <!-- 第一排 -->
+    <div class="notice">
+      <div class="titles">
+        <span
+          class="title"
+          @click="red = index"
+          v-for="(item, index) in data"
           :key="index"
-        >
-          {{ int.name }}
-        </div>
-      </div>
-    </div>
-    <!-- int.bt=!int.bt -->
-    <!-- 内容格式 -->
-    <div class="interest" style="display: flex">
-      <div class="caption" style="width: 62px">内容格式:</div>
-      <div class="dance">
-        <div
-          class="danceitem"
-          @click="item.bt = !item.bt"
-          :class="{ special: item.bt }"
-          v-for="(item, index) in formats"
-          :key="index"
+          :class="{ active: red == index }"
         >
           {{ item.name }}
+        </span>
+      </div>
+      <el-button bg class="filtrate" @click="change = !change"
+        >筛选
+        <el-icon style="width: 16px" :class="{ icon: change }"
+          ><ArrowDown /></el-icon
+      ></el-button>
+    </div>
+  
+    <!-- 下方点击筛选才会展示出来的数据 -->
+    <div style="padding: 26px 0; position: relative" v-if="change">
+      <!-- 兴趣技能 -->
+      <div class="interest" style="display: flex">
+        <div class="caption">兴趣技能:</div>
+        <div class="dance">
+          <div
+            class="danceitem"
+            @click="btsHandler(int)"
+            :class="{ special: int.bt }"
+            v-for="(int, index) in interest"
+            :key="index"
+          >
+            {{ int.name }}
+          </div>
         </div>
       </div>
+      <!-- int.bt=!int.bt -->
+      <!-- 内容格式 -->
+      <div class="interest" style="display: flex">
+        <div class="caption" style="width: 62px">内容格式:</div>
+        <div class="dance">
+          <div
+            class="danceitem"
+            @click="item.bt = !item.bt"
+            :class="{ special: item.bt }"
+            v-for="(item, index) in formats"
+            :key="index"
+          >
+            {{ item.name }}
+          </div>
+        </div>
+      </div>
+      <div class="reset" @click="resetHandler" v-if="!reset">重置</div>
     </div>
-    <div class="reset" @click="resetHandler" v-if="!reset">重置</div>
-  </div>
+</div>
 
   <VideoList />
 
@@ -155,7 +157,10 @@ const getProperties = async () => {
 </script>
 
 <style>
-
+.box{
+  width: 1200px;
+  margin: 0 auto;
+}
 .notice {
   display: flex;
 }

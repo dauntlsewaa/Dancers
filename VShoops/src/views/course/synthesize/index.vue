@@ -1,9 +1,6 @@
 <template>
   <!-- 综合 -->
-<<<<<<< HEAD
 
-=======
->>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
   <div>
     <el-menu
       class="el-menu-demo"
@@ -42,17 +39,11 @@
   </div>
 </template>
 
-<<<<<<< HEAD
-<script lang="ts" setup></script>
-=======
-<<<<<<< HEAD
 
->>>>>>> 476ccc391024283a86a2beef2938220449e473e9
+
+
 <script lang="ts" setup>
 
-=======
-<script lang="ts" setup>
->>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 import { ref } from "vue";
 const isActive = ref("2-1");
 
@@ -60,27 +51,9 @@ const handlerMenu = (e: any) => {
   isActive.value = e;
 };
 </script>
-<<<<<<< HEAD
 
-<style scoped>
-.el-menu-demo {
-  display: flex;
-  /* justify-content: center; */
-  border-bottom: none;
-=======
-<<<<<<< HEAD
-<style scoped>
-.el-menu-demo {
->>>>>>> 476ccc391024283a86a2beef2938220449e473e9
-    display: flex;
-    /* justify-content: center; */
-    border-bottom: none;
-    width: 1200px;
-    margin: 0 auto !important;
-<<<<<<< HEAD
-=======
 
-=======
+
 
 <style scoped>
 .el-menu-demo {
@@ -89,8 +62,7 @@ const handlerMenu = (e: any) => {
   border-bottom: none;
   width: 1200px;
   margin: 0 auto !important;
->>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
->>>>>>> 476ccc391024283a86a2beef2938220449e473e9
+
 }
 
 /deep/.el-menu--horizontal .el-menu-item:not(.is-disabled):focus,

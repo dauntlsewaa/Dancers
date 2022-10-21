@@ -66,17 +66,6 @@
             </template>
           </el-dropdown>
 
-<<<<<<< HEAD
-          <el-button style="border: none" @click="dialogVisible = true"> 登录 </el-button>
-=======
-          <el-button
-            type="primary"
-            size="default"
-            :icon="Plus"
-            round
-            style="background-color: #f93684; margin-left: 10px; border: none"
-            >发布</el-button
-          >
 
           <el-button style="border: none" v-if="!token">
             <router-link to="/login">登陆 </router-link>
@@ -88,9 +77,9 @@
             width="30"
             height="30"
             style="border-radius: 50%; margin-left: 10px"
-            @click="toLoginOut"
+           @click="toLoginOut"
           />
->>>>>>> 476ccc391024283a86a2beef2938220449e473e9
+
         </div>
       </div>
     </el-card>
@@ -101,30 +90,23 @@
 import { Plus, Iphone } from "@element-plus/icons-vue";
 import { ref, onMounted } from "vue";
 
+
 //引入路由
 import { useRouter } from "vue-router";
 //获取路由对象
 const router = useRouter();
 
-//点击图标跳转回推荐首页
-<<<<<<< HEAD
-const toRec = () =>{
-  // alert(123)
-  router.push({path:'/index/recommend'})
-  //重新发请求获取数据？？？？？
-}
-=======
 
 let token = ref<any>("");
-let isShow = ref(false);
 onMounted(() => {
   token.value = localStorage.getItem("token");
   console.log(token.value);
 });
 let toLoginOut = () => {
-  isShow.value = !isShow;
+ localStorage.clear()
+ token.value = ''
 };
->>>>>>> 476ccc391024283a86a2beef2938220449e473e9
+
 
 const dialogVisible = ref(false);
 </script>

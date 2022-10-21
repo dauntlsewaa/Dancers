@@ -19,7 +19,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
         path: 'recommend',
         component: () => import('@/views/home/VideoList/index.vue'),
       },
-      
+
       // 作品
       {
         path: 'original',
@@ -46,7 +46,7 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       {
         path: 'vip_zone',
         component: () => import('@/views/course/vip/index.vue'),
-        
+
       },
       // 视频课
       {
@@ -134,11 +134,8 @@ export const staticRoutes: Array<RouteRecordRaw> = [
   },
   //视频播放路由
   {
-<<<<<<< HEAD
-    path:'/player',
-    component: () => import('@/components/video/index.vue') 
-  }
-=======
+
+
     path: '/player',
     component: () => import('@/components/video/VideoDetail.vue')
   },
@@ -148,7 +145,6 @@ export const staticRoutes: Array<RouteRecordRaw> = [
     component: () => import('@/components/login/index.vue')
   },
 
->>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 ];
 
 

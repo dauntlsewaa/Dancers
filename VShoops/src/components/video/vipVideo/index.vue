@@ -267,7 +267,7 @@ let video = ref<any>([]);
 let router = useRouter();
 
 onMounted(async () => {
-  await getVideoList();
+  // await getVideoList();
   
   videoPlay();
   router.push("/player");

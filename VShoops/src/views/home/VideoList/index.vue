@@ -109,7 +109,7 @@
     <el-button
       @click="isLoading"
       plain
-      style="margin: 20px 500px; width: 140px; height: 40px"
+      style="margin: 20px 770px; width: 140px; height: 40px"
       v-else
       >加载更多</el-button
     >
@@ -148,13 +148,10 @@ watch(
 let getVideoList = async () => {
   loading.value = true;
   let result = await reqVideoList();
-<<<<<<< HEAD
   video.value.push(...result.content)
  
   
-=======
   video.value.push(...result.content);
->>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
   loading.value = false;
 };
 

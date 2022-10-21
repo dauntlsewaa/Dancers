@@ -4,14 +4,14 @@
       <div class="title-container">
         <h3 class="title">中舞网</h3>
       </div>
-      <el-form-item label="用户名" style="padding-left: 550px">
+      <el-form-item label="用户名" style="padding-left: 650px">
         <el-input
           v-model="ruleForm.name"
           class="svg-container"
           :input-style="{ width: '300px', height: '40px' }"
         />
       </el-form-item>
-      <el-form-item label="密码：" prop="pass" style="padding-left: 550px">
+      <el-form-item label="密码：" prop="pass" style="padding-left: 650px">
         <el-input
           v-model="ruleForm.pass"
           type="password"
@@ -95,7 +95,7 @@ const handleLogin = () => {
 .login-form {
   width: 300px;
   height: 600px;
-  /* text-align: center; */
+  text-align: center; 
 }
 
 .el-input__wrapper {
