@@ -40,8 +40,10 @@
             style="background-color: #f93684; margin-left: 10px; border: none"
             >发布</el-button
           >
-
-          <el-button style="border: none" @click="dialogVisible = true"> 登陆 </el-button>
+          <el-button style="border: none"> 登陆 
+           
+          </el-button>
+          <el-avatar size="small" :src="circleUrl"></el-avatar>
         </div>
       </div>
     </el-card>
@@ -87,7 +89,9 @@ const toRec = () =>{
   router.push({path:'/index/recommend'})
   //重新发请求获取数据？？？？？
 }
-
+const  circleUrl =()=> {
+  "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+}
 
 
 

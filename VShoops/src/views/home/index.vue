@@ -46,10 +46,20 @@
       </el-affix>
 
       <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
+<<<<<<< HEAD
         <!-- 兴趣选择 -->
         <Dialog ref="dialog"></Dialog>
 
         <router-view></router-view>
+=======
+        <Dialog ref="dialog"></Dialog>
+
+        <!-- 属性筛选列表 -->
+        <Attrs />
+
+        <!--视频列表 -->
+        <VideoList />
+>>>>>>> liuyajing
 
         <!-- 视频播放 -->
         <!-- <VideoDetail /> -->

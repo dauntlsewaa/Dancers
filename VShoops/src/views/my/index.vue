@@ -1,5 +1,5 @@
 <template>
-  <Header />
+    <Header />
     <MyItem />
     <Footer></Footer>
 </template>

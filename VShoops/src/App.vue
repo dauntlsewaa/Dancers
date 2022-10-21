@@ -1,17 +1,24 @@
 <template>
   <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 7aa09d04cbbecdc021d2a9dfaf2b0c3bcc87f31d
+=======
+>>>>>>> liuyajing
     <router-view></router-view>
+    <login></login>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Login from './components/login/index.vue';
+</script>
 
 <style></style>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -55,3 +62,5 @@
 </script>
 >>>>>>> liuyajing
 >>>>>>> 7aa09d04cbbecdc021d2a9dfaf2b0c3bcc87f31d
+=======
+>>>>>>> liuyajing
