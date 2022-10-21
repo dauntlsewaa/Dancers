@@ -13,7 +13,9 @@
       </span>
     </div>
     <el-button bg class="filtrate" @click="change = !change"
-      >筛选 <el-icon style="width: 16px" :class="{ icon: change }"><ArrowDown /></el-icon
+      >筛选
+      <el-icon style="width: 16px" :class="{ icon: change }"
+        ><ArrowDown /></el-icon
     ></el-button>
   </div>
 
@@ -52,15 +54,19 @@
     </div>
     <div class="reset" @click="resetHandler" v-if="!reset">重置</div>
   </div>
-  <!--视频列表 -->
+
   <VideoList />
+
+
 </template>
 
 <script setup lang="ts">
 import { ElMessage } from "element-plus";
 import { ref, onMounted, computed } from "vue";
 import { reqProperties } from "@/api/home/index";
+
 import VideoList from "@/views/home/VideoList/index.vue";
+
 import { forEach } from "lodash";
 // 定义综合榜点击变化的标识符
 let red = ref(0);
@@ -95,8 +101,14 @@ onMounted(() => {
 // 兴趣按钮点击事件回调
 const btsHandler = (int) => {
   //  如果按钮数组中带有bt属性已经变色的有三个了个
+
   if (interests.value.length >= 3) {
     ElMessage("同一筛选条件最多选择3个");
+
+  if (interests.value.length >= 3 && !int.bt) {
+    ElMessage("同一筛选条件最多选择3个");
+    console.log(interests.value);
+
   } else {
     int.bt = !int.bt;
   }
@@ -114,6 +126,10 @@ const formatse = computed(() => {
     return item.bt;
   });
 });
+
+
+
+// 重置按钮清空选项
 
 const reset = computed(() => {
   return formatse.value.length == 0 && interests.value.length == 0;
@@ -141,14 +157,7 @@ const getProperties = async () => {
 </script>
 
 <style>
-/*
-.el-menu--horizontal > .el-menu-item.is-active {
-  border-bottom: none !important;
-  }
-.flex-grow {
-  flex-grow: 1;
-}
- */
+
 .notice {
   display: flex;
 }

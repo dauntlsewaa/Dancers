@@ -40,15 +40,14 @@
             style="background-color: #f93684; margin-left: 10px; border: none"
             >发布</el-button
           >
-          <el-button style="border: none"> 登陆 
-           
-          </el-button>
+          <el-button style="border: none"> 登陆 </el-button>
           <el-avatar size="small" :src="circleUrl"></el-avatar>
         </div>
       </div>
     </el-card>
 
     <!-- 二维码 -->
+
     <el-dialog
       v-model="dialogVisible"
       draggable
@@ -76,28 +75,23 @@
 
 <script setup lang="ts">
 import { Plus, Iphone } from "@element-plus/icons-vue";
-import { ref,onMounted } from "vue";
+import { ref, onMounted } from "vue";
 
 //引入路由
-import {useRouter} from 'vue-router'
+import { useRouter } from "vue-router";
 //获取路由对象
-const router = useRouter()
+const router = useRouter();
 
 //点击图标跳转回推荐首页
-const toRec = () =>{
+
+const toRec = () => {
   // alert(123)
-  router.push({path:'/index/recommend'})
+  router.push({ path: "/index/recommend" });
   //重新发请求获取数据？？？？？
-}
-const  circleUrl =()=> {
-  "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-}
-
-
-
-
-
-
+};
+const circleUrl = () => {
+  "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png";
+};
 
 const dialogVisible = ref(false);
 </script>

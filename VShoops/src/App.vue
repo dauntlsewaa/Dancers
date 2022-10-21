@@ -1,6 +1,7 @@
 <template>
   <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11,6 +12,9 @@
 =======
 >>>>>>> liuyajing
 >>>>>>> 575cda281937a3bcad3daa7319aebb7a463ff317
+=======
+
+>>>>>>> 7ff67610079bf0e49280c3ca808fa332ad333b1c
     <router-view></router-view>
     <login></login>
   </div>
@@ -20,6 +24,7 @@
 import Login from './components/login/index.vue';
 </script>
 
+<<<<<<< HEAD
 <style></style>
 <<<<<<< HEAD
 =======
@@ -27,17 +32,15 @@ import Login from './components/login/index.vue';
 <<<<<<< HEAD
 =======
 =======
-
-
-
-
-
 =======
->>>>>>> liuyajing
-    <router-view></router-view>
-  </div>
-</template>
+>>>>>>> 7ff67610079bf0e49280c3ca808fa332ad333b1c
 
+
+
+
+
+
+<<<<<<< HEAD
 <script setup lang="ts">
 
 
@@ -70,3 +73,5 @@ import Login from './components/login/index.vue';
 =======
 >>>>>>> liuyajing
 >>>>>>> 575cda281937a3bcad3daa7319aebb7a463ff317
+=======
+>>>>>>> 7ff67610079bf0e49280c3ca808fa332ad333b1c
