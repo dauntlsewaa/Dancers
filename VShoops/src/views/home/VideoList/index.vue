@@ -117,29 +117,38 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { reqVideoList } from "../../../api/home/index";
 
 //引入路由
-import {useRouter} from 'vue-router'
+import { useRouter, useRoute } from "vue-router";
 //获取路由对象
-const router = useRouter()
+const router = useRouter();
+const routes = useRoute();
 
 // 视频数据
 let video = ref<any>([]);
 
 const loading = ref(false);
 
+
 onMounted(() => {
   getVideoList();
-  
 });
+
+watch(
+  () => routes.path,
+  () => {
+    getVideoList();
+  }
+);
+
 
 // 请求视频数据
 let getVideoList = async () => {
   loading.value = true;
   let result = await reqVideoList();
-  video.value.push(...result.content)
+  video.value.push(...result.content);
   loading.value = false;
 };
 
@@ -149,27 +158,11 @@ let isLoading = () => {
 };
 
 // 点击视频播放的回调函数
-const playerVideo = () => { 
+const playerVideo = () => {
   // alert(123)
-  router.push({path:'/player'});
-}
-
-
-
-
-
-
-
-
-
+  router.push({ path: "/player" });
+};
 </script>
-
-
-
-
-
-
-
 
 <style scoped>
 /deep/.el-button:focus,

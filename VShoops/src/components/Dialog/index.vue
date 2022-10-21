@@ -72,6 +72,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { reqInterest } from "@/api/home/index";
+import { ElMessage } from "element-plus";
 
 // 显示或隐藏弹窗
 const dialogVisible = ref(false);
@@ -105,32 +106,113 @@ const getInterest = async () => {
 
 // 点击显示选择兴趣
 let handlerDialog = () => {
-  console.log(123);
   dialogVisible.value = !dialogVisible.value;
   getInterest();
 };
 
 // 点击添加兴趣
 const handlerColor = (row: any, index: any) => {
+  console.log(row);
   let result = tags.value.findIndex((item: any) => {
     return item.id === row.id;
   });
 
-  if (result === -1) {
-    row.isShow = true;
-    tags.value.push(row);
+  if (tags.value.length < 7) {
+    if (result === -1) {
+      row.isShow = true;
+      tags.value.push(row);
+    } else {
+      tags.value.splice(result, 1);
+      row.isShow = false;
+    }
+    change.value = row.id;
     return;
   } else {
-    tags.value.splice(result, 1);
-    row.isShow = false;
+    ElMessage.error("最多添加7个兴趣技能");
+    return;
   }
-  change.value = row.id;
 };
 
 defineExpose({
-    handlerDialog,
+  handlerDialog,
+  tags: tags.value,
 });
 </script>
 
-<style scoped></style>
-\
+<style scoped>
+/* 选择兴趣 */
+.my-header {
+  float: left;
+}
+.my-header :nth-child(2) {
+  margin-left: 10px;
+  color: #b1b5c1;
+}
+
+.el-form {
+  margin: 15px 0;
+}
+.title-memo {
+  color: #b1b5c1;
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+.el-form {
+  margin-top: 10px;
+}
+
+.tags {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #eaecf0;
+  color: #111;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 0 22px 21px 0;
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tagIcon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.sub-title {
+  margin: 8px 0 10px;
+  color: #111;
+  font-size: 14px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.tag-group {
+  height: 300px;
+  overflow: hidden;
+}
+.dialog-footer {
+  margin-top: 20px;
+  padding: 10px 75px;
+  text-align: right;
+}
+.el-button-small {
+  padding: 9px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.el-button-primary {
+  color: #fff;
+  background-color: #f93684;
+  border-color: #f93684;
+}
+</style>

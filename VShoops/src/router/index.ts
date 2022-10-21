@@ -11,9 +11,9 @@ const router = createRouter({
 	history: createWebHistory(),
   //路由器管理的路由
 	routes: staticRoutes,
-  scrollBehavior() {
-    return { top: 0, left: 0}
-  },
+  // scrollBehavior() {
+  //   return { top: 0, left: 0}
+  // },
 })
 // 导出路由
 export default router;
