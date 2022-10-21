@@ -23,6 +23,7 @@
           <!-- 价格区间 -->
           <div class="interest">
             <span>价格区间:</span>
+<<<<<<< HEAD
             <div class="dance">
               <div
                 style="width: 100px"
@@ -34,6 +35,11 @@
               >
                 {{ item.name }}
               </div>
+=======
+            <div class="dance" style="height:30px;">
+              <div style="width: 100px;" @click="item.bt=!item.bt"  :class="{ isChecked: item.bt }" :key="index" class="checkbox-button " v-for="(item,index) in priceRange">{{item.name}}</div>
+           
+>>>>>>> b3791b21a3cb8b84cc461d2de19ce5faea094425
             </div>
           </div>
         </div>
@@ -73,6 +79,7 @@
               </div>
               <div class="interest">
                 <span>难易度:</span>
+<<<<<<< HEAD
                 <div class="dance">
                   <div
                     style="width: 100px"
@@ -84,6 +91,10 @@
                   >
                     {{ item.name }}
                   </div>
+=======
+                <div class="dance" style="height:50px;">
+                  <div  style="width: 100px;" @click="btsHandler3(item)" :class="{ isChecked: item.bt }" :key="index"  v-for="(item,index) in difficultDegree" class="checkbox-button">{{item.name}}</div>
+>>>>>>> b3791b21a3cb8b84cc461d2de19ce5faea094425
                 </div>
               </div>
             </el-collapse-item>
@@ -236,7 +247,7 @@ const difficultDegrees = computed(() => {
   border-bottom: none;
   padding: 10px;
   position: absolute;
-  bottom: -80px;
+  bottom: -70px;
 }
 ::v-deep .el-collapse-item__content {
   padding-bottom: 0;
@@ -318,6 +329,7 @@ span {
   display: flex;
   width: 1000px;
   flex-wrap: wrap;
+  height:110px ;
 }
 .checkbox-button {
   font-size: 14px;
@@ -326,7 +338,7 @@ span {
   margin-top: 10px;
   border-radius: 10px;
   color: #606266;
-  width: 66px;
+
   height: 30px;
   line-height: 30px;
   text-align: center;

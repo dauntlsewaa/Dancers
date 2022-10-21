@@ -19,6 +19,14 @@ import Header from "@/components/header/header.vue";
 // 底部组件
 import Footer from "@/components/footer/footer.vue";
 
+//图片懒加载
+// import lazyPlugin from 'vue3-lazy'
+import lazyload from "vue-lazyload"
+
+
+
+
+
 
 const app = createApp(App)
 
@@ -32,7 +40,15 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 app.component('Header', Header)
 app.component('Footer', Footer)
 
-
+//图片懒加载
+app.use(
+  lazyload,{ 
+  preLoad: 1.3,  
+  error:('../src/assets/loadingerror.png'),
+  loading:('../src/assets/loading.png'),
+  attempt: 1
+}
+)
 
 app.use(ElementPlus, {
   locale: zhCn

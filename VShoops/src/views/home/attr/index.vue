@@ -27,7 +27,7 @@
         <div class="caption">兴趣技能:</div>
         <div class="dance">
           <div
-            class="danceitem"
+            class="danceitem" 
             @click="btsHandler(int)"
             :class="{ special: int.bt }"
             v-for="(int, index) in interest"
@@ -43,7 +43,7 @@
         <div class="caption" style="width: 62px">内容格式:</div>
         <div class="dance">
           <div
-            class="danceitem"
+            class="danceitem" 
             @click="item.bt = !item.bt"
             :class="{ special: item.bt }"
             v-for="(item, index) in formats"
@@ -93,7 +93,11 @@ const data = ref([
 // 存储兴趣技能的数据
 let interest = ref([]);
 // 存储内容格式的数据
-let formats = ref([]);
+let formats = ref([
+  {name:'视频'},
+  {name:'图片'},
+  {name:'文章'},
+]);
 
 onMounted(() => {
   // 挂载的时候发一次请求
@@ -147,11 +151,11 @@ const resetHandler = () => {
 // 发请求获取数据
 const getProperties = async () => {
   const result = await reqProperties();
-  // console.log(result);
+  console.log(result);
   // 存储数据
   interest.value = result[0].choises;
   // console.log(interest.value);
-  formats.value = result[1].choises;
+  // formats.value = result[1].choises;
   // console.log(formats.value);
 };
 </script>
@@ -201,6 +205,7 @@ const getProperties = async () => {
   height: 80px;
   display: flex;
   padding-left: 30px;
+  overflow: hidden;
 }
 .dance {
   display: flex;
@@ -217,7 +222,7 @@ const getProperties = async () => {
   color: #7d8090;
   text-align: center;
   line-height: 30px;
-  width: 68px;
+  width: 70px;
   height: 30px;
 }
 .caption {
@@ -228,8 +233,7 @@ const getProperties = async () => {
   padding-right: 30px;
 }
 .special {
-  width: 68px;
-  height: 30px;
+
   background: #f93684;
   color: #e9ecec;
   border-radius: 4px;

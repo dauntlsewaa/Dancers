@@ -63,14 +63,21 @@
     <vipAttr />
     <!-- 排序 -->
     <Synthesize />
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> b3791b21a3cb8b84cc461d2de19ce5faea094425
   </div>
 </template>
 
 <script setup lang="ts">
 import vipAttr from "@/views/course/vipAttr/index.vue";
 import Synthesize from "@/views/course/synthesize/index.vue";
+<<<<<<< HEAD
 
+=======
+>>>>>>> b3791b21a3cb8b84cc461d2de19ce5faea094425
 </script>
 
 <style scoped>

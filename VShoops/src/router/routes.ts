@@ -137,15 +137,26 @@ export const staticRoutes: Array<RouteRecordRaw> = [
 
 
     path: '/player',
-    component: () => import('@/components/video/VideoDetail.vue')
+    component: () => import('@/components/video/index.vue')
   },
   //登陆页面
   {
     path: '/login',
     component: () => import('@/components/login/index.vue')
   },
-
+  //404页面
+  {
+    path: '/404',
+    component: () => import('@/components/404/index.vue')
+  },
+  /*  任意路由跳转404 */
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
+  },
 ];
+
+
 
 
 
