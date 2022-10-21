@@ -1,8 +1,8 @@
 <template>
   <div class="videoContainer">
     <div class="videoList">
-      <div class="videoItem" v-for="item in video" :key="item.id">
-        <div class="videoImg" @click="playerVideo">
+      <div class="videoItem" v-for="item in video" :key="item.id" @click="playerVideo">
+        <div class="videoImg" >
           <img class="videoImg" :src="item.cover[0]" />
         </div>
         <div class="videoTitle">
@@ -117,29 +117,44 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { reqVideoList } from "../../../api/home/index";
 
 //引入路由
-import {useRouter} from 'vue-router'
+import { useRouter, useRoute } from "vue-router";
 //获取路由对象
-const router = useRouter()
+const router = useRouter();
+const routes = useRoute();
 
 // 视频数据
 let video = ref<any>([]);
 
 const loading = ref(false);
 
+
 onMounted(() => {
   getVideoList();
-  
 });
+
+watch(
+  () => routes.path,
+  () => {
+    getVideoList();
+  }
+);
+
 
 // 请求视频数据
 let getVideoList = async () => {
   loading.value = true;
   let result = await reqVideoList();
+<<<<<<< HEAD
   video.value.push(...result.content)
+ 
+  
+=======
+  video.value.push(...result.content);
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
   loading.value = false;
 };
 
@@ -149,27 +164,11 @@ let isLoading = () => {
 };
 
 // 点击视频播放的回调函数
-const playerVideo = () => { 
+const playerVideo = () => {
   // alert(123)
-  router.push({path:'/player'});
-}
-
-
-
-
-
-
-
-
-
+  router.push({ path: "/player" });
+};
 </script>
-
-
-
-
-
-
-
 
 <style scoped>
 /deep/.el-button:focus,

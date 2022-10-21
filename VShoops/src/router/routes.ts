@@ -17,12 +17,14 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       // 推荐页面
       {
         path: 'recommend',
-        component: () => import('@/views/home/index.vue'),
+        component: () => import('@/views/home/VideoList/index.vue'),
       },
+      
       // 作品
       {
         path: 'original',
-        component: () => import('@/views/home/index.vue')
+        component: () => import('@/views/home/attr/index.vue'),
+
       },
       {
         path: 'recommend',
@@ -43,7 +45,8 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       // 会员专区
       {
         path: 'vip_zone',
-        component: () => import('@/views/course/vip/index.vue')
+        component: () => import('@/views/course/vip/index.vue'),
+        
       },
       // 视频课
       {
@@ -54,6 +57,27 @@ export const staticRoutes: Array<RouteRecordRaw> = [
       {
         path: 'zone_list',
         component: () => import('@/views/course/theme/index.vue')
+      },
+      // 综合
+      {
+        path: 'x',
+        component: () => import('@/views/course/vip/index.vue')
+      },
+      {
+        path: 'w',
+        component: () => import('@/views/course/vip/index.vue')
+      },
+      {
+        path: 'e',
+        component: () => import('@/views/course/vip/index.vue')
+      },
+      {
+        path: 'q',
+        component: () => import('@/views/course/vip/index.vue')
+      },
+      {
+        path: 'a',
+        component: () => import('@/views/course/vip/index.vue')
       }
     ]
   },
@@ -110,9 +134,21 @@ export const staticRoutes: Array<RouteRecordRaw> = [
   },
   //视频播放路由
   {
+<<<<<<< HEAD
     path:'/player',
-    component: () => import('@/components/video/VideoDetail.vue') 
+    component: () => import('@/components/video/index.vue') 
   }
+=======
+    path: '/player',
+    component: () => import('@/components/video/VideoDetail.vue')
+  },
+  //登陆页面
+  {
+    path: '/login',
+    component: () => import('@/components/login/index.vue')
+  },
+
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 ];
 
 

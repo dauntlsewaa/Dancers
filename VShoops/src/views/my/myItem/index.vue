@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div class="myItem">
 
   <div class="my">
@@ -14,17 +15,47 @@
             />
             <div>登录以后显示用户</div>
             <img class="imgtwo" src="../../assets/111.png" alt="" />
+=======
+  <div class="myItem">
+    <div class="my">
+      <div class="left">
+        <!-- 登陆数据 -->
+        <el-card>
+          <div class="Personal">
+            <div class="PersonalDetails">
+              <img
+                class="imgone"
+                src="https://rs.dance365.com/default_head@3x.png?imageView2/0/w/200/h/1200/format/webp/ignore-error/1"
+                alt=""
+              />
+              <div>登录以后显示用户</div>
+              <img class="imgtwo" src="../../assets/111.png" alt="" />
+            </div>
+>>>>>>> 476ccc391024283a86a2beef2938220449e473e9
           </div>
         </div>
           <div class="PersonalPosition">
+<<<<<<< HEAD
+=======
+            <div class="PersonalLeft">
+              <div>0</div>
+              <div class="string">关注</div>
+            </div>
+>>>>>>> 476ccc391024283a86a2beef2938220449e473e9
             <div class="PersonalPosition">
               <div class="PersonalLeft">
                 <div>0</div>
                 <div class="string">关注</div>
               </div>
-              <div class="PersonalLeft">
-                <div>0</div>
-                <div class="string">粉丝</div>
+              <div class="PersonalPosition">
+                <div class="PersonalLeft">
+                  <div>0</div>
+                  <div class="string">关注</div>
+                </div>
+                <div class="PersonalLeft">
+                  <div>0</div>
+                  <div class="string">粉丝</div>
+                </div>
               </div>
             </div>
           </div>
@@ -87,6 +118,12 @@
         </el-card>
       </div>
 
+<<<<<<< HEAD
+=======
+      <div class="right">
+        <router-view></router-view>
+      </div>
+>>>>>>> 476ccc391024283a86a2beef2938220449e473e9
     </div>
   </div>
   <div class="right">

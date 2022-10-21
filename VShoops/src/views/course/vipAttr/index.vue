@@ -8,82 +8,40 @@
           <div class="interest">
             <span>兴趣技能:</span>
             <div class="dance">
-              <div class="checkbox-button isChecked">爵士舞</div>
-              <div class="checkbox-button">爵士舞</div>
-              <div class="checkbox-button">爵士舞</div>
-              <div class="checkbox-button isChecked">爵士舞</div>
-              <div class="checkbox-button isChecked">爵士舞</div>
-              <div class="checkbox-button">爵士舞</div>
-              <div class="checkbox-button">爵士舞</div>
-              <div class="checkbox-button isChecked">爵士舞</div>
-              <div class="checkbox-button isChecked">爵士舞</div>
-              <div class="checkbox-button isChecked">爵士舞</div>
-              <div class="checkbox-button">爵士舞</div>
-              <div class="checkbox-button">爵士舞</div>
-              <div class="checkbox-button isChecked">爵士舞</div>
+              <div @click="btsHandler(item)"
+              :class="{ isChecked: item.bt }" style="width: 100px;" :key="index" class="checkbox-button " v-for="(item,index) in avocation">{{item.name}}</div>
             </div>
           </div>
-          <!-- 内容样式 -->
+          <!-- 价格区间 -->
           <div class="interest">
-            <span>兴趣技能:</span>
+            <span>价格区间:</span>
             <div class="dance">
-              <div class="checkbox-button isChecked">视频</div>
-              <div class="checkbox-button">图片</div>
-              <div class="checkbox-button">文章</div>
+              <div style="width: 100px;" @click="item.bt=!item.bt"  :class="{ isChecked: item.bt }" :key="index" class="checkbox-button " v-for="(item,index) in priceRange">{{item.name}}</div>
+           
             </div>
           </div>
         </div>
-
+        <!-- 展开数据 -->
         <div class="demo-collapse">
           <el-collapse v-model="activeNames" @click="handleChange" class="el-collapse">
             <el-collapse-item :title="flag === 0 ? '展开全部' : '收起'" name="1">
               <div class="interest">
-                <span>兴趣技能:</span>
+                <span>课程类型:</span>
                 <div class="dance">
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div @click="btsHandler1(item)" style="width: 100px;"
+                  :class="{ isChecked: item.bt }"   :key="index"  v-for="(item,index) in coureType" class="checkbox-button">{{item.name}}</div>
                 </div>
               </div>
               <div class="interest">
-                <span>兴趣技能:</span>
+                <span>学习目标:</span>
                 <div class="dance">
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div @click="btsHandler2(item)" :class="{ isChecked: item.bt }"  style="width: 100px;" :key="index"  v-for="(item,index) in learningGoals" class="checkbox-button ">{{item.name}}</div>
                 </div>
               </div>
               <div class="interest">
-                <span>兴趣技能:</span>
+                <span>难易度:</span>
                 <div class="dance">
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button">爵士舞</div>
-                  <div class="checkbox-button isChecked">爵士舞</div>
+                  <div  style="width: 100px;" @click="btsHandler3(item)" :class="{ isChecked: item.bt }" :key="index"  v-for="(item,index) in difficultDegree" class="checkbox-button">{{item.name}}</div>
                 </div>
               </div>
             </el-collapse-item>
@@ -95,7 +53,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import request from '@/utils/request'
+import { ref,onMounted , computed} from "vue";
+import { ElMessage } from "element-plus";
+import {reqProperties}  from '@/api/course/index'
+// 存储兴趣技能的数据
+let avocation= ref([]);
+// 存储价格区间的数据
+let priceRange = ref([]);
+// 存储课程类型的数据
+let coureType = ref([]);
+// 存储学习目标的数据
+let learningGoals = ref([]);
+// 存储难易度的数据
+let difficultDegree = ref([]);
 
 const activeNames = ref(["0"]);
 const flag = ref(0);
@@ -105,6 +76,96 @@ const handleChange = () => {
   flag.value = flag.value === 1 ? 0 : 1;
   console.log(flag.value);
 };
+onMounted(() => {
+  // 挂载的时候发一次请求
+  getProperties();
+});
+
+// 发请求获取数据
+const getProperties = async () => {
+  const result = await request.get('/moment/properties/filter/vip_zone?access_token=0c1166e8-c539-4341-a8ac-c4324d0707e7')
+  console.log(result);
+  // 存储数据
+  avocation.value=result[0].choises
+  // console.log(avocation.value);
+  priceRange.value=result[1].choises
+  coureType.value=result[2].choises
+  learningGoals.value=result[3].choises
+  difficultDegree.value=result[4].choises
+
+};
+
+// 兴趣按钮点击事件回调
+const btsHandler = (item) =>{
+    //  如果按钮数组中带有bt属性已经变色的有三个了个
+console.log(123);
+  if (interests.value.length >= 3 && !item.bt ) {
+    ElMessage("同一筛选条件最多选择3个");
+    console.log(interests.value);
+  } else {
+    item.bt = !item.bt;
+  }
+
+ }
+ // 课程类型按钮点击事件回调
+const btsHandler1 = (item) =>{
+    //  如果按钮数组中带有bt属性已经变色的有三个了个
+
+  if (coureTypes.value.length >= 3 && !item.bt ) {
+    ElMessage("同一筛选条件最多选择3个");
+  } else {
+    item.bt = !item.bt;
+  }
+
+ }
+  //学习目标按钮点击事件回调
+const btsHandler2 = (item) =>{
+    //  如果按钮数组中带有bt属性已经变色的有三个了个
+  if (learningGoalss.value.length >= 3 && !item.bt ) {
+    ElMessage("同一筛选条件最多选择3个");
+ 
+  } else {
+    item.bt = !item.bt;
+  }
+
+ }
+   // 难易度按钮点击事件回调
+const btsHandler3 = (item) =>{
+    //  如果按钮数组中带有bt属性已经变色的有三个了个
+  if (difficultDegrees.value.length >= 3 && !item.bt ) {
+    ElMessage("同一筛选条件最多选择3个");
+ 
+  } else {
+    item.bt = !item.bt;
+  }
+
+ }
+
+
+// 计算属性,计算兴趣按钮数组中带有bt属性已经变色的有几个
+const interests = computed(() => {
+  return avocation.value.filter((item) => {
+    return item.bt;
+  });
+});
+// 计算属性,计算课程类型按钮数组中带有bt属性已经变色的有几个
+const coureTypes = computed(() => {
+  return coureType.value.filter((item) => {
+    return item.bt;
+  });
+});
+// 计算属性,计算学习目标按钮数组中带有bt属性已经变色的有几个
+const learningGoalss = computed(() => {
+  return learningGoals.value.filter((item) => {
+    return item.bt;
+  });
+});
+// 计算属性,计算难易度钮数组中带有bt属性已经变色的有几个
+const difficultDegrees = computed(() => {
+  return difficultDegree.value.filter((item) => {
+    return item.bt;
+  });
+});
 </script>
 
 <style scoped>
@@ -137,9 +198,9 @@ const handleChange = () => {
   margin-left: 50%;
   display: block;
   border-bottom: none;
-  padding: 20px;
+  padding: 10px;
   position: absolute;
-  bottom: -40px;
+  bottom: -80px;
 }
 ::v-deep .el-collapse-item__content {
   padding-bottom: 0;
@@ -237,6 +298,7 @@ span {
 .isChecked {
   background-color: #f93684;
   color: white;
+  border-radius: 4px;
 }
 .reset {
   margin-top: 15px;

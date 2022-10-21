@@ -24,7 +24,7 @@
           </ul>
         </div>
 
-        <div>
+        <div class="right">
           <el-button
             style="border: none; font-size: 16px; color: #101010"
             size="default"
@@ -66,59 +66,71 @@
             </template>
           </el-dropdown>
 
+<<<<<<< HEAD
           <el-button style="border: none" @click="dialogVisible = true"> 登录 </el-button>
+=======
+          <el-button
+            type="primary"
+            size="default"
+            :icon="Plus"
+            round
+            style="background-color: #f93684; margin-left: 10px; border: none"
+            >发布</el-button
+          >
+
+          <el-button style="border: none" v-if="!token">
+            <router-link to="/login">登陆 </router-link>
+          </el-button>
+
+          <img
+            src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fq_70%2Fimages03%2F20221019%2Fd238380148944608933e1accadc089ce.png&refer=http%3A%2F%2Fp5.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668923859&t=4a19766364020992c1241da32271e418"
+            v-else
+            width="30"
+            height="30"
+            style="border-radius: 50%; margin-left: 10px"
+            @click="toLoginOut"
+          />
+>>>>>>> 476ccc391024283a86a2beef2938220449e473e9
         </div>
       </div>
     </el-card>
-
-    <!-- 二维码 -->
-    <el-dialog
-      v-model="dialogVisible"
-      draggable
-      modal="false"
-      destroy-on-close="true"
-      class="el-ewm"
-      style="width: 400px"
-    >
-      <span class="ewm">扫码登录</span>
-      <div class="qr-box">
-        <img src="./images/1.png" alt="" />
-      </div>
-      <div class="dialog">
-        <p class="tips">打开“中舞网APP”，扫描二维码登录</p>
-      </div>
-      <p>如未安装APP,扫描此二维码同样可以下载“中舞网APP”</p>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button>确定登陆</el-button>
-        </span>
-      </template>
-    </el-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Plus, Iphone } from "@element-plus/icons-vue";
-import { ref,onMounted } from "vue";
+import { ref, onMounted } from "vue";
 
 //引入路由
-import {useRouter} from 'vue-router'
+import { useRouter } from "vue-router";
 //获取路由对象
-const router = useRouter()
+const router = useRouter();
 
 //点击图标跳转回推荐首页
+<<<<<<< HEAD
 const toRec = () =>{
   // alert(123)
   router.push({path:'/index/recommend'})
   //重新发请求获取数据？？？？？
 }
+=======
+
+let token = ref<any>("");
+let isShow = ref(false);
+onMounted(() => {
+  token.value = localStorage.getItem("token");
+  console.log(token.value);
+});
+let toLoginOut = () => {
+  isShow.value = !isShow;
+};
+>>>>>>> 476ccc391024283a86a2beef2938220449e473e9
 
 const dialogVisible = ref(false);
 </script>
 
 <style scoped>
 * {
-  padding: 0;
   margin: 0;
 }
 li {
@@ -133,6 +145,11 @@ li {
 
 .header_left {
   display: flex;
+}
+.right {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .navList {

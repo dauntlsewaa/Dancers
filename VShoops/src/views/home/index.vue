@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <!--  头部 -->
     <Header></Header>
     <div style="background-color: #fff">
@@ -18,18 +18,25 @@
       <el-affix>
         <div style="width: 100%; background-color: #fff">
           <div class="nav">
-            <el-menu mode="horizontal" :ellipsis="false">
+            <el-menu mode="horizontal" :ellipsis="false" style="width: 600px">
               <el-menu-item index="0"></el-menu-item>
               <div class="flex-grow" />
-              <el-menu-item index="1">推荐</el-menu-item>
-              <el-menu-item index="2">作品</el-menu-item>
+              <el-menu-item index="1">
+                <router-link to="/index/recommend">推荐</router-link>
+              </el-menu-item>
+              <el-menu-item index="2">
+                <router-link to="/index/original">作品</router-link>
+              </el-menu-item>
               <el-menu-item index="3">教程</el-menu-item>
               <el-menu-item index="4">专题</el-menu-item>
               <el-menu-item index="5">动态</el-menu-item>
               <el-menu-item index="6">关注</el-menu-item>
-              <el-menu-item index="7">古典舞</el-menu-item>
-              <el-menu-item index="8">肚皮舞</el-menu-item>
-              <el-menu-item index="9">爵士舞</el-menu-item>
+              <el-menu-item
+                :index="index + 7"
+                v-for="(item, index) in tags"
+                :key="index"
+                >{{ item.name }}</el-menu-item
+              >
             </el-menu>
             <el-button class="navBtn" plain :icon="Grid" @click="handler"
               >选择兴趣技能</el-button
@@ -39,6 +46,7 @@
       </el-affix>
 
       <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
+<<<<<<< HEAD
         <!-- 兴趣选择 -->
         <Dialog ref="dialog"></Dialog>
         <!-- 选择兴趣技能 -->
@@ -110,13 +118,29 @@
           </div>
 
         </el-dialog>
+=======
+<<<<<<< HEAD
+
+        <!-- 兴趣选择 -->
+        <Dialog ref="dialog"></Dialog>
+
+        <router-view></router-view>
+
+=======
+        <Dialog ref="dialog"></Dialog>
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
+>>>>>>> 476ccc391024283a86a2beef2938220449e473e9
 
         <!-- 属性筛选列表 -->
         <Attrs />
 
         <!--视频列表 -->
         <VideoList />
+<<<<<<< HEAD
 
+
+=======
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
         <!-- 视频播放 -->
         <!-- <VideoDetail /> -->
       </div>
@@ -132,12 +156,19 @@
 
 <script setup lang="ts">
 // 引入视频播放
-import VideoDetail from "../../components/video/VideoDetail.vue";
-
+<<<<<<< HEAD
+import VideoDetail from '../../components/video/index.vue'
 import { ref, computed, onMounted } from "vue";
-import Dialog from "@/components/Dialog/index.vue";
+import Header from "@/components/header/header.vue";
 import Attrs from "./attr/index.vue";
 import VideoList from "./VideoList/index.vue";
+import Footer from "../../components/footer/footer.vue";
+=======
+import VideoDetail from "@/components/video/VideoDetail.vue";
+
+import { ref, onMounted, nextTick, watch } from "vue";
+import Dialog from "@/components/Dialog/index.vue";
+>>>>>>> 3a83efa0d27484caf1eeefeb8a3f21046b5da0ed
 
 import { Grid } from "@element-plus/icons-vue";
 
@@ -147,11 +178,18 @@ import { reqSwiperList } from "@/api/home/index";
 let slideshowList = ref<any>([]);
 
 // 兴趣选择实例
+
 let dialog = ref();
+
+// tags
+let tags = ref<any>([]);
 
 // 默认页面加载操作
 onMounted(() => {
   getslideandnav();
+  nextTick(() => {
+    tags.value = dialog.value.tags;
+  });
 });
 
 // 获取轮播图列表数据
@@ -255,81 +293,6 @@ let handler = () => {
   font-size: 16px;
 }
 
-/* 选择兴趣 */
-.my-header {
-  float: left;
-}
-.my-header :nth-child(2) {
-  margin-left: 10px;
-  color: #b1b5c1;
-}
-
-.el-form {
-  margin: 15px 0;
-}
-.title-memo {
-  color: #b1b5c1;
-  margin: 6px 0 0;
-  font-size: 14px;
-}
-
-.el-form {
-  margin-top: 10px;
-}
-
-.tags {
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 4px;
-  border: 1px solid #eaecf0;
-  color: #111;
-  background-color: #fff;
-  cursor: pointer;
-  margin: 0 22px 21px 0;
-  display: inline-block;
-  font-size: 12px;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.tagIcon {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-}
-
-.sub-title {
-  margin: 8px 0 10px;
-  color: #111;
-  font-size: 14px;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-.tag-group {
-  height: 300px;
-  overflow: hidden;
-}
-.dialog-footer {
-  margin-top: 20px;
-  padding: 10px 75px;
-  text-align: right;
-}
-.el-button-small {
-  padding: 9px;
-  font-size: 12px;
-  border-radius: 3px;
-}
-.el-button-primary {
-  color: #fff;
-  background-color: #f93684;
-  border-color: #f93684;
-}
 
 
 /* 回到顶部 */
