@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import request from '@/utils/request'
 
 enum API {
@@ -19,3 +20,16 @@ export const reqStreaming = () => request.get(API.STREAMING)
 //主题页/图片数据
 export const reqActivityzones = () => request.get(API.ACTIVITYZONES)
 
+=======
+import request from '../../utils/request'
+
+
+enum API {
+    THEME = 'moment/activityZones/collect/default?access_token=02e7ccfe-0e01-48d3-90e0-7e60239f18cd&pageSize=16',
+
+}
+
+
+//我的课程主题请求函数
+export const reqCourseTheme = () => request.get(API.THEME)
+>>>>>>> b951b5f6397f769327e182b2f346a6689d2c7776

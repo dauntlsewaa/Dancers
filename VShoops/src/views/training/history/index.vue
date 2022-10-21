@@ -4,7 +4,7 @@
         <!-- 上方 -->
 <el-card class="header" shadow="always" :body-style="{ padding: '20px' }">
     <div>
-        <span >浏览记录</span>
+        <span @click="show=true" :class="{active:show==true}" >浏览记录</span>
     </div>
 </el-card>
 <!-- 下方 -->
@@ -43,11 +43,13 @@
     <el-table-column class="time" prop="time"  align="right" ></el-table-column>
     <el-table-column  class="delete" align="right"  >
    <template #="{row,$index}">
-     <el-button text size="default">删除</el-button>
+     <el-button text size="default" @click="open($index)" >删除</el-button>
    </template>
     </el-table-column>
   
  </el-table>
+
+ <!-- 消息弹框,点击删除按钮弹出 -->
 
  
 </el-card>
@@ -55,11 +57,12 @@
 </template>
 
 <script setup lang="ts">
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search } from '@element-plus/icons-vue'
 import {reqViewrecords} from '@/api/training/index'
 import {ref} from 'vue'
 import {onMounted} from 'vue'
-
+let show = ref(false)
 const content = ref([])
 onMounted(() => {
     getContent()
@@ -71,6 +74,32 @@ const  getContent =async ()=>{
     // 存储数据
     content.value = result.content;
     // console.log(content.value[0].momentBackup.cover[0]);  
+}
+
+// 消息弹框的js
+
+
+const open = (index) => {
+  ElMessageBox.confirm(
+    '此操作将删除该项,是否继续',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning',
+    }
+  )
+    .then(() => {
+       content.value.splice(index,1)
+        
+      ElMessage({
+        type: 'success',
+        message: '删除成功',
+      })
+    })
+    .catch(() => {
+   
+    })
 }
 </script>
 <!--  -->

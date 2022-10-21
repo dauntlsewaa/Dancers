@@ -8,24 +8,19 @@
       <el-aside width="170px" style="margin-right: 10px">
         <div class="card left-sidebar">
           <!--左侧上方 -->
-          <div class="practice active hover">
-            练习室<el-icon class="right-icon"><ArrowRight /></el-icon>
+          <div class="practice active hover" @click="show=!show">
+            练习室<el-icon v-if="!show" class="right-icon"><ArrowRight /></el-icon>
+                  <el-icon v-else class="right-icon"><ArrowDown /></el-icon>
           </div>
-          <span class="myPractice"
+          <span v-if="show" class="myPractice"
             ><router-link to="/training/dynamics">我的练习室</router-link></span
           >
         </div>
         <div class="card">
-          <div class="hover active card-item">
-            <router-link to="/training/mediaCache">缓存</router-link>
+          <div class="hover  card-item" @click="clickHandler(item,index)" :class="{active:num==index}" v-for="(item,index) in data" :key="index">
+            <router-link :to="item.router" >{{item.name}}</router-link>
           </div>
-          <div class="hover card-item">音频库</div>
-          <div class="hover card-item">
-            <router-link to="/training/collections">收藏</router-link>
-          </div>
-          <div class="hover card-item">
-            <router-link to="/training/view_records">历史</router-link>
-          </div>
+       
         </div>
       </el-aside>
       <!-- 右侧中心展示数据区域 -->
@@ -40,9 +35,45 @@
 </template>
 
 <script setup lang="ts">
+import { ElMessage, ElMessageBox } from 'element-plus'
+import type { Action } from 'element-plus'
 import Header from "@/components/header/header.vue";
 import Footer from '@/components/footer/footer.vue'
 import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
+import {ref} from 'vue'
+// 定义缓存等数组
+ const data = ref(
+ [
+  {name:'缓存',
+  router:'/training/mediaCache'},
+  {name:'音频库',
+  router:''},
+  {name:'收藏',
+  router:'/training/collections'},
+  {name:'历史',
+  router:'/training/view_records'},
+ ]
+  )
+  // 定义标识符切换红色条
+  let num = ref(0)
+  // 定义我的练习室是否显示的标识符
+  let show = ref(false)
+
+    // 点击音频库的弹框js
+  const open = () => {
+  ElMessageBox.alert('请打开中舞网APP，点击"练习室"-"音频库"中查看。', '', {
+    confirmButtonText: '确定',
+  })
+}
+// 缓存及其他按钮的点击事件
+ const  clickHandler= (item,index)=>{
+      num.value=index
+      if(item.name=='音频库'){
+          open()
+      }
+ }
+  
+
 
 </script>
 

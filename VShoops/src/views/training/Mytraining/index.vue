@@ -2,11 +2,9 @@
   <!-- 我的练习室组件 -->
   <div>
     <el-card class="header" shadow="always" :body-style="{ padding: '20px' }">
-      <el-button text class="active">全部</el-button>
-      <el-button text>我创建的</el-button>
-      <el-button text>我加入的</el-button>
-      <el-button text>我课程的</el-button>
-      <el-button class="establish" size="default">创建</el-button>
+      <el-button text :class="{active:num==index}" @click="num=index" v-for="(bt,index) in buttons" :key="index">{{bt.name}}</el-button>
+     
+      <el-button class="establish" size="default" @click="show=true">创建</el-button>
     </el-card>
     <el-card
       shadow="always"
@@ -53,6 +51,17 @@
           </div>
         </el-table-column>
       </el-table>
+
+      <el-dialog
+      v-model="show"
+   
+      width="30%"
+      align-center
+    >
+      <span><img style=" width:100%;height:100%" src="@/assets/chuangjian.jpg" alt=""></span>
+     
+    </el-dialog>
+      
     </el-card>
   </div>
 </template>
@@ -68,7 +77,25 @@ const data= ref([
     time:'昨天 11:30',
      }
     ])
-    
+
+  // 按钮数组
+const buttons = ref([
+  {
+    name:'全部'
+  },
+  {
+    name:'我创建的'
+  },
+  {
+    name:'我加入的'
+  },
+  {
+    name:'我课程的'
+  }
+])
+// 标识符
+let num = ref(0)
+let show = ref(false)    
 const content = ref([])
 onMounted(() => {
     getPlans()

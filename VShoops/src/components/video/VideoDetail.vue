@@ -1,15 +1,16 @@
 <template>
-
-
-
-    <div style="background-color: #fff">
-
-    <Header />
-
-    <div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
-
-    <div class="Container">
+<div style="background-color: #fff">
+<Header />
+<div style="background-color: #f5f7f9; width: 1200px; margin: 0 auto">
+<div class="Container">
         <div class="main">
+
+            <!-- 小窗播放 -->
+            <!-- <div id="small"></div> -->
+
+            
+
+
             <div class="videoPlay">
                 <div id="mse"></div>
             </div>
@@ -160,12 +161,32 @@ import Footer from "../../components/footer/footer.vue";
 
 import {onMounted} from 'vue'
 import Player from 'xgplayer' 
+import pip from 'xgplayer/dist/controls/pip';
 onMounted(()=>{
     let player = new Player({
     id: 'mse',
     url: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
     width:1200,
-    height:534
+    height:534,
+    // 视频预览
+    thumbnail: {
+      pic_num: 44,
+      width: 160,
+      height: 90,
+      col: 10,
+      row: 10,
+      urls: ['./xgplayer-demo-thumbnail-1.jpg','./xgplayer-demo-thumbnail-2.jpg'],
+
+     },
+     //下一集
+      playNext: {
+        urlList: [
+          'url1',
+          'url2',
+          'url3'
+        ],
+    },
+  pip: true ,//打开画中画
 });
 })
 
